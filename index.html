@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapTaskPhoto - Keep the Muck Out of Memories</title>
+    <meta name="description" content="Photo intelligence for the real world. SnapTaskPhoto captures receipts, serial numbers, menus, business cards — then recognizes, translates, and organizes them. On-device AI built in. Generative AI on demand.">
+    <meta property="og:title" content="SnapTaskPhoto - Keep the Muck Out of Memories">
+    <meta property="og:description" content="Photo intelligence for the real world. SnapTaskPhoto captures receipts, serial numbers, menus, business cards — then recognizes, translates, and organizes them. On-device AI built in. Generative AI on demand.">
+    <meta property="og:url" content="https://snaptaskphoto.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://snaptaskphoto.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://snaptaskphoto.com/">
+    <meta name="apple-itunes-app" content="app-id=6757636900">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SnapTaskPhoto",
+      "operatingSystem": "iOS 18.0+",
+      "applicationCategory": "PhotographyApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "A separate camera for task photos. On-device AI recognition, barcode scanning, translation. Generative AI for deeper analysis.",
+      "url": "https://snaptaskphoto.com",
+      "author": {
+        "@type": "Organization",
+        "name": "Digital Gemba"
+      }
+    }
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #fafafa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #5856D6 0%, #007AFF 100%);
+            color: white;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 0 0 1rem 0;
+            font-weight: 700;
+        }
+        .hero .subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .app-store-badge {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .app-store-badge img {
+            height: 50px;
+        }
+        .app-store-placeholder {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0 3rem 0;
+        }
+        @media (max-width: 650px) {
+            .pain-points-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .pain-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 2px solid #e5e5e5;
+            transition: all 0.2s ease;
+        }
+        .pain-card:hover {
+            border-color: #007AFF;
+            box-shadow: 0 4px 12px rgba(0,122,255,0.1);
+        }
+        .pain-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .pain-card h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #d32f2f;
+        }
+        .pain-card .solution {
+            margin: 0;
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .pain-card .solution strong {
+            color: #007AFF;
+        }
+        .how-it-works {
+            background: linear-gradient(135deg, #f5f5f7 0%, #fff 100%);
+            border-radius: 16px;
+            padding: 40px 30px;
+            margin: 3rem 0;
+            border: 1px solid #e5e5e5;
+        }
+        .how-it-works h2 {
+            margin-top: 0;
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 650px) {
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        .step {
+            text-align: center;
+        }
+        .step .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background: #007AFF;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .step h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        .step p {
+            margin: 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+        .privacy-callout {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 40px 30px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        .privacy-callout h2 {
+            margin-top: 0;
+            color: white;
+        }
+        .privacy-callout p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            margin: 1rem 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .privacy-callout .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .features {
+            margin: 3rem 0;
+        }
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        .feature-text h3 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1.1rem;
+        }
+        .feature-text p {
+            margin: 0;
+            color: #555;
+        }
+        .pricing-box {
+            background: linear-gradient(135deg, #f5f5f7 0%, #fff 100%);
+            border-radius: 16px;
+            padding: 40px 30px;
+            margin: 3rem 0;
+            border: 1px solid #e5e5e5;
+            text-align: center;
+        }
+        .pricing-box h2 {
+            margin-top: 0;
+        }
+        .pricing-tiers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (max-width: 500px) {
+            .pricing-tiers {
+                grid-template-columns: 1fr;
+            }
+        }
+        .tier {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 2px solid #e5e5e5;
+        }
+        .tier h3 {
+            margin: 0 0 0.5rem 0;
+        }
+        .tier .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #007AFF;
+        }
+        .tier p {
+            margin: 1rem 0 0 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .ai-disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            color: #856404;
+        }
+        .ai-disclaimer strong {
+            color: #d32f2f;
+        }
+        .cta {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .cta h2 {
+            margin-top: 0;
+        }
+        a {
+            color: #007AFF;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+        footer nav {
+            margin-bottom: 1rem;
+        }
+        footer nav a {
+            margin: 0 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <p style="font-size: 1.1rem; font-weight: 600; letter-spacing: 0.05em; margin: 0 0 0.25rem 0; opacity: 0.9;">SnapTaskPhoto</p>
+        <h1>Keep the Muck Out of Memories™</h1>
+        <p style="font-size: 1.15rem; font-style: italic; margin: 0 0 0.75rem 0; opacity: 0.9; letter-spacing: 0.02em;">Photo Intelligence for the Real World</p>
+        <p class="subtitle">Capture it. Recognize it. Understand it. Act on it.</p>
+
+        <a href="https://apps.apple.com/us/app/snaptaskphoto/id6757636900" class="app-store-badge">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+    </header>
+
+    <main class="container">
+        <h2>10 problems. One app. Zero clutter.</h2>
+        <p class="section-intro">Ever tried to remember where you saved that receipt? Or squint at a serial number? Here's what changes.</p>
+
+        <div class="pain-points-grid">
+            <div class="pain-card">
+                <span class="icon">🧾</span>
+                <h3>Receipts everywhere</h3>
+                <p class="solution">Capture, <strong>extract vendor and total,</strong> file by folder. Find them in seconds, not minutes.</p>
+            </div>
+
+            <div class="pain-card">
+                <span class="icon">🔍</span>
+                <h3>Tiny serial numbers and barcodes</h3>
+                <p class="solution"><strong>AI reads model numbers, specs, warranty info.</strong> Barcodes and QR codes scanned automatically. No squinting. No retyping.</p>
+            </div>
+
+            <div class="pain-card">
+                <span class="icon">❓</span>
+                <h3>"What is this thing?"</h3>
+                <p class="solution">Snap anything. <strong>AI identifies it and estimates value.</strong> Vehicles, electronics, art, plants, pets.</p>
+            </div>
+
+            <div class="pain-card">
+                <span class="icon">🍽️</span>
+                <h3>Tracking calories and carbs</h3>
+                <p class="solution">Snap your meal → <strong>instant nutrition breakdown.</strong> No manual entry. No endless scrolling through food databases.</p>
+            </div>
+
+            <div class="pain-card">
+                <span class="icon">🌍</span>
+                <h3>"I can't read this"</h3>
+                <p class="solution">Snap signs, menus, labels, instructions in any language. <strong>Translated on-device instantly.</strong> AI adds context — what it means and what to do about it.</p>
+            </div>
+
+            <div class="pain-card">
+                <span class="icon">💳</span>
+                <h3>Business cards pile up</h3>
+                <p class="solution">Snap → <strong>AI extracts contact</strong> → Share to Contacts. Done.</p>
+            </div>
+
+            <div class="pain-card">
+                <span class="icon">🔬</span>
+                <h3>Can't read test results</h3>
+                <p class="solution">Snap lab work, soil tests, water reports. <strong>AI explains jargon</strong> and translates to plain language.</p>
+            </div>
+
+            <div class="pain-card">
+                <span class="icon">📊</span>
+                <h3>Conference slides fly by</h3>
+                <p class="solution">Capture → <strong>AI summarizes key points.</strong> Review later without decoding handwriting or blurry text.</p>
+            </div>
+
+            <div class="pain-card">
+                <span class="icon">📦</span>
+                <h3>Reference docs scattered</h3>
+                <p class="solution"><strong>One place</strong> for manuals, warranties, IDs, insurance cards, policies. Tagged by location and date.</p>
+            </div>
+
+            <div class="pain-card">
+                <span class="icon">🛡️</span>
+                <h3>Need proof for a dispute?</h3>
+                <p class="solution">Snap damage, incidents, conditions. <strong>AI describes and timestamps everything</strong> for insurance claims and legal disputes.</p>
+            </div>
+        </div>
+
+        <div class="how-it-works">
+            <h2>How It Works</h2>
+            <p class="section-intro" style="margin-top: 0;">Photo intelligence in four steps — from shutter to action.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Capture</h3>
+                    <p>Choose your intent. Photo goes to iCloud Drive, never your Camera Roll.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Instant Recognition</h3>
+                    <p>Apple on-device AI kicks in immediately. OCR extracts text, barcodes are decoded, content is classified, foreign text is translated. No internet. No credits. Nothing leaves your phone.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Generative AI Insights</h3>
+                    <p>Want more? Tap Analyze and generative AI goes deeper — structuring receipts, estimating nutrition, identifying unknown items, explaining test results in plain language. One credit per analysis.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Act</h3>
+                    <p>Share to Reminders, Things, Contacts, Messages. Search across all folders. Browse on a map.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="how-it-works">
+            <h2>Two Layers of Photo Intelligence</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+                <div>
+                    <h3 style="color: #007AFF; margin-top: 0;">On-Device AI — Free. Instant. Private.</h3>
+                    <ul style="color: #555; padding-left: 1.2rem;">
+                        <li>Text recognition (OCR) with no character limit</li>
+                        <li>Barcode and QR code scanning</li>
+                        <li>Content classification and auto-tagging</li>
+                        <li>Foreign text translation</li>
+                        <li>Document edge detection</li>
+                    </ul>
+                    <p style="color: #555; font-size: 0.9rem;">Runs entirely on your iPhone — nothing leaves your device.</p>
+                </div>
+                <div>
+                    <h3 style="color: #5856D6; margin-top: 0;">Generative AI — Deeper Understanding</h3>
+                    <ul style="color: #555; padding-left: 1.2rem;">
+                        <li>Structures receipts into vendor, date, and total</li>
+                        <li>Estimates calories and carbs from meal photos</li>
+                        <li>Identifies unknown items with value estimates</li>
+                        <li>Explains test results and jargon in plain language</li>
+                        <li>Translates with cultural context, not just words</li>
+                        <li>Ask follow-up questions for more detail</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: #555; font-style: italic;">On-device AI does the heavy lifting. Generative AI adds the understanding. You always keep both.</p>
+        </div>
+
+        <div class="privacy-callout">
+            <span class="icon">🔒</span>
+            <h2>Your Data Stays Yours</h2>
+            <p><strong>Photos stored in your iCloud Drive.</strong> We never see them. Ever.</p>
+            <p><strong>On-device text recognition, translation, barcode scanning, and image classification.</strong> All run entirely on your phone. Nothing leaves your device.</p>
+            <p><strong>Generative AI analysis is optional.</strong> When used, images are sent securely to Claude API and not stored on our servers.</p>
+        </div>
+
+        <div class="ai-disclaimer">
+            <strong>⚠️ AI Disclaimer:</strong> AI analyses are often wildly inaccurate. Verify everything before acting on it. Not suitable for medical, dietary, or financial decisions.
+        </div>
+
+        <h2>What Else Can It Do?</h2>
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">🧠</span>
+                <div class="feature-text">
+                    <h3>On-Device Intelligence — No Credits Needed</h3>
+                    <p>Every photo gets instant, private processing: full OCR with no character limit, barcode and QR code scanning, automatic classification and tagging, foreign text translation, and document edge detection. All on your phone. No internet required.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">✂️</span>
+                <div class="feature-text">
+                    <h3>Document Auto-Crop</h3>
+                    <p>Detects document edges and offers one-tap perspective-corrected cropping. Great for receipts, business cards, and forms.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📐</span>
+                <div class="feature-text">
+                    <h3>Auto-Shrunk for Sharing</h3>
+                    <p>Photos compressed to ~300KB — small enough to email, text, or share anywhere. No more "file too large" errors.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🔎</span>
+                <div class="feature-text">
+                    <h3>Search Across Everything</h3>
+                    <p>Find any photo by title, text content, AI analysis, barcode data, or auto-tags. Works across all folders instantly.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🌐</span>
+                <div class="feature-text">
+                    <h3>Works In Your Language</h3>
+                    <p>Translations and AI responses follow your system language. Override anytime in Settings.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🧹</span>
+                <div class="feature-text">
+                    <h3>Clean Your Camera Roll</h3>
+                    <p>Filter by album, screenshots, or photos not in any album. Select multiple and batch delete, move, or organize. Sort by similarity, document type, or location. Adjustable grid (1/2/3 columns). View photos on a map.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📁</span>
+                <div class="feature-text">
+                    <h3>Auto-File by Intent</h3>
+                    <p>Photos land in folders based on what you captured: Tasks, Read, Receipt, Food, Identify, Interpret, Slides, Reference, Contacts, or Evidence. Create custom folders in Files app—they appear automatically.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">⚡</span>
+                <div class="feature-text">
+                    <h3>Batch Mode</h3>
+                    <p>Rapid-fire capture without leaving camera. Snap 10 slides in a row, analyze them all later.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📤</span>
+                <div class="feature-text">
+                    <h3>Share to Any App</h3>
+                    <p>Reminders, Things 3, Notes, Messages, Mail—anywhere. Deep links jump back to the photo instantly.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📍</span>
+                <div class="feature-text">
+                    <h3>Location Tagged</h3>
+                    <p>Photos show where they were captured (e.g., "Boston 17Jan"). Know at a glance where you snapped that receipt.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📥</span>
+                <div class="feature-text">
+                    <h3>Import from Anywhere</h3>
+                    <p>Share Extension imports photos from any app. Clean up existing Camera Roll clutter too.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📦</span>
+                <div class="feature-text">
+                    <h3>Archive Without Moving</h3>
+                    <p>Mark items as archived to hide them from active view while keeping them in their folder. Toggle "Show Archived" to see them again.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🔀</span>
+                <div class="feature-text">
+                    <h3>Smart Sort Modes</h3>
+                    <p>Sort your Camera Roll by Documents First (finds document-like photos), Similar (groups visually alike photos), or by location coordinates.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">💬</span>
+                <div class="feature-text">
+                    <h3>Follow-Up Questions</h3>
+                    <p>After AI analysis, ask Claude follow-up questions about the photo. Add context before analysis for better results.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📸</span>
+                <div class="feature-text">
+                    <h3>Screenshots Only Filter</h3>
+                    <p>Toggle Screenshots Only in the Roll tab to filter your Camera Roll to just screenshots. Combine with batch select for fast cleanup.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🗺️</span>
+                <div class="feature-text">
+                    <h3>Map View</h3>
+                    <p>Tap the map icon in the Roll tab to see your Camera Roll photos on a map. Photos with GPS data appear as pins — tap any pin to open the photo.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-box">
+            <h2>Simple Pricing</h2>
+            <div class="pricing-tiers">
+                <div class="tier">
+                    <h3>Free</h3>
+                    <p class="price">$0</p>
+                    <p>Full capture & organization. On-device OCR, translation, barcode scanning, and auto-tagging. 15 AI analyses included.</p>
+                </div>
+                <div class="tier">
+                    <h3>Credits</h3>
+                    <p class="price">$4.99</p>
+                    <p>50 AI analyses. Buy anytime, never expires. No subscription required.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>Ready to Get Things Done?</h2>
+            <p><strong>Requires iOS 18.0 or later.</strong></p>
+            <a href="https://apps.apple.com/us/app/snaptaskphoto/id6757636900" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+            <p style="margin-top: 1.5rem; color: #555; font-style: italic; font-size: 0.95rem;">Photo intelligence. Always on. Always private. Always yours.</p>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="support.html">Support</a>
+        </nav>
+        <p>&copy; 2026 Digital Gemba, LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>

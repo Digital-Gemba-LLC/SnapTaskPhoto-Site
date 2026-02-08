@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - SnapTaskPhoto</title>
+    <meta property="og:title" content="SnapTaskPhoto - Keep the Muck Out of Memories">
+    <meta property="og:description" content="A separate camera for task photos. Receipts, serial numbers, business cards — captured, recognized, organized. Not in your Camera Roll.">
+    <meta property="og:url" content="https://snaptaskphoto.com/support.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://snaptaskphoto.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://snaptaskphoto.com/support.html">
+    <meta name="apple-itunes-app" content="app-id=6757636900">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #333;
+            background: #fafafa;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .app-name {
+            color: #007AFF;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        a {
+            color: #007AFF;
+        }
+        .contact-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 2rem 0;
+        }
+        .contact-box h2 {
+            margin-top: 0;
+        }
+        .email-link {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .faq-section {
+            margin-top: 2rem;
+        }
+        .faq-section h2 {
+            color: #007AFF;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 0.5rem;
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        .faq-item h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        .faq-item p {
+            margin-top: 0.25rem;
+            color: #555;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        /* Intent comparison table */
+        .intent-table-section {
+            margin-top: 2rem;
+        }
+        .intent-table-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        .intent-table-section .table-subheading {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        .intent-table-note {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            padding: 12px 16px;
+            background: #f0f7ff;
+            border-radius: 8px;
+            border-left: 3px solid #007AFF;
+        }
+        .intent-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+        .intent-table thead th {
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #555;
+            border-bottom: 2px solid #ddd;
+        }
+        .intent-table thead th:first-child {
+            background: #f5f5f7;
+            width: 100px;
+        }
+        .intent-table thead th.col-ondevice {
+            background: #f5f5f5;
+        }
+        .intent-table thead th.col-ai {
+            background: #f0f7ff;
+        }
+        .intent-table tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        .intent-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .intent-table tbody td:first-child {
+            font-weight: 600;
+            background: #fafafa;
+            white-space: nowrap;
+        }
+        .intent-table tbody td.col-ondevice {
+            background: #fafafa;
+        }
+        .intent-table tbody td.col-ai {
+            background: #f8fbff;
+        }
+        .intent-table tbody tr.high-value td:first-child {
+            background: #fffbf0;
+        }
+        .intent-table tbody tr.high-value td.col-ondevice {
+            background: #fffdf5;
+        }
+        .intent-table tbody tr.high-value td.col-ai {
+            background: #f8fbff;
+        }
+        .intent-star {
+            display: inline-block;
+            background: #FFF3E0;
+            color: #E65100;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+        .ai-plus {
+            color: #007AFF;
+            font-weight: 700;
+        }
+        .intent-table-footer {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .intent-table-footer p {
+            margin: 0.75rem 0;
+        }
+        .intent-table-footer .high-value-note {
+            background: #FFF8E1;
+            border: 1px solid #FFE082;
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: #5D4037;
+        }
+        .intent-table-footer .pricing-note {
+            text-align: center;
+            font-weight: 500;
+            color: #007AFF;
+            margin-top: 1rem;
+        }
+        @media (max-width: 600px) {
+            .intent-table,
+            .intent-table thead,
+            .intent-table tbody,
+            .intent-table th,
+            .intent-table td,
+            .intent-table tr {
+                display: block;
+            }
+            .intent-table thead {
+                display: none;
+            }
+            .intent-table tbody tr {
+                background: #fff;
+                border: 1px solid #ddd;
+                border-radius: 12px;
+                margin-bottom: 1rem;
+                overflow: hidden;
+            }
+            .intent-table tbody tr.high-value {
+                border-color: #FFE082;
+            }
+            .intent-table tbody td {
+                border-bottom: none;
+                padding: 10px 16px;
+            }
+            .intent-table tbody td:first-child {
+                background: #f5f5f7;
+                font-size: 1rem;
+                padding: 12px 16px;
+                border-bottom: 1px solid #eee;
+                white-space: normal;
+            }
+            .intent-table tbody tr.high-value td:first-child {
+                background: #FFF8E1;
+            }
+            .intent-table tbody td.col-ondevice,
+            .intent-table tbody td.col-ai {
+                background: transparent;
+            }
+            .intent-table tbody td.col-ondevice::before {
+                content: "Included (On-Device AI)";
+                display: block;
+                font-weight: 600;
+                font-size: 0.8rem;
+                color: #888;
+                margin-bottom: 4px;
+            }
+            .intent-table tbody td.col-ai::before {
+                content: "AI Credit Adds";
+                display: block;
+                font-weight: 600;
+                font-size: 0.8rem;
+                color: #007AFF;
+                margin-bottom: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Support</h1>
+    <p class="subtitle">Get help with <span class="app-name">SnapTaskPhoto</span><br><em>Keep the Muck Out of Memories™</em></p>
+    <p style="color: #555; font-size: 0.95rem; margin-top: -1rem; margin-bottom: 2rem;">SnapTaskPhoto brings photo intelligence to your everyday captures — turning receipts, menus, serial numbers, and documents into structured, searchable, actionable information.</p>
+
+    <div class="contact-box">
+        <h2>Contact Us</h2>
+        <p>Have a question, found a bug, or want to suggest a feature? We'd love to hear from you.</p>
+        <p class="email-link"><a href="mailto:support@snaptaskphoto.com">support@snaptaskphoto.com</a></p>
+        <p>We typically respond within 1-2 business days.</p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <!-- Getting Started -->
+    <div class="faq-section">
+        <h2>Getting Started</h2>
+
+        <div class="faq-item">
+            <h3>How do I capture photos with the app?</h3>
+            <p>Open the app and you'll see the SNAP screen with 10 capture intents: Task, Read, Receipt, Food, Identify, Interpret, Slide, Reference, Contact, or Evidence. Tap what you're capturing, take the photo, and it goes directly to your iCloud Drive — never touching your Camera Roll. Photos auto-file to folders based on the intent you choose.</p>
+            <p>Every photo you capture is instantly processed by Apple's on-device AI — text is extracted, barcodes are scanned, and content is classified. All free, all private. For deeper analysis, tap Analyze to use generative AI (powered by Claude).</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Where are my photos stored?</h3>
+            <p>Photos are stored in your iCloud Drive in a "SnapTaskPhoto" folder. You can see them in the Files app under iCloud Drive → SnapTaskPhoto. This means your photos are backed up automatically, sync across your devices, and won't be lost if you delete the app.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What happens if I delete the app?</h3>
+            <p>Your photos stay safe in iCloud Drive. Reinstall the app anytime and they'll be right where you left them. You can also access them directly through the Files app.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do photos sync across my devices?</h3>
+            <p>Yes. Photos are stored in iCloud Drive, so they automatically sync to any device signed into the same Apple ID with iCloud Drive enabled.</p>
+        </div>
+    </div>
+
+    <!-- Using the App -->
+    <div class="faq-section">
+        <h2>Using the App</h2>
+
+        <div class="faq-item">
+            <h3>How do I process my photos?</h3>
+            <p>Photos land in folders based on the capture intent you chose — Receipt photos go to Receipt, Food photos go to Food, and so on. Open the Folders tab to browse all your folders. Tap any photo to open details where you can:</p>
+            <ul>
+                <li><strong>Analyze:</strong> Run AI analysis (Task, Text, Receipt, Food, Identify, Interpret, Slide, Reference, Contact, or Evidence)</li>
+                <li><strong>Share:</strong> Send to Reminders, Things 3, or other apps</li>
+                <li><strong>Folder:</strong> Move to a different folder</li>
+                <li><strong>Delete:</strong> Remove the photo</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I create a Reminder from a photo?</h3>
+            <p>Open any photo and tap Share. Select Reminders from the share sheet. The reminder includes a deep link back to the photo so you can tap it to see what you need to do.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why can't I add images to Reminders?</h3>
+            <p>Images in Reminders require the upgraded iCloud Reminders format. To upgrade, open the Reminders app — if prompted, tap "Upgrade." You can also check Settings → [Your Name] → iCloud → See All → Reminders. This is a one-time iCloud account upgrade.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What happens to my Reminder link if I delete the photo?</h3>
+            <p>Deep links are preserved. When you delete a photo, it moves to the Deleted folder rather than being permanently removed. The link in your Reminder will still work. You can permanently purge deleted photos in Settings when you're sure you don't need them.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I crop photos?</h3>
+            <p>Yes. Open a photo and tap Crop. Note that cropping is permanent — it replaces the original image. The app will warn you before cropping.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is Batch Mode?</h3>
+            <p>Batch Mode keeps you in the camera for rapid capture. After taking a photo, you stay in camera view instead of jumping to details — great for snapping multiple receipts, slides, or items quickly. Toggle it on the SNAP launcher screen.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is Auto-AI?</h3>
+            <p>Auto-AI automatically runs AI analysis when you capture a photo. It's ON by default. Toggle it on the SNAP launcher screen if you want to control when analysis runs, or analyze photos manually from the detail view anytime.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I give the AI more context before analysis?</h3>
+            <p>Yes. Before running AI analysis, you can add background information to help the AI understand what it's looking at. For example, tell it "this is a receipt from my business trip" or "this plant is in my backyard in New England." The extra context leads to more accurate and useful results.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I ask follow-up questions after AI analysis?</h3>
+            <p>Yes. After an initial analysis, you can ask Claude follow-up questions about the photo. For example, after identifying a plant, ask "is it safe for dogs?" The conversation history is saved with the photo.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I rotate photos?</h3>
+            <p>Yes. Open any photo and use the rotate button to fix orientation.</p>
+        </div>
+    </div>
+
+    <!-- On-Device Intelligence -->
+    <div class="faq-section">
+        <h2>Photo Intelligence: On-Device</h2>
+
+        <div class="faq-item">
+            <h3>What does the app do without AI credits?</h3>
+            <p>A lot. Apple's on-device AI processes every photo instantly for free: text recognition (OCR) extracts all visible text with no character limit, barcode and QR code scanning decodes any codes in the image, image classification auto-tags photos by content type, and for the Interpret intent, non-English text is automatically translated. All of this runs on your phone with no internet connection needed.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does barcode scanning work?</h3>
+            <p>The app automatically detects barcodes and QR codes in every photo you capture or import. Decoded data appears in the photo details — URLs are tappable links, product codes and serial numbers are displayed for easy reference. No special scanning mode needed.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does auto-tagging work?</h3>
+            <p>Apple's Vision framework classifies every photo with content labels like food, document, outdoor, animal, and more. These tags are searchable — type "food" in search to find all your meal photos, even ones that haven't been AI-analyzed.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does on-device translation work?</h3>
+            <p>When you use the Interpret intent and the text is in a foreign language, the app automatically translates it on-device. You'll see both the translation and the original text. No credits used. Want deeper context and explanation? Tap Analyze to use generative AI.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What does document auto-crop do?</h3>
+            <p>When viewing a photo that contains a document, receipt, or card, the app detects the edges and offers a "Crop to Document" button. One tap perspective-corrects and crops to just the document.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I change the translation language?</h3>
+            <p>By default the app uses your iPhone's system language. To override, go to Settings → AI Response Language and choose your preferred language. This affects both on-device translations and generative AI analysis responses.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What's the difference between on-device AI and generative AI analysis?</h3>
+            <p>On-device AI (Apple Vision) extracts what's in the photo: raw text, barcodes, content classification, and translations. It's instant, free, and completely private — nothing leaves your phone. Generative AI (Claude) interprets what it means: structuring a receipt into vendor/date/total, estimating calories from a meal photo, identifying an unknown item with value estimate, or explaining medical test results in plain language. Think of it as extraction vs. understanding. Together, these two layers form SnapTaskPhoto's photo intelligence — extraction plus understanding, available on every photo you capture.</p>
+        </div>
+
+        <div class="intent-table-section">
+            <h3>What do I get with each capture intent?</h3>
+            <p class="table-subheading">Every photo gets free on-device processing automatically. AI analysis adds a layer of interpretation — it never replaces what's already there.</p>
+
+            <p class="intent-table-note">AI analysis always adds to your on-device results — it never removes or replaces the extracted text, barcodes, or tags.</p>
+
+            <table class="intent-table">
+                <thead>
+                    <tr>
+                        <th>Intent</th>
+                        <th class="col-ondevice">Included (On-Device AI)</th>
+                        <th class="col-ai">AI Credit Adds (Generative AI)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Task</td>
+                        <td class="col-ondevice">Full text extracted. Barcodes/QR decoded. Content classified and tagged.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Actionable task summary with priority, next steps, and suggested due date.</td>
+                    </tr>
+                    <tr>
+                        <td>Read</td>
+                        <td class="col-ondevice">Full text extracted with no character limit. Barcodes/QR decoded.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Structured summary — key information highlighted, organized by topic or section. Full text always preserved.</td>
+                    </tr>
+                    <tr class="high-value">
+                        <td>Receipt <span class="intent-star">&#9733; HIGH VALUE</span></td>
+                        <td class="col-ondevice">Full text extracted. Barcodes/QR decoded (loyalty cards, transaction IDs).</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Vendor name, date, total, tax, and line items structured and ready to file or expense.</td>
+                    </tr>
+                    <tr class="high-value">
+                        <td>Food <span class="intent-star">&#9733; HIGH VALUE</span></td>
+                        <td class="col-ondevice">Classified as food. Text extracted from menus or nutrition labels if present.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Dish identification with estimated calories, carbs, protein, and fat. Ingredient and allergen notes.</td>
+                    </tr>
+                    <tr class="high-value">
+                        <td>Identify <span class="intent-star">&#9733; HIGH VALUE</span></td>
+                        <td class="col-ondevice">Generic classification labels (e.g. "animal," "vehicle," "electronics"). Barcodes/QR decoded.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Specific identification — make, model, species, variety. Value estimate where applicable.</td>
+                    </tr>
+                    <tr>
+                        <td>Interpret</td>
+                        <td class="col-ondevice">Full text extracted. Foreign text auto-translated on-device. Barcodes/QR decoded.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Plain-language explanation with context. Cultural notes for menus. What it means, why it matters, what to do.</td>
+                    </tr>
+                    <tr>
+                        <td>Slide</td>
+                        <td class="col-ondevice">Full text extracted from slide content.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Key takeaways and action items highlighted. Full slide text always preserved.</td>
+                    </tr>
+                    <tr>
+                        <td>Reference</td>
+                        <td class="col-ondevice">Full text extracted. Barcodes/QR decoded (serial numbers, product codes). Content classified.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Structured details — model, specs, expiration dates, policy numbers, key terms organized. Full text always preserved.</td>
+                    </tr>
+                    <tr class="high-value">
+                        <td>Contact <span class="intent-star">&#9733; HIGH VALUE</span></td>
+                        <td class="col-ondevice">Full text extracted from business card.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Structured contact: name, title, company, phone, email, address. Ready for vCard export to Contacts.</td>
+                    </tr>
+                    <tr class="high-value">
+                        <td>Evidence <span class="intent-star">&#9733; HIGH VALUE</span></td>
+                        <td class="col-ondevice">Full text extracted. Content classified. Location and timestamp from capture.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Detailed condition description — what's shown, what's damaged, environmental context. Documentation-grade summary.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="intent-table-footer">
+                <p><strong>Every intent, on-device:</strong> Document edge detection with one-tap auto-crop. Auto-shrunk to ~300KB for easy sharing.</p>
+                <p><strong>Every intent, AI adds:</strong> Ask follow-up questions after analysis. Add context before analysis for better results. Responds in your preferred language. On-device results always preserved alongside AI analysis.</p>
+                <div class="high-value-note">
+                    <strong>&#9733; High-value AI augmentation.</strong> These intents benefit the most from an AI credit — on-device provides raw text and basic classification, but AI transforms it into structured, actionable information you can use immediately.
+                </div>
+                <p class="pricing-note">Start with 15 free AI analyses. Need more? 50 for $4.99.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Folders & Organization -->
+    <div class="faq-section">
+        <h2>Folders & Organization</h2>
+
+        <div class="faq-item">
+            <h3>How do folders work?</h3>
+            <p>Photos auto-file to folders based on your capture mode: Task photos go to Tasks, Food photos go to Food, etc. You can also manually move photos between folders. The Folders tab shows all your folders so you can browse everything.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What folders are available?</h3>
+            <p>There are 10 default folders: <strong>Tasks</strong> (actionable to-dos), <strong>Read</strong> (OCR/text extraction results), <strong>Receipt</strong> (expenses, returns, purchases), <strong>Food</strong> (meal tracking), <strong>Identify</strong> (item identification results), <strong>Interpret</strong> (test results and jargon explained), <strong>Slides</strong> (presentations and whiteboards), <strong>Reference</strong> (IDs, cards, permanent lookup items), <strong>Contacts</strong> (business cards), and <strong>Evidence</strong> (legal documentation and dispute records). Plus <strong>Inbox</strong> for Share Extension imports and uncategorized photos. You can also create custom folders in the Files app (iCloud Drive → SnapTaskPhoto) and they'll appear automatically in the app.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What's the difference between moving to a folder and deleting?</h3>
+            <p>Moving to a folder keeps the photo in your iCloud Drive for reference — useful for receipts or things you've shared to Reminders. Delete moves it to a Deleted folder where you can recover it later or permanently remove it to free up space.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is Archive/Unarchive?</h3>
+            <p>Archive lets you hide completed items from your active view while keeping them in their original folder. Toggle "Archived" on any photo to mark it as done — it disappears from the default view but stays organized where it belongs. Use the "Show archived photos" toggle at the top of folder views to see archived items again. Toggle it off to bring items back to active view.</p>
+        </div>
+
+    </div>
+
+    <!-- Photo Gallery Cleanup -->
+    <div class="faq-section">
+        <h2>Photo Gallery Cleanup</h2>
+
+        <div class="faq-item">
+            <h3>What does Photo Gallery Cleanup do?</h3>
+            <p>The Roll tab lets you triage your Camera Roll to separate task photos from memories. You'll see your library stats (total photos, photos not in albums) at the top. View your photos in a grid and decide what to do with each one:</p>
+            <ul>
+                <li><strong>Move:</strong> Choose a folder, import the photo, then delete from Camera Roll</li>
+                <li><strong>Copy:</strong> Choose a folder, import the photo, but keep in Camera Roll</li>
+                <li><strong>Album:</strong> Add to a Camera Roll album</li>
+                <li><strong>Share:</strong> Share the photo directly</li>
+                <li><strong>Keep:</strong> Mark as a memory — it won't appear in future cleanups</li>
+                <li><strong>Delete:</strong> Remove from Camera Roll entirely</li>
+            </ul>
+            <p>Use <strong>Batch Mode</strong> (in the Options menu) if you want Move and Copy to work silently without opening Photo Details — great for rapid processing.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I browse photos without going back to the grid?</h3>
+            <p>When viewing a photo in the Roll tab, swipe left or right to move to the next or previous photo. A counter shows your position (e.g., "3 of 47"). No need to go back to the grid to see more photos.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I select multiple photos quickly?</h3>
+            <p>Two ways to multi-select:</p>
+            <ul>
+                <li><strong>Long press:</strong> Hold any photo to enter selection mode and immediately select it</li>
+                <li><strong>Drag to select:</strong> Once in selection mode, drag your finger across multiple photos to select them all at once</li>
+            </ul>
+            <p>Then use the action bar at the bottom to Delete, add to Album, or Move all selected photos.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What do the filter toggles do?</h3>
+            <p>The Options menu has toggles to filter your view:</p>
+            <ul>
+                <li><strong>Hide Processed:</strong> Hides photos you've already Move'd or Copy'd</li>
+                <li><strong>Hide Kept:</strong> Hides photos you've marked as memories</li>
+                <li><strong>Screenshots Only:</strong> Filters to show only screenshots</li>
+            </ul>
+            <p>All are off by default so you see everything. Turn them on to focus on specific photo types.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I filter by album?</h3>
+            <p>Tap the album filter dropdown in the toolbar (shows "All Photos" by default). You can filter by:</p>
+            <ul>
+                <li><strong>All Photos:</strong> Everything in your Camera Roll</li>
+                <li><strong>Not in Album:</strong> Photos not yet organized into any album</li>
+                <li><strong>Any album:</strong> View just one album at a time</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I add a photo to an album?</h3>
+            <p>Open any photo and tap the <strong>Album</strong> button. You'll see a list of your existing albums plus a "New Album..." option. Tap an album to add the photo, or create a new one. The photo stays in your Camera Roll — albums are just groupings.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I create a new album?</h3>
+            <p>Tap the album filter dropdown and select <strong>New Album...</strong>. Enter a name and the album is created. You'll automatically switch to viewing the new album.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I delete an album?</h3>
+            <p>First, filter to the album you want to delete. Then tap the options menu (⋯) and select <strong>Delete Album</strong>. This option only appears when viewing a user-created album — smart albums like Favorites and Screenshots are managed by iOS. Remember: deleting an album doesn't delete the photos inside it.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Will cleanup affect my original photos?</h3>
+            <p>Move and Copy create a downsized copy in the app (optimized for storage). If you choose Move, the original is deleted from your Camera Roll but recoverable in your Recently Deleted album for 30 days. Keep and Delete only affect Camera Roll — they don't copy anything to the app.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How much are photos compressed?</h3>
+            <p>Photos are automatically resized to 1200px on the longest edge and saved as 75% quality JPEG. A typical 20MB HDR photo becomes roughly 200-400KB — small enough to email, text, or share anywhere. Your original stays untouched in your Camera Roll if you use Copy instead of Move.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I sort photos in the Roll tab?</h3>
+            <p>Tap the Options menu and choose a sort mode:</p>
+            <ul>
+                <li><strong>Recent:</strong> Newest first (default)</li>
+                <li><strong>Documents First:</strong> Finds document-like photos by analyzing whitespace content</li>
+                <li><strong>Similar:</strong> Groups visually alike photos together using perceptual hashing</li>
+                <li><strong>Latitude / Longitude:</strong> Sort by geographic location</li>
+                <li><strong>Distance from Me:</strong> Sort by proximity to your current location (requires Location Services)</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I clean up just screenshots?</h3>
+            <p>Toggle <strong>Screenshots Only</strong> in the Options menu to filter your Camera Roll to screenshots. Combine with batch select (long press, then Select All) for fast cleanup.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I change the photo grid size?</h3>
+            <p>Tap the Options menu and choose 1, 2, or 3 columns under the Grid setting. Use 1 column for detail, 3 columns to scan fast. Your choice is remembered between sessions.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I search for photos?</h3>
+            <p>Use the search bar at the top of the Folders tab. Search finds photos by title, text content, AI analysis, folder name, or auto-generated tags. Results appear across all folders.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I see my photos on a map?</h3>
+            <p>Yes. Tap the map icon in the Roll tab toolbar to switch from grid view to map view. Photos with GPS data appear as pins on the map. Tap a pin to open the photo. The header shows how many of your photos have location data. If none do, you may need to enable Location Services for your Camera app in system Settings.</p>
+        </div>
+    </div>
+
+    <!-- What Happens to My Photos -->
+    <div class="faq-section">
+        <h2>What Happens to My Photos?</h2>
+
+        <div class="faq-item">
+            <h3>You control when photos are permanently deleted</h3>
+            <p>We designed the app to be safe with your photos. In-app deletions go to a Deleted folder in iCloud Drive — you decide when to purge. Camera Roll deletions go to iOS Recently Deleted for 30 days before permanent removal. Nothing is permanently deleted without your say.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Move (from Roll)</h3>
+            <p>Creates a downsized copy in the app, then deletes the original from your Camera Roll. The deleted original goes to iOS Recently Deleted where you can recover it for 30 days.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Copy (from Roll)</h3>
+            <p>Creates a downsized copy in the app. Your original stays untouched in your Camera Roll at full resolution.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Delete (from Roll)</h3>
+            <p>Removes the photo from your Camera Roll. It goes to iOS Recently Deleted where you can recover it for 30 days before permanent removal.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Delete (in app)</h3>
+            <p>Moves the photo to a Deleted folder in your iCloud Drive (SnapTaskPhoto/Deleted). You can recover it from there, or permanently remove it using Empty Folder or by purging individual photos. Deep links to the photo still work while it's in Deleted.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>About downsizing</h3>
+            <p>Photos are resized to 1200px max and compressed to ~200-400KB. This is optimized for sharing via email, text, and task apps — not for high-resolution printing or archival. If you need the full-resolution original, use Copy instead of Move so it stays in your Camera Roll.</p>
+        </div>
+    </div>
+
+    <!-- Understanding Your iCloud Storage -->
+    <div class="faq-section">
+        <h2>Understanding Your iCloud Storage</h2>
+
+        <div class="faq-item">
+            <h3>You own your data</h3>
+            <p>Photos are stored in iCloud Drive under the SnapTaskPhoto folder. Browse them anytime in the Files app (iPhone) or Finder (Mac). They're your files — backed up, synced, and accessible even if you uninstall the app.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>File structure: two files per photo</h3>
+            <p>Each photo has two files:</p>
+            <ul>
+                <li><strong>.jpg</strong> — the image itself</li>
+                <li><strong>.json</strong> — metadata (notes, AI analysis, location, share history)</li>
+            </ul>
+            <p>Example: <code>20260118_143022_a1b2.jpg</code> and <code>20260118_143022_a1b2.json</code></p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Simple folder structure</h3>
+            <p>Photos go directly into folders at the top level of your SnapTaskPhoto storage. No subfolders. No nested complexity. You can create additional folders at the same level in the Files app — they appear automatically in the app.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>The 10 capture folders explained</h3>
+            <ul>
+                <li><strong>Tasks</strong> — Photos with actionable to-dos</li>
+                <li><strong>Read</strong> — OCR/text extraction results</li>
+                <li><strong>Receipt</strong> — Expenses, returns, purchases</li>
+                <li><strong>Food</strong> — Meals with carb/calorie estimates</li>
+                <li><strong>Identify</strong> — Item identification results</li>
+                <li><strong>Interpret</strong> — Test results and scientific jargon explained</li>
+                <li><strong>Slides</strong> — Presentation slides and whiteboard captures</li>
+                <li><strong>Reference</strong> — IDs, cards, passwords — permanent lookup items</li>
+                <li><strong>Contacts</strong> — Business cards and contact information</li>
+                <li><strong>Evidence</strong> — Legal documentation, damage, incidents, dispute records</li>
+            </ul>
+            <p>Plus system folders: <strong>Inbox</strong> (Share Extension imports and uncategorized photos), <strong>Archive</strong> (completed items), and <strong>Deleted</strong> (recoverable trash).</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>The 10 capture options</h3>
+            <p>When you tap SNAP, you choose what you're capturing. This determines where it's filed and (if Auto-AI is on) how it's analyzed:</p>
+            <ul>
+                <li><strong>Task</strong> — Infers actionable task titles → files to Tasks</li>
+                <li><strong>Read</strong> — Extracts all visible text (OCR) → files to Read</li>
+                <li><strong>Receipt</strong> — Extracts vendor, date, total → files to Receipt</li>
+                <li><strong>Food</strong> — Identifies meals, estimates carbs/calories → files to Food</li>
+                <li><strong>Identify</strong> — Identifies unknown items and estimated value → files to Identify</li>
+                <li><strong>Interpret</strong> — Explains test results, jargon, or translates foreign text to your preferred language → files to Interpret</li>
+                <li><strong>Slide</strong> — Summarizes key points from presentations → files to Slides</li>
+                <li><strong>Reference</strong> — Extracts key details from documents/cards → files to Reference</li>
+                <li><strong>Contact</strong> — Extracts contact info from business cards → files to Contacts</li>
+                <li><strong>Evidence</strong> — Documents incidents, damage, conditions for legal or insurance purposes → files to Evidence</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- AI Analysis -->
+    <div class="faq-section">
+        <h2>AI Analysis</h2>
+
+        <div class="faq-item">
+            <h3>What are the different AI analysis modes?</h3>
+            <ul>
+                <li><strong>Task:</strong> Infers actionable task titles from the photo. Best for "what do I need to do?" situations.</li>
+                <li><strong>Text:</strong> Extracts all visible text verbatim with no character limit. Best for documents and receipts.</li>
+                <li><strong>Receipt:</strong> Extracts vendor, date, total amount, and key line items from receipts and invoices.</li>
+                <li><strong>Food:</strong> Identifies meals and estimates carbs and calories for tracking.</li>
+                <li><strong>Identify:</strong> Identifies unknown items and estimated value — vehicles, electronics, art, antiques, plants, pets, collectibles.</li>
+                <li><strong>Interpret:</strong> Explains test results and scientific jargon in plain language. Translates foreign text to your preferred language. Great for blood work, soil tests, lab reports, menus, and any document with specialized terminology.</li>
+                <li><strong>Slide:</strong> Summarizes conference slides and presentations into key takeaways.</li>
+                <li><strong>Reference:</strong> Extracts key information from documents and cards — names, numbers, dates, expiration, issuers, and other details for easy lookup.</li>
+                <li><strong>Evidence:</strong> Documents and describes incidents, damage, or conditions with full text extraction — for legal, insurance, or dispute purposes.</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h3>What can Identify mode identify?</h3>
+            <p>Almost anything! Plants (species, care tips), pets (breed, age estimate), vehicles, electronics, antiques, collectibles, furniture, artwork, coins, stamps, vintage items, and more. You'll get identification details plus a rough value estimate where applicable.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What can Interpret mode explain?</h3>
+            <p>Any document with specialized terminology: blood work and lab panels, soil and water quality tests, genetic/DNA reports, veterinary results, automotive diagnostics, home inspection reports, academic evaluations, foreign menus, and more. Results are explained in plain language with anything outside normal ranges highlighted. Foreign text is translated to your preferred language on-device before AI interpretation. Always consult a qualified professional before acting on any interpretation.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What does the app do on-device without AI credits?</h3>
+            <p>Every photo gets instant, private processing on your phone — no internet, no credits:</p>
+            <ul>
+                <li><strong>Full text recognition (OCR)</strong> with no character limit</li>
+                <li><strong>Barcode and QR code scanning</strong> — decoded content saved with the photo</li>
+                <li><strong>Automatic classification and tagging</strong> — searchable labels for photo content</li>
+                <li><strong>Foreign text translation</strong> for the Interpret capture mode</li>
+                <li><strong>Document edge detection</strong> for one-tap crop</li>
+            </ul>
+            <p>These are all Apple on-device AI features — distinct from the generative AI analysis which uses credits. On-device AI does the extraction. Generative AI adds interpretation and understanding.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What AI powers the analysis?</h3>
+            <p>Generative AI analysis is powered by Claude (from Anthropic). When you tap Analyze, your photo is sent securely for processing. Results are saved with your photo in iCloud Drive. Nothing is stored on Anthropic's servers.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does AI analysis work in my language?</h3>
+            <p>Yes. Generative AI responses follow your system language by default. You can also set a specific language in Settings → AI Response Language. This works for all analysis modes.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does the AI analysis send my photos to the cloud?</h3>
+            <p>Only if you use the generative AI analysis feature. When you tap Analyze, the photo is sent securely to generate a smart description. This is optional — on-device recognition and manual notes work without any cloud connection.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What are the free tier limits?</h3>
+            <p>You get 15 free generative AI analyses to try it out — this is a one-time allowance, not monthly. All other features — capture, organization, sharing, on-device OCR, barcode scanning, translation, auto-tagging, and search — are unlimited and free forever. Need more AI analyses? Buy a credit pack anytime.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I get more AI analyses?</h3>
+            <p>Purchase a credit pack: 50 AI analyses for $4.99. No subscription required — buy only when you need them. Credits never expire and stay with your Apple ID.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How accurate is AI analysis?</h3>
+            <p><strong>AI analyses are often wildly inaccurate.</strong> Verify everything before acting. Food estimates, item valuations, and other analyses are for entertainment only — not for medical, dietary, or financial decisions. When accuracy matters, consult a qualified professional.</p>
+        </div>
+    </div>
+
+    <!-- Settings & Maintenance -->
+    <div class="faq-section">
+        <h2>Settings & Maintenance</h2>
+
+        <div class="faq-item">
+            <h3>Where can I see my usage stats?</h3>
+            <p>Open Settings to see your lifetime stats: photos captured, moved from Camera Roll, copied, deleted, added to albums, marked as memories, and shared. These accumulate over time to show your total app usage.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I change the AI response language?</h3>
+            <p>Go to Settings → AI Response Language. Choose System Default (follows your iPhone language) or select a specific language from 19 options. This controls both on-device translations and the language generative AI uses for analysis results.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What does "Fix Photo Dates" do?</h3>
+            <p>If photos show the wrong date (the import date instead of when they were taken), use Fix Photo Dates in Settings. It scans all your photos, reads the original capture date from the image file (EXIF metadata), and corrects any mismatched dates. This is a one-time fix for photos imported before date preservation was added.</p>
+        </div>
+    </div>
+
+    <!-- Privacy & Permissions -->
+    <div class="faq-section">
+        <h2>Privacy & Permissions</h2>
+
+        <div class="faq-item">
+            <h3>Is my data private?</h3>
+            <p>Yes. Photos are stored in your personal iCloud Drive — we never see them. On-device OCR, translation, barcode scanning, and classification run entirely on your phone. AI analysis is optional and processed without storing your photos. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What permissions does the app need?</h3>
+            <p>All permissions are optional — use what fits your workflow:</p>
+            <ul>
+                <li><strong>Camera:</strong> Capture photos directly to Files, bypassing your Camera Roll. Skip this if you only want to import from Camera Roll.</li>
+                <li><strong>Photo Library:</strong> Access Camera Roll for Photo Gallery Cleanup. Skip this if you only want to capture with the in-app camera.</li>
+                <li><strong>Location:</strong> Tag photos with where they were captured. Photos display the city/town name (e.g., "Boston 17Jan") so you know at a glance where you took them. Completely optional.</li>
+            </ul>
+            <p>You can change permissions anytime in Settings → SnapTaskPhoto.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why does the app need photo library access?</h3>
+            <p>Photo library access is only needed for Photo Gallery Cleanup, which lets you import from or delete photos in your Camera Roll. The main capture feature works without it — photos go directly to iCloud Drive.</p>
+        </div>
+    </div>
+
+    <h2>App Information</h2>
+    <p><strong>Current Version:</strong> 1.11</p>
+    <p><strong>Requires:</strong> iOS 18.0 or later</p>
+    <p><strong>Developer:</strong> Digital Gemba, LLC</p>
+
+    <footer>
+        <p><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="support.html">Support</a></p>
+        <p>© 2026 Digital Gemba, LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>
