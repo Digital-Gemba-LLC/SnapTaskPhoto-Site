@@ -290,6 +290,148 @@
         .ai-disclaimer strong {
             color: #d32f2f;
         }
+        /* Visual showcases */
+        .showcase {
+            margin: 3rem 0;
+        }
+        .showcase-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        .showcase-split.reverse .showcase-visual { order: 2; }
+        .showcase-split.reverse .showcase-text { order: 1; }
+        @media (max-width: 650px) {
+            .showcase-split {
+                grid-template-columns: 1fr;
+            }
+            .showcase-split.reverse .showcase-visual { order: 0; }
+            .showcase-split.reverse .showcase-text { order: 0; }
+        }
+        .showcase-text h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.3rem;
+        }
+        .showcase-text p {
+            color: #555;
+            margin: 0 0 0.75rem 0;
+        }
+        .showcase-text .guide-link {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .showcase-visual {
+            text-align: center;
+        }
+        .showcase-visual img {
+            max-width: 100%;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+        }
+        /* Mock intent grid for index */
+        .mock-ui-compact {
+            background: #f5f5f7;
+            border-radius: 16px;
+            padding: 16px;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+        .mock-intent-grid-sm {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+        }
+        .mock-intent-sm {
+            border-radius: 10px;
+            padding: 10px 6px;
+            text-align: center;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .mock-intent-sm .emoji { display: block; font-size: 1.1rem; margin-bottom: 2px; }
+        /* Food overlay for index */
+        .food-showcase-wrap {
+            position: relative;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+        .food-showcase-wrap img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+        }
+        .food-overlay-grid {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 3.5%;
+            padding: 1.5%;
+        }
+        .food-overlay-cell { position: relative; }
+        .food-overlay-badge {
+            position: absolute;
+            bottom: 4%; left: 6%; right: 6%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.65));
+            padding: 10px 5px 3px;
+            border-radius: 0 0 8px 8px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.55rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        /* Best photo for index */
+        .best-photo-examples {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+        .best-photo-examples img {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid #e5e5e5;
+        }
+        .best-photo-examples figcaption {
+            font-size: 0.75rem;
+            color: #888;
+            text-align: center;
+            margin-top: 4px;
+        }
+        .best-flow-compact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+        .best-flow-compact .bfc-step {
+            background: #f0f7ff;
+            border: 1px solid #cce0ff;
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #007AFF;
+        }
+        .best-flow-compact .bfc-arrow {
+            color: #007AFF;
+            font-size: 1rem;
+        }
+        .ai-generated-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #bbb;
+            font-style: italic;
+            margin-top: 4px;
+        }
         .cta {
             text-align: center;
             padding: 3rem 0;
@@ -329,7 +471,7 @@
     </header>
 
     <main class="container">
-        <h2>10 problems. One app. Zero clutter.</h2>
+        <h2>12 problems. One app. Zero clutter.</h2>
         <p class="section-intro">Ever tried to remember where you saved that receipt? Or squint at a serial number? Here's what changes.</p>
 
         <div class="pain-points-grid">
@@ -391,6 +533,18 @@
                 <span class="icon">🛡️</span>
                 <h3>Need proof for a dispute?</h3>
                 <p class="solution">Snap damage, incidents, conditions. <strong>AI describes and timestamps everything</strong> for insurance claims and legal disputes.</p>
+            </div>
+
+            <div class="pain-card">
+                <span class="icon">📱</span>
+                <h3>Camera Roll is a mess</h3>
+                <p class="solution">Task photos buried in memories. <strong>Filter, sort, batch-select, and triage.</strong> Move the muck out. Keep the memories.</p>
+            </div>
+
+            <div class="pain-card">
+                <span class="icon">📸</span>
+                <h3>5 shots of the same thing</h3>
+                <p class="solution">Select the duplicates, tap <strong>Best — AI picks the sharpest shot.</strong> Delete the rest in one tap. Two taps, done.</p>
             </div>
         </div>
 
@@ -463,132 +617,107 @@
             <strong>⚠️ AI Disclaimer:</strong> AI analyses are often wildly inaccurate. Verify everything before acting on it. Not suitable for medical, dietary, or financial decisions.
         </div>
 
-        <h2>What Else Can It Do?</h2>
-        <div class="features">
-            <div class="feature">
-                <span class="feature-icon">🧠</span>
-                <div class="feature-text">
-                    <h3>On-Device Intelligence — No Credits Needed</h3>
-                    <p>Every photo gets instant, private processing: full OCR with no character limit, barcode and QR code scanning, automatic classification and tagging, foreign text translation, and document edge detection. All on your phone. No internet required.</p>
+        <h2>See It In Action</h2>
+        <p class="section-intro">Three tabs. Each one does something your Camera Roll can't.</p>
+
+        <!-- Showcase 1: SNAP -->
+        <div class="showcase">
+            <div class="showcase-split">
+                <div class="showcase-visual">
+                    <div class="mock-ui-compact">
+                        <div class="mock-intent-grid-sm">
+                            <div class="mock-intent-sm" style="background: #007AFF;"><span class="emoji">&#10003;</span> Task</div>
+                            <div class="mock-intent-sm" style="background: #34C759;"><span class="emoji">&#128196;</span> Read</div>
+                            <div class="mock-intent-sm" style="background: #FF9500;"><span class="emoji">&#129534;</span> Receipt</div>
+                            <div class="mock-intent-sm" style="background: #FF3B30;"><span class="emoji">&#127869;</span> Food</div>
+                            <div class="mock-intent-sm" style="background: #5856D6;"><span class="emoji">&#128269;</span> Identify</div>
+                            <div class="mock-intent-sm" style="background: #AF52DE;"><span class="emoji">&#128300;</span> Interpret</div>
+                            <div class="mock-intent-sm" style="background: #00C7BE;"><span class="emoji">&#128202;</span> Slide</div>
+                            <div class="mock-intent-sm" style="background: #64D2FF;"><span class="emoji">&#128230;</span> Reference</div>
+                            <div class="mock-intent-sm" style="background: #FF6482;"><span class="emoji">&#128188;</span> Contact</div>
+                            <div class="mock-intent-sm" style="background: #FFD60A; color: #333;"><span class="emoji">&#128737;</span> Evidence</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-text">
+                    <h3>SNAP: Capture With Purpose</h3>
+                    <p>Tap what you're capturing. The app knows how to process it, where to file it, and what to extract. Receipt goes to Receipt folder. Food gets calories estimated. Contact becomes a vCard.</p>
+                    <p>Every photo gets free on-device OCR, barcode scanning, and classification. Generative AI adds deeper understanding when you want it.</p>
+                    <a href="snap.html" class="guide-link">SNAP tab guide &#8594;</a>
                 </div>
             </div>
-            <div class="feature">
-                <span class="feature-icon">✂️</span>
-                <div class="feature-text">
-                    <h3>Document Auto-Crop</h3>
-                    <p>Detects document edges and offers one-tap perspective-corrected cropping. Great for receipts, business cards, and forms.</p>
+        </div>
+
+        <!-- Showcase 2: Food Tracking -->
+        <div class="showcase">
+            <div class="showcase-split reverse">
+                <div class="showcase-visual">
+                    <div class="food-showcase-wrap">
+                        <img src="food_grid.png" alt="Food folder showing meals with calorie and carb overlays" loading="lazy">
+                        <div class="food-overlay-grid">
+                            <div class="food-overlay-cell"><div class="food-overlay-badge"><span>480 cal</span><span>62g</span></div></div>
+                            <div class="food-overlay-cell"><div class="food-overlay-badge"><span>320 cal</span><span>12g</span></div></div>
+                            <div class="food-overlay-cell"><div class="food-overlay-badge"><span>740 cal</span><span>58g</span></div></div>
+                            <div class="food-overlay-cell"><div class="food-overlay-badge"><span>390 cal</span><span>52g</span></div></div>
+                            <div class="food-overlay-cell"><div class="food-overlay-badge"><span>280 cal</span><span>44g</span></div></div>
+                            <div class="food-overlay-cell"><div class="food-overlay-badge"><span>350 cal</span><span>38g</span></div></div>
+                        </div>
+                    </div>
+                    <p class="ai-generated-note">Example photos are AI-generated</p>
+                </div>
+                <div class="showcase-text">
+                    <h3>Snap Your Meal. See the Numbers.</h3>
+                    <p>Point, shoot, done. AI estimates calories and carbs instantly. Each photo shows nutrition at a glance. A daily banner tallies your totals.</p>
+                    <p>No food databases. No manual entry. No searching for "homemade pasta with red sauce." Just snap it.</p>
+                    <a href="folders.html" class="guide-link">Folders tab guide &#8594;</a>
                 </div>
             </div>
-            <div class="feature">
-                <span class="feature-icon">📐</span>
-                <div class="feature-text">
-                    <h3>Auto-Shrunk for Sharing</h3>
-                    <p>Photos compressed to ~300KB — small enough to email, text, or share anywhere. No more "file too large" errors.</p>
+        </div>
+
+        <!-- Showcase 3: Best Photo -->
+        <div class="showcase">
+            <div class="showcase-split">
+                <div class="showcase-visual">
+                    <div class="best-photo-examples">
+                        <figure style="margin: 0;">
+                            <img src="focus_example.png" alt="AI picks the sharpest photo from similar shots" loading="lazy">
+                            <figcaption>Picks the sharp one</figcaption>
+                        </figure>
+                        <figure style="margin: 0;">
+                            <img src="blink_example.png" alt="AI picks the photo where everyone's eyes are open" loading="lazy">
+                            <figcaption>Picks eyes-open</figcaption>
+                        </figure>
+                    </div>
+                    <p class="ai-generated-note">Example photos are AI-generated</p>
+                </div>
+                <div class="showcase-text">
+                    <h3>Best Photo: Two Taps to Done</h3>
+                    <p>Select 2-6 similar photos. Tap Best. AI compares sharpness, lighting, composition, and facial expressions. The winner is deselected. Rejects stay selected.</p>
+                    <div class="best-flow-compact">
+                        <span class="bfc-step">Select</span>
+                        <span class="bfc-arrow">&#8594;</span>
+                        <span class="bfc-step">Best</span>
+                        <span class="bfc-arrow">&#8594;</span>
+                        <span class="bfc-step">Delete</span>
+                    </div>
+                    <p>Stop keeping 5 versions of the same shot.</p>
+                    <a href="cleanup.html" class="guide-link">Clean Up tab guide &#8594;</a>
                 </div>
             </div>
-            <div class="feature">
-                <span class="feature-icon">🔎</span>
-                <div class="feature-text">
-                    <h3>Search Across Everything</h3>
-                    <p>Find any photo by title, text content, AI analysis, barcode data, or auto-tags. Works across all folders instantly.</p>
+        </div>
+
+        <!-- Showcase 4: Camera Roll Cleanup -->
+        <div class="showcase">
+            <div class="showcase-split reverse">
+                <div class="showcase-visual">
+                    <img src="camera_roll.png" alt="Camera Roll grid ready for triage" loading="lazy" style="max-width: 280px; border-radius: 12px; border: 1px solid #e5e5e5;">
+                    <p class="ai-generated-note">Example photos are AI-generated</p>
                 </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🗓️</span>
-                <div class="feature-text">
-                    <h3>Filter by Time and Location</h3>
-                    <p>Open any folder and tap the filter icon to narrow by time period (Today, Yesterday, Last Week, Last Month) or by town. Combine both for precise browsing. Active filters show a dismissible banner so you always know what's filtered.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🌐</span>
-                <div class="feature-text">
-                    <h3>Works In Your Language</h3>
-                    <p>Translations and AI responses follow your system language. Override anytime in Settings.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🧹</span>
-                <div class="feature-text">
+                <div class="showcase-text">
                     <h3>Clean Your Camera Roll</h3>
-                    <p>Filter by album, screenshots, or photos not in any album. Select multiple and batch delete, move, or organize. Sort by similarity, document type, or location. Adjustable grid (1/2/3 columns). View photos on a map. Select 2-4 similar photos and tap <strong>Best</strong> — AI picks the sharpest shot, leaving rejects selected for instant deletion.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">📁</span>
-                <div class="feature-text">
-                    <h3>Auto-File by Intent</h3>
-                    <p>Photos land in folders based on what you captured: Tasks, Read, Receipt, Food, Identify, Interpret, Slides, Reference, Contacts, or Evidence. Create custom folders in Files app—they appear automatically.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🤖</span>
-                <div class="feature-text">
-                    <h3>Smart Auto-AI</h3>
-                    <p>Auto-AI is configured per capture intent. Food, Identify, Interpret, and Contact default to ON — the intents where AI adds the most value. Toggle per intent on the SNAP screen; your choice is remembered.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">⚡</span>
-                <div class="feature-text">
-                    <h3>Batch Mode</h3>
-                    <p>Rapid-fire capture without leaving camera. Snap 10 slides in a row, analyze them all later.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">📤</span>
-                <div class="feature-text">
-                    <h3>Share to Any App</h3>
-                    <p>Reminders, Things 3, Notes, Messages, Mail—anywhere. Deep links jump back to the photo instantly.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">📍</span>
-                <div class="feature-text">
-                    <h3>Location Tagged</h3>
-                    <p>Photos show where they were captured (e.g., "Boston 17Jan"). Know at a glance where you snapped that receipt.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">📥</span>
-                <div class="feature-text">
-                    <h3>Import from Anywhere</h3>
-                    <p>Share Extension imports photos from any app. Clean up existing Camera Roll clutter too.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">📦</span>
-                <div class="feature-text">
-                    <h3>Archive Without Moving</h3>
-                    <p>Mark items as archived to hide them from active view while keeping them in their folder. Toggle "Show Archived" to see them again.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🔀</span>
-                <div class="feature-text">
-                    <h3>Smart Sort Modes</h3>
-                    <p>Sort your Camera Roll by Documents First (finds document-like photos), Similar (groups visually alike photos), or by location coordinates.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">💬</span>
-                <div class="feature-text">
-                    <h3>Follow-Up Questions</h3>
-                    <p>After AI analysis, ask Claude follow-up questions about the photo. Add context before analysis for better results.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">📸</span>
-                <div class="feature-text">
-                    <h3>Screenshots Only Filter</h3>
-                    <p>Toggle Screenshots Only in the Roll tab to filter your Camera Roll to just screenshots. Combine with batch select for fast cleanup.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🗺️</span>
-                <div class="feature-text">
-                    <h3>Map View</h3>
-                    <p>Tap the map icon in the Roll tab to see your Camera Roll photos on a map. Photos with GPS data appear as pins — tap any pin to open the photo.</p>
+                    <p>Your Camera Roll is full of task photos mixed in with memories. Filter by album, screenshots, or "not in any album." Sort by similarity to cluster duplicates. View on a map.</p>
+                    <p>Move task photos into SnapTaskPhoto. Delete the clutter. Keep the memories. Batch select and act on dozens at once.</p>
+                    <a href="cleanup.html" class="guide-link">Clean Up tab guide &#8594;</a>
                 </div>
             </div>
         </div>
