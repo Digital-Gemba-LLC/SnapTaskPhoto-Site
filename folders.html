@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Folders Tab - SnapTaskPhoto Guide</title>
+    <meta name="description" content="Learn how the Folders tab works in SnapTaskPhoto. Smart folders, time and location filters, search, nutrition tracking, and custom folders. Everything organized, nothing lost.">
+    <meta property="og:title" content="The Folders Tab - SnapTaskPhoto Guide">
+    <meta property="og:description" content="Learn how the Folders tab works in SnapTaskPhoto. Smart folders, filters, search, and custom folders.">
+    <meta property="og:url" content="https://snaptaskphoto.com/folders.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://snaptaskphoto.com/folders.html">
+    <meta name="apple-itunes-app" content="app-id=6757636900">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #fafafa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        a { color: #007AFF; }
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, #5856D6 0%, #007AFF 100%);
+            color: white;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 0 0 0.75rem 0;
+            font-weight: 700;
+        }
+        .hero .subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        /* Tutorial nav */
+        .tutorial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .tutorial-nav a {
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #888;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .tutorial-nav a:hover { color: #007AFF; }
+        .tutorial-nav a.active {
+            color: #007AFF;
+            border-bottom-color: #007AFF;
+        }
+        /* Headings */
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Mock UI */
+        .mock-ui {
+            background: #f5f5f7;
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 360px;
+            margin: 2rem auto;
+        }
+        .mock-tab-bar {
+            display: flex;
+            gap: 6px;
+            background: #e5e5ea;
+            border-radius: 10px;
+            padding: 3px;
+            margin-bottom: 16px;
+        }
+        .mock-tab {
+            flex: 1;
+            text-align: center;
+            padding: 8px 0;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #666;
+        }
+        .mock-tab.active {
+            background: #fff;
+            color: #333;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+        /* Mock folder grids */
+        .mock-smart-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .mock-smart-tile {
+            background: linear-gradient(135deg, #5856D6, #007AFF);
+            border-radius: 10px;
+            padding: 12px 10px;
+            text-align: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .mock-smart-tile .count {
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .mock-folder-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .mock-folder-tile {
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #333;
+            border: 1px solid #e5e5e5;
+        }
+        .mock-folder-tile .emoji {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 2px;
+        }
+        /* Cards */
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 2px solid #e5e5e5;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+        .feature-card:hover {
+            border-color: #007AFF;
+            box-shadow: 0 4px 12px rgba(0,122,255,0.1);
+        }
+        .feature-card h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.2rem;
+        }
+        .feature-card p {
+            margin: 0 0 0.5rem 0;
+            color: #555;
+        }
+        .feature-card p:last-child { margin-bottom: 0; }
+        /* Folder list */
+        .folder-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 2rem 0;
+        }
+        .folder-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 14px;
+            border: 1px solid #e5e5e5;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .folder-item .emoji {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .folder-item .name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .folder-item .desc {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        /* Mock filter banner */
+        .mock-filter-banner {
+            background: #f0f7ff;
+            border: 1px solid #cce0ff;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.8rem;
+            color: #007AFF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 8px 0;
+        }
+        .mock-filter-x {
+            background: #007AFF;
+            color: #fff;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            font-size: 0.65rem;
+            flex-shrink: 0;
+        }
+        /* Mock nutrition banner */
+        .mock-nutrition-banner {
+            background: linear-gradient(135deg, #FF9500, #FF3B30);
+            border-radius: 10px;
+            padding: 12px 16px;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            font-size: 0.8rem;
+            margin: 8px 0;
+        }
+        .mock-nutrition-banner .stat { font-weight: 600; }
+        .mock-nutrition-banner .stat .number {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        /* Tip callout */
+        .tip-callout {
+            background: #f0f7ff;
+            border-left: 4px solid #007AFF;
+            border-radius: 0 10px 10px 0;
+            padding: 16px 20px;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+        .tip-callout strong { color: #007AFF; }
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .cta h2 { margin-top: 0; }
+        .app-store-badge {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .app-store-badge img { height: 50px; }
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+        footer nav { margin-bottom: 1rem; }
+        footer nav a { margin: 0 0.75rem; }
+        /* Food photo grid with CSS overlays */
+        .food-grid-wrapper {
+            max-width: 400px;
+            margin: 2rem auto;
+        }
+        .food-image-container {
+            position: relative;
+            margin-top: 6px;
+        }
+        .food-image-container img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+        }
+        .food-badge-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 3.5%;
+            padding: 1.5%;
+        }
+        .food-badge-cell {
+            position: relative;
+        }
+        .food-badge {
+            position: absolute;
+            bottom: 4%;
+            left: 6%;
+            right: 6%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.65));
+            padding: 12px 6px 4px;
+            border-radius: 0 0 8px 8px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .ai-generated-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #bbb;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        /* Responsive */
+        @media (max-width: 650px) {
+            .hero h1 { font-size: 2rem; }
+            .folder-grid { grid-template-columns: 1fr; }
+            .tutorial-nav a { padding: 12px 16px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>The Folders Tab</h1>
+        <p class="subtitle">Everything organized. Nothing lost.</p>
+    </header>
+
+    <nav class="tutorial-nav">
+        <a href="snap.html">SNAP</a>
+        <a href="folders.html" class="active">Folders</a>
+        <a href="cleanup.html">Clean Up</a>
+    </nav>
+
+    <main class="container">
+        <p class="section-intro" style="margin-top: 2rem;">Photos arrive here automatically from the <a href="snap.html">SNAP tab</a>, and manually from the <a href="cleanup.html">Clean Up tab</a> when you move or copy Camera Roll photos. Each capture intent files photos to its default folder. Browse, filter, search, and act on everything you've captured.</p>
+
+        <!-- Smart Folders -->
+        <h2>Smart Folders</h2>
+        <p class="section-intro">Quick access to recent captures across all folders.</p>
+
+        <div class="mock-ui">
+            <div class="mock-tab-bar">
+                <div class="mock-tab">SNAP</div>
+                <div class="mock-tab active">Folders</div>
+                <div class="mock-tab">Roll</div>
+            </div>
+            <div class="mock-smart-grid">
+                <div class="mock-smart-tile">
+                    <span class="count">5</span> Today
+                </div>
+                <div class="mock-smart-tile">
+                    <span class="count">8</span> Yesterday
+                </div>
+                <div class="mock-smart-tile">
+                    <span class="count">23</span> Last Week
+                </div>
+                <div class="mock-smart-tile">
+                    <span class="count">47</span> Last Month
+                </div>
+            </div>
+            <div class="mock-folder-grid">
+                <div class="mock-folder-tile"><span class="emoji">&#128229;</span> Inbox</div>
+                <div class="mock-folder-tile"><span class="emoji">&#10003;</span> Tasks</div>
+                <div class="mock-folder-tile"><span class="emoji">&#128196;</span> Read</div>
+                <div class="mock-folder-tile"><span class="emoji">&#129534;</span> Receipt</div>
+                <div class="mock-folder-tile"><span class="emoji">&#127869;</span> Food</div>
+                <div class="mock-folder-tile"><span class="emoji">&#128269;</span> Identify</div>
+            </div>
+        </div>
+
+        <!-- All Folders -->
+        <h2>All Folders</h2>
+        <p class="section-intro">Photos auto-file based on capture intent. Move photos between folders anytime.</p>
+
+        <div class="folder-grid">
+            <div class="folder-item">
+                <span class="emoji">&#128229;</span>
+                <div><div class="name">Inbox</div><div class="desc">Imports and uncategorized</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#10003;</span>
+                <div><div class="name">Tasks</div><div class="desc">Actionable to-dos</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#128196;</span>
+                <div><div class="name">Read</div><div class="desc">OCR / text extraction</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#129534;</span>
+                <div><div class="name">Receipt</div><div class="desc">Expenses, returns</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#127869;</span>
+                <div><div class="name">Food</div><div class="desc">Meals with nutrition</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#128269;</span>
+                <div><div class="name">Identify</div><div class="desc">Item identification</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#128300;</span>
+                <div><div class="name">Interpret</div><div class="desc">Test results, jargon</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#128202;</span>
+                <div><div class="name">Slides</div><div class="desc">Presentations</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#128230;</span>
+                <div><div class="name">Reference</div><div class="desc">IDs, manuals, cards</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#128188;</span>
+                <div><div class="name">Contacts</div><div class="desc">Business cards</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#128737;</span>
+                <div><div class="name">Evidence</div><div class="desc">Legal documentation</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#128451;</span>
+                <div><div class="name">Archive</div><div class="desc">Completed items</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#128465;</span>
+                <div><div class="name">Deleted</div><div class="desc">Recoverable trash</div></div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <h2>Filters</h2>
+        <p class="section-intro">Narrow any folder by time period, location, or both. Tap the filter icon in any folder's toolbar.</p>
+
+        <div class="feature-card">
+            <h3>Time Period</h3>
+            <p>Filter to Today, Yesterday, Last Week, or Last Month. See only what's recent and relevant.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Location</h3>
+            <p>Filter by town or city where photos were captured. Includes a "No Location" option for photos without GPS data.</p>
+        </div>
+
+        <div class="mock-ui" style="max-width: 400px;">
+            <div class="mock-filter-banner">
+                <span>Last Week &middot; Boston</span>
+                <span class="mock-filter-x">&#10005;</span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
+                <div style="background: #ddd; border-radius: 6px; height: 70px;"></div>
+                <div style="background: #ddd; border-radius: 6px; height: 70px;"></div>
+                <div style="background: #ddd; border-radius: 6px; height: 70px;"></div>
+                <div style="background: #ddd; border-radius: 6px; height: 70px;"></div>
+                <div style="background: #ddd; border-radius: 6px; height: 70px;"></div>
+                <div style="background: #ddd; border-radius: 6px; height: 70px;"></div>
+            </div>
+        </div>
+
+        <div class="tip-callout">
+            <strong>Tip:</strong> Combine time and location filters for precise browsing — like "Last Week in Boston." Filters reset automatically when you navigate back to the folder list.
+        </div>
+
+        <!-- Search -->
+        <h2>Search</h2>
+        <p class="section-intro">Find any photo across all folders instantly.</p>
+
+        <div class="feature-card">
+            <h3>Search finds everything</h3>
+            <p>Search matches across notes, OCR text, AI analysis, barcodes, auto-tags, and folder names. Type "receipt" to find all receipts. Type a vendor name to find that specific one.</p>
+            <p>Search works on filtered results too — apply a filter first, then search within it.</p>
+        </div>
+
+        <!-- Food Folder -->
+        <h2>The Food Folder</h2>
+        <p class="section-intro">The Food folder has special nutrition features.</p>
+
+        <div class="food-grid-wrapper">
+            <div class="mock-nutrition-banner">
+                <div class="stat"><span class="number">1,840</span> calories today</div>
+                <div class="stat"><span class="number">186g</span> carbs today</div>
+            </div>
+            <div class="food-image-container">
+                <img src="food_grid.png" alt="Food folder showing 6 meals with calorie and carb overlays" loading="lazy">
+                <div class="food-badge-overlay">
+                    <div class="food-badge-cell"><div class="food-badge"><span>480 cal</span><span>62g</span></div></div>
+                    <div class="food-badge-cell"><div class="food-badge"><span>320 cal</span><span>12g</span></div></div>
+                    <div class="food-badge-cell"><div class="food-badge"><span>740 cal</span><span>58g</span></div></div>
+                    <div class="food-badge-cell"><div class="food-badge"><span>390 cal</span><span>52g</span></div></div>
+                    <div class="food-badge-cell"><div class="food-badge"><span>280 cal</span><span>44g</span></div></div>
+                    <div class="food-badge-cell"><div class="food-badge"><span>350 cal</span><span>38g</span></div></div>
+                </div>
+            </div>
+            <p class="ai-generated-note">Example photos are AI-generated</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Daily nutrition banner</h3>
+            <p>A banner at the top of the Food folder shows your total calories and carbs for today. Updated as you capture meals throughout the day.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Per-photo calorie overlay</h3>
+            <p>Each food photo shows its estimated calories and carbs as a thumbnail overlay. Browse your meals at a glance without opening each one.</p>
+        </div>
+
+        <!-- Show Archived -->
+        <h2>Show Archived</h2>
+
+        <div class="feature-card">
+            <h3>Hide completed items without deleting</h3>
+            <p>Mark any photo as "archived" to remove it from the default folder view. The photo stays in its folder — it's just hidden. Toggle "Show archived photos" at the top of any folder view to see archived items again, or unarchive them to bring them back.</p>
+        </div>
+
+        <!-- Custom Folders -->
+        <h2>Custom Folders</h2>
+
+        <div class="feature-card">
+            <h3>Create folders in the Files app</h3>
+            <p>Open the Files app, navigate to iCloud Drive, and create a new folder inside the SnapTaskPhoto directory. It appears automatically in the app. Custom folders work just like built-in ones — you can move photos into them and browse their contents.</p>
+        </div>
+
+        <div class="tip-callout">
+            <strong>How do photos get here?</strong> Every photo captured on the <a href="snap.html">SNAP tab</a> auto-files to its intent's default folder. You can also import from your Camera Roll using the <a href="cleanup.html">Clean Up tab</a>.
+        </div>
+
+        <!-- CTA -->
+        <div class="cta">
+            <h2>Ready to Get Organized?</h2>
+            <p><strong>Requires iOS 18.0 or later.</strong></p>
+            <a href="https://apps.apple.com/us/app/snaptaskphoto/id6757636900" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+            <p style="margin-top: 1.5rem; color: #555; font-style: italic; font-size: 0.95rem;">Photo intelligence. Always on. Always private. Always yours.</p>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="snap.html">SNAP Guide</a>
+            <a href="folders.html">Folders Guide</a>
+            <a href="cleanup.html">Clean Up Guide</a>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </nav>
+        <p>&copy; 2026 Digital Gemba, LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>

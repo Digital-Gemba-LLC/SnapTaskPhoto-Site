@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The SNAP Tab - SnapTaskPhoto Guide</title>
+    <meta name="description" content="Learn how the SNAP tab works in SnapTaskPhoto. 10 capture intents, on-device AI, and generative AI analysis. Capture with purpose — every photo knows where it belongs.">
+    <meta property="og:title" content="The SNAP Tab - SnapTaskPhoto Guide">
+    <meta property="og:description" content="Learn how the SNAP tab works in SnapTaskPhoto. 10 capture intents, on-device AI, and generative AI analysis.">
+    <meta property="og:url" content="https://snaptaskphoto.com/snap.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://snaptaskphoto.com/snap.html">
+    <meta name="apple-itunes-app" content="app-id=6757636900">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #fafafa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        a { color: #007AFF; }
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, #5856D6 0%, #007AFF 100%);
+            color: white;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 0 0 0.75rem 0;
+            font-weight: 700;
+        }
+        .hero .subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        /* Tutorial nav */
+        .tutorial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 0;
+        }
+        .tutorial-nav a {
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #888;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .tutorial-nav a:hover { color: #007AFF; }
+        .tutorial-nav a.active {
+            color: #007AFF;
+            border-bottom-color: #007AFF;
+        }
+        /* Section headings */
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* How it works steps */
+        .how-it-works {
+            background: linear-gradient(135deg, #f5f5f7 0%, #fff 100%);
+            border-radius: 16px;
+            padding: 40px 30px;
+            margin: 2rem 0 3rem 0;
+            border: 1px solid #e5e5e5;
+        }
+        .how-it-works h2 { margin-top: 0; }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .step { text-align: center; }
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background: #007AFF;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .step h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.15rem;
+        }
+        .step p {
+            margin: 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+        /* Mock UI container */
+        .mock-ui {
+            background: #f5f5f7;
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 360px;
+            margin: 2rem auto;
+        }
+        /* Mock tab bar */
+        .mock-tab-bar {
+            display: flex;
+            gap: 6px;
+            background: #e5e5ea;
+            border-radius: 10px;
+            padding: 3px;
+            margin-bottom: 16px;
+        }
+        .mock-tab {
+            flex: 1;
+            text-align: center;
+            padding: 8px 0;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #666;
+        }
+        .mock-tab.active {
+            background: #fff;
+            color: #333;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+        /* Mock intent grid */
+        .mock-intent-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .mock-intent-btn {
+            border-radius: 12px;
+            padding: 14px 8px;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .mock-intent-btn .emoji {
+            display: block;
+            font-size: 1.4rem;
+            margin-bottom: 4px;
+        }
+        /* Intent cards */
+        .intent-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .intent-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 2px solid #e5e5e5;
+            transition: all 0.2s ease;
+        }
+        .intent-card:hover {
+            border-color: #007AFF;
+            box-shadow: 0 4px 12px rgba(0,122,255,0.1);
+        }
+        .intent-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .intent-card-header .emoji {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        .intent-card-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        .intent-card-header .folder-tag {
+            font-size: 0.8rem;
+            color: #888;
+            font-weight: 400;
+        }
+        .intent-card p {
+            margin: 0 0 12px 0;
+            color: #555;
+        }
+        .intent-detail-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .intent-detail-box {
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }
+        .intent-detail-box.free {
+            background: #e8f5e9;
+            border: 1px solid #c8e6c9;
+        }
+        .intent-detail-box.free .label {
+            font-weight: 700;
+            color: #2e7d32;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 6px;
+        }
+        .intent-detail-box.ai {
+            background: #ede7f6;
+            border: 1px solid #d1c4e9;
+        }
+        .intent-detail-box.ai .label {
+            font-weight: 700;
+            color: #5856D6;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 6px;
+        }
+        /* Tip callout */
+        .tip-callout {
+            background: #f0f7ff;
+            border-left: 4px solid #007AFF;
+            border-radius: 0 10px 10px 0;
+            padding: 16px 20px;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+        .tip-callout strong { color: #007AFF; }
+        /* Toggle explanation */
+        .toggle-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .toggle-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 2px solid #e5e5e5;
+        }
+        .toggle-card h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        .toggle-card p {
+            margin: 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+        /* Where photos go */
+        .flow-box {
+            background: linear-gradient(135deg, #f5f5f7 0%, #fff 100%);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 2rem 0;
+            border: 1px solid #e5e5e5;
+            text-align: center;
+        }
+        .flow-box h3 { margin-top: 0; }
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: #007AFF;
+            margin: 0.5rem 0;
+        }
+        .flow-label {
+            font-size: 1rem;
+            color: #555;
+            margin: 0.5rem 0;
+        }
+        .flow-label strong { color: #333; }
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .cta h2 { margin-top: 0; }
+        .app-store-badge {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .app-store-badge img { height: 50px; }
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+        footer nav { margin-bottom: 1rem; }
+        footer nav a { margin: 0 0.75rem; }
+        /* Responsive */
+        @media (max-width: 650px) {
+            .hero h1 { font-size: 2rem; }
+            .steps { grid-template-columns: 1fr; gap: 1.5rem; }
+            .intent-detail-boxes { grid-template-columns: 1fr; }
+            .toggle-section { grid-template-columns: 1fr; }
+            .tutorial-nav a { padding: 12px 16px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>The SNAP Tab</h1>
+        <p class="subtitle">Capture with purpose. Every photo knows where it belongs.</p>
+    </header>
+
+    <nav class="tutorial-nav">
+        <a href="snap.html" class="active">SNAP</a>
+        <a href="folders.html">Folders</a>
+        <a href="cleanup.html">Clean Up</a>
+    </nav>
+
+    <main class="container">
+        <div class="how-it-works">
+            <h2>How SNAP Works</h2>
+            <p class="section-intro" style="margin-top: 0;">Three steps from shutter to organized.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Intent</h3>
+                    <p>Tap what you're capturing: Receipt, Food, Contact, or any of the 10 intents. This tells the app how to process and file it.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Take the Photo</h3>
+                    <p>Capture directly to iCloud Drive. It never touches your Camera Roll. On-device AI kicks in instantly.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Instant Processing</h3>
+                    <p>Text is extracted, barcodes decoded, content classified. If Auto-AI is on, generative analysis runs too. Photo auto-files to the right folder.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mock UI: SNAP Screen -->
+        <h2>The SNAP Screen</h2>
+        <p class="section-intro">Choose your capture intent. Each button tells the app what you're photographing.</p>
+
+        <div class="mock-ui">
+            <div class="mock-tab-bar">
+                <div class="mock-tab active">SNAP</div>
+                <div class="mock-tab">Folders</div>
+                <div class="mock-tab">Roll</div>
+            </div>
+            <div class="mock-intent-grid">
+                <div class="mock-intent-btn" style="background: #007AFF;">
+                    <span class="emoji">&#10003;</span> Task
+                </div>
+                <div class="mock-intent-btn" style="background: #34C759;">
+                    <span class="emoji">&#128196;</span> Read
+                </div>
+                <div class="mock-intent-btn" style="background: #FF9500;">
+                    <span class="emoji">&#129534;</span> Receipt
+                </div>
+                <div class="mock-intent-btn" style="background: #FF3B30;">
+                    <span class="emoji">&#127869;</span> Food
+                </div>
+                <div class="mock-intent-btn" style="background: #5856D6;">
+                    <span class="emoji">&#128269;</span> Identify
+                </div>
+                <div class="mock-intent-btn" style="background: #AF52DE;">
+                    <span class="emoji">&#128300;</span> Interpret
+                </div>
+                <div class="mock-intent-btn" style="background: #00C7BE;">
+                    <span class="emoji">&#128202;</span> Slide
+                </div>
+                <div class="mock-intent-btn" style="background: #64D2FF;">
+                    <span class="emoji">&#128230;</span> Reference
+                </div>
+                <div class="mock-intent-btn" style="background: #FF6482;">
+                    <span class="emoji">&#128188;</span> Contact
+                </div>
+                <div class="mock-intent-btn" style="background: #FFD60A; color: #333;">
+                    <span class="emoji">&#128737;</span> Evidence
+                </div>
+            </div>
+        </div>
+
+        <div class="tip-callout">
+            <strong>Tip:</strong> On-device AI runs free on every photo — OCR, barcodes, classification, and translation. No credits needed. Nothing leaves your phone.
+        </div>
+
+        <!-- 10 Capture Intents -->
+        <h2>10 Capture Intents</h2>
+        <p class="section-intro">Each intent determines what gets extracted, what AI analyzes, and which folder receives the photo.</p>
+
+        <div class="intent-cards">
+            <div class="intent-card">
+                <div class="intent-card-header">
+                    <span class="emoji">&#10003;</span>
+                    <h3>Task <span class="folder-tag">&#8594; Tasks folder</span></h3>
+                </div>
+                <p>Capture something you need to act on. A whiteboard, a note, a to-do list.</p>
+                <div class="intent-detail-boxes">
+                    <div class="intent-detail-box free">
+                        <div class="label">Free (On-Device)</div>
+                        Full text extracted. Barcodes and QR codes decoded. Content classified and auto-tagged.
+                    </div>
+                    <div class="intent-detail-box ai">
+                        <div class="label">With AI Credit</div>
+                        Actionable task summary with priority, next steps, and suggested due date.
+                    </div>
+                </div>
+            </div>
+
+            <div class="intent-card">
+                <div class="intent-card-header">
+                    <span class="emoji">&#128196;</span>
+                    <h3>Read <span class="folder-tag">&#8594; Read folder</span></h3>
+                </div>
+                <p>Extract all visible text from any document, sign, or screen. No character limit.</p>
+                <div class="intent-detail-boxes">
+                    <div class="intent-detail-box free">
+                        <div class="label">Free (On-Device)</div>
+                        Full text extracted with no character limit. Barcodes and QR codes decoded.
+                    </div>
+                    <div class="intent-detail-box ai">
+                        <div class="label">With AI Credit</div>
+                        Structured summary with key information highlighted and organized by topic.
+                    </div>
+                </div>
+            </div>
+
+            <div class="intent-card">
+                <div class="intent-card-header">
+                    <span class="emoji">&#129534;</span>
+                    <h3>Receipt <span class="folder-tag">&#8594; Receipt folder</span></h3>
+                </div>
+                <p>Capture receipts and invoices. Get structured data ready to file or expense.</p>
+                <div class="intent-detail-boxes">
+                    <div class="intent-detail-box free">
+                        <div class="label">Free (On-Device)</div>
+                        Full text extracted. Barcodes decoded (loyalty cards, transaction IDs).
+                    </div>
+                    <div class="intent-detail-box ai">
+                        <div class="label">With AI Credit</div>
+                        Vendor name, date, total, tax, and line items structured and ready to expense.
+                    </div>
+                </div>
+            </div>
+
+            <div class="intent-card">
+                <div class="intent-card-header">
+                    <span class="emoji">&#127869;</span>
+                    <h3>Food <span class="folder-tag">&#8594; Food folder</span></h3>
+                </div>
+                <p>Snap your meal for instant nutrition estimation. No manual food database entry.</p>
+                <div class="intent-detail-boxes">
+                    <div class="intent-detail-box free">
+                        <div class="label">Free (On-Device)</div>
+                        Classified as food. Text extracted from menus or nutrition labels if present.
+                    </div>
+                    <div class="intent-detail-box ai">
+                        <div class="label">With AI Credit</div>
+                        Dish identified with estimated calories, carbs, protein, fat. Ingredient and allergen notes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="intent-card">
+                <div class="intent-card-header">
+                    <span class="emoji">&#128269;</span>
+                    <h3>Identify <span class="folder-tag">&#8594; Identify folder</span></h3>
+                </div>
+                <p>Snap anything you can't identify. Plants, vehicles, electronics, antiques, art.</p>
+                <div class="intent-detail-boxes">
+                    <div class="intent-detail-box free">
+                        <div class="label">Free (On-Device)</div>
+                        Generic classification labels (e.g. "animal," "vehicle"). Barcodes and QR codes decoded.
+                    </div>
+                    <div class="intent-detail-box ai">
+                        <div class="label">With AI Credit</div>
+                        Specific identification — make, model, species, variety. Value estimate where applicable.
+                    </div>
+                </div>
+            </div>
+
+            <div class="intent-card">
+                <div class="intent-card-header">
+                    <span class="emoji">&#128300;</span>
+                    <h3>Interpret <span class="folder-tag">&#8594; Interpret folder</span></h3>
+                </div>
+                <p>Decode test results, jargon, or foreign text. Get plain-language explanations.</p>
+                <div class="intent-detail-boxes">
+                    <div class="intent-detail-box free">
+                        <div class="label">Free (On-Device)</div>
+                        Full text extracted. Foreign text auto-translated on-device. Barcodes decoded.
+                    </div>
+                    <div class="intent-detail-box ai">
+                        <div class="label">With AI Credit</div>
+                        Plain-language explanation with context. Cultural notes. What it means and what to do.
+                    </div>
+                </div>
+            </div>
+
+            <div class="intent-card">
+                <div class="intent-card-header">
+                    <span class="emoji">&#128202;</span>
+                    <h3>Slide <span class="folder-tag">&#8594; Slides folder</span></h3>
+                </div>
+                <p>Capture conference slides and whiteboards. Review key points later.</p>
+                <div class="intent-detail-boxes">
+                    <div class="intent-detail-box free">
+                        <div class="label">Free (On-Device)</div>
+                        Full text extracted from slide content. Content classified.
+                    </div>
+                    <div class="intent-detail-box ai">
+                        <div class="label">With AI Credit</div>
+                        Key takeaways and action items highlighted. Full slide text always preserved.
+                    </div>
+                </div>
+            </div>
+
+            <div class="intent-card">
+                <div class="intent-card-header">
+                    <span class="emoji">&#128230;</span>
+                    <h3>Reference <span class="folder-tag">&#8594; Reference folder</span></h3>
+                </div>
+                <p>Capture IDs, warranties, manuals, insurance cards — anything you need to look up later.</p>
+                <div class="intent-detail-boxes">
+                    <div class="intent-detail-box free">
+                        <div class="label">Free (On-Device)</div>
+                        Full text extracted. Barcodes decoded (serial numbers, product codes). Content classified.
+                    </div>
+                    <div class="intent-detail-box ai">
+                        <div class="label">With AI Credit</div>
+                        Structured details — model, specs, expiration dates, policy numbers, key terms organized.
+                    </div>
+                </div>
+            </div>
+
+            <div class="intent-card">
+                <div class="intent-card-header">
+                    <span class="emoji">&#128188;</span>
+                    <h3>Contact <span class="folder-tag">&#8594; Contacts folder</span></h3>
+                </div>
+                <p>Snap a business card. Extract contact info and share directly to Contacts.</p>
+                <div class="intent-detail-boxes">
+                    <div class="intent-detail-box free">
+                        <div class="label">Free (On-Device)</div>
+                        Full text extracted from business card.
+                    </div>
+                    <div class="intent-detail-box ai">
+                        <div class="label">With AI Credit</div>
+                        Structured contact: name, title, company, phone, email, address. Ready for vCard export.
+                    </div>
+                </div>
+            </div>
+
+            <div class="intent-card">
+                <div class="intent-card-header">
+                    <span class="emoji">&#128737;</span>
+                    <h3>Evidence <span class="folder-tag">&#8594; Evidence folder</span></h3>
+                </div>
+                <p>Document damage, incidents, or conditions for insurance claims and legal disputes.</p>
+                <div class="intent-detail-boxes">
+                    <div class="intent-detail-box free">
+                        <div class="label">Free (On-Device)</div>
+                        Full text extracted. Content classified. Location and timestamp from capture.
+                    </div>
+                    <div class="intent-detail-box ai">
+                        <div class="label">With AI Credit</div>
+                        Detailed condition description — what's shown, what's damaged, environmental context.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mode Toggles -->
+        <h2>Mode Toggles</h2>
+        <p class="section-intro">Two toggles on the SNAP screen customize your capture workflow.</p>
+
+        <div class="toggle-section">
+            <div class="toggle-card">
+                <h3>Auto-AI</h3>
+                <p>Automatically runs generative AI analysis after capture. Configured per intent — Food, Identify, Interpret, and Contact default to ON. Each intent remembers your preference independently. Uses one credit per analysis.</p>
+            </div>
+            <div class="toggle-card">
+                <h3>Batch Mode</h3>
+                <p>Keeps you in the camera after each capture for rapid-fire shooting. Great for snapping 10 slides in a row, or multiple receipts. Analyze them all later from the Folders tab.</p>
+            </div>
+        </div>
+
+        <!-- Where Photos Go -->
+        <h2>Where Do Photos Go?</h2>
+
+        <div class="flow-box">
+            <h3>Auto-Filing by Intent</h3>
+            <div class="flow-label"><strong>You tap "Receipt"</strong></div>
+            <div class="flow-arrow">&#8595;</div>
+            <div class="flow-label">Photo saves to iCloud Drive</div>
+            <div class="flow-arrow">&#8595;</div>
+            <div class="flow-label"><strong>Receipt folder</strong></div>
+            <div class="flow-arrow">&#8595;</div>
+            <div class="flow-label">Find it in <a href="folders.html">Folders tab</a></div>
+        </div>
+
+        <p style="text-align: center; color: #555;">Each intent has a default folder. You can always move photos between folders later. <a href="folders.html">Learn about Folders &#8594;</a></p>
+
+        <div class="tip-callout">
+            <strong>No AI? No problem.</strong> There's also a "No AI" quick-capture button that skips all analysis and saves directly to your Inbox folder. Perfect for when you just need to snap something fast.
+        </div>
+
+        <!-- CTA -->
+        <div class="cta">
+            <h2>Ready to Capture with Purpose?</h2>
+            <p><strong>Requires iOS 18.0 or later.</strong></p>
+            <a href="https://apps.apple.com/us/app/snaptaskphoto/id6757636900" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+            <p style="margin-top: 1.5rem; color: #555; font-style: italic; font-size: 0.95rem;">Photo intelligence. Always on. Always private. Always yours.</p>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="snap.html">SNAP Guide</a>
+            <a href="folders.html">Folders Guide</a>
+            <a href="cleanup.html">Clean Up Guide</a>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </nav>
+        <p>&copy; 2026 Digital Gemba, LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>

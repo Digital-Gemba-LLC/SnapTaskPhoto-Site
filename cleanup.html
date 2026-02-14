@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Clean Up Tab - SnapTaskPhoto Guide</title>
+    <meta name="description" content="Learn how the Clean Up tab works in SnapTaskPhoto. Triage your Camera Roll — delete, move, organize, and find the best photo with AI. Keep the memories, remove the muck.">
+    <meta property="og:title" content="The Clean Up Tab - SnapTaskPhoto Guide">
+    <meta property="og:description" content="Triage your Camera Roll. Delete, move, organize, and find the best photo with AI.">
+    <meta property="og:url" content="https://snaptaskphoto.com/cleanup.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://snaptaskphoto.com/cleanup.html">
+    <meta name="apple-itunes-app" content="app-id=6757636900">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #fafafa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        a { color: #007AFF; }
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, #5856D6 0%, #007AFF 100%);
+            color: white;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 0 0 0.75rem 0;
+            font-weight: 700;
+        }
+        .hero .subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        /* Tutorial nav */
+        .tutorial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .tutorial-nav a {
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #888;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .tutorial-nav a:hover { color: #007AFF; }
+        .tutorial-nav a.active {
+            color: #007AFF;
+            border-bottom-color: #007AFF;
+        }
+        /* Headings */
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Mock UI */
+        .mock-ui {
+            background: #f5f5f7;
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 360px;
+            margin: 2rem auto;
+        }
+        .mock-tab-bar {
+            display: flex;
+            gap: 6px;
+            background: #e5e5ea;
+            border-radius: 10px;
+            padding: 3px;
+            margin-bottom: 16px;
+        }
+        .mock-tab {
+            flex: 1;
+            text-align: center;
+            padding: 8px 0;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #666;
+        }
+        .mock-tab.active {
+            background: #fff;
+            color: #333;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+        /* Mock photo grid */
+        .mock-photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+        .mock-photo {
+            background: #ccc;
+            border-radius: 4px;
+            aspect-ratio: 1;
+        }
+        .mock-photo.selected {
+            outline: 3px solid #007AFF;
+            outline-offset: -3px;
+        }
+        .mock-photo:nth-child(1) { background: #b3d4fc; }
+        .mock-photo:nth-child(2) { background: #c8e6c9; }
+        .mock-photo:nth-child(3) { background: #ffe0b2; }
+        .mock-photo:nth-child(4) { background: #d1c4e9; }
+        .mock-photo:nth-child(5) { background: #ffcdd2; }
+        .mock-photo:nth-child(6) { background: #b2dfdb; }
+        .mock-photo:nth-child(7) { background: #f0f4c3; }
+        .mock-photo:nth-child(8) { background: #ffccbc; }
+        .mock-photo:nth-child(9) { background: #bbdefb; }
+        /* Mock action bar */
+        .mock-action-bar {
+            display: flex;
+            justify-content: space-around;
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px 4px;
+            border: 1px solid #e5e5e5;
+        }
+        .mock-action {
+            text-align: center;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #007AFF;
+        }
+        .mock-action .icon {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 2px;
+        }
+        /* Mock album dropdown */
+        .mock-dropdown {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .mock-dropdown .chevron {
+            color: #888;
+            font-size: 0.7rem;
+        }
+        /* Cards */
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 2px solid #e5e5e5;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+        .feature-card:hover {
+            border-color: #007AFF;
+            box-shadow: 0 4px 12px rgba(0,122,255,0.1);
+        }
+        .feature-card h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.2rem;
+        }
+        .feature-card p {
+            margin: 0 0 0.5rem 0;
+            color: #555;
+        }
+        .feature-card p:last-child { margin-bottom: 0; }
+        .feature-card ul {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.2rem;
+            color: #555;
+        }
+        .feature-card li { margin-bottom: 0.25rem; }
+        /* Action grid */
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .action-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid #e5e5e5;
+            transition: all 0.2s ease;
+        }
+        .action-item:hover {
+            border-color: #007AFF;
+            box-shadow: 0 4px 12px rgba(0,122,255,0.1);
+        }
+        .action-item h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.05rem;
+        }
+        .action-item p {
+            margin: 0;
+            color: #555;
+            font-size: 0.9rem;
+        }
+        .action-item .action-emoji {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+        /* Best photo highlight */
+        .best-photo-box {
+            background: linear-gradient(135deg, #f5f5f7 0%, #fff 100%);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 2rem 0;
+            border: 1px solid #e5e5e5;
+        }
+        .best-photo-box h3 { margin-top: 0; }
+        .example-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .example-figure {
+            margin: 0;
+            text-align: center;
+        }
+        .example-figure img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+        }
+        .example-figure figcaption {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #555;
+        }
+        .ai-generated-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #bbb;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        .example-img {
+            display: block;
+            max-width: 360px;
+            width: 100%;
+            margin: 0 auto;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+        }
+        .best-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        .best-flow-step {
+            background: #fff;
+            border-radius: 10px;
+            padding: 14px 18px;
+            border: 1px solid #e5e5e5;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .best-flow-step.highlight {
+            border-color: #007AFF;
+            background: #f0f7ff;
+            color: #007AFF;
+        }
+        .best-flow-arrow {
+            font-size: 1.2rem;
+            color: #007AFF;
+        }
+        /* Options list */
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .option-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 16px;
+            border: 1px solid #e5e5e5;
+        }
+        .option-item h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 0.95rem;
+        }
+        .option-item p {
+            margin: 0;
+            color: #555;
+            font-size: 0.85rem;
+        }
+        /* Sort list */
+        .sort-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 2rem 0;
+        }
+        .sort-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 14px;
+            border: 1px solid #e5e5e5;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sort-item .sort-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        .sort-item .sort-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .sort-item .sort-desc {
+            font-size: 0.78rem;
+            color: #888;
+        }
+        /* Tip callout */
+        .tip-callout {
+            background: #f0f7ff;
+            border-left: 4px solid #007AFF;
+            border-radius: 0 10px 10px 0;
+            padding: 16px 20px;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+        .tip-callout strong { color: #007AFF; }
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .cta h2 { margin-top: 0; }
+        .app-store-badge {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .app-store-badge img { height: 50px; }
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+        footer nav { margin-bottom: 1rem; }
+        footer nav a { margin: 0 0.75rem; }
+        /* Responsive */
+        @media (max-width: 650px) {
+            .hero h1 { font-size: 2rem; }
+            .action-grid { grid-template-columns: 1fr; }
+            .options-grid { grid-template-columns: 1fr; }
+            .sort-list { grid-template-columns: 1fr; }
+            .tutorial-nav a { padding: 12px 16px; font-size: 0.9rem; }
+            .best-flow { flex-direction: column; }
+            .best-flow-arrow { transform: rotate(90deg); }
+            .example-images { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>The Clean Up Tab</h1>
+        <p class="subtitle">Triage your Camera Roll. Keep the memories, remove the muck.</p>
+    </header>
+
+    <nav class="tutorial-nav">
+        <a href="snap.html">SNAP</a>
+        <a href="folders.html">Folders</a>
+        <a href="cleanup.html" class="active">Clean Up</a>
+    </nav>
+
+    <main class="container">
+        <p class="section-intro" style="margin-top: 2rem;">Your Camera Roll is full of task photos mixed with memories. Clean Up helps you sort through them — move task photos into SnapTaskPhoto, organize into albums, or delete the clutter.</p>
+
+        <!-- Album Filters -->
+        <h2>Album Filters</h2>
+        <p class="section-intro">Start by choosing what to look at. Filter your Camera Roll by album.</p>
+
+        <img src="camera_roll.png" alt="Camera Roll grid showing varied photos ready for triage" class="example-img" loading="lazy">
+        <p class="ai-generated-note">Example photos are AI-generated</p>
+
+        <div class="feature-card">
+            <h3>Three filter modes</h3>
+            <ul>
+                <li><strong>All Photos</strong> — Everything in your Camera Roll</li>
+                <li><strong>Not in Album</strong> — Photos not yet organized into any album</li>
+                <li><strong>[Album Name]</strong> — View photos from a specific album</li>
+            </ul>
+            <p>When viewing an album, you get extra actions: Move photos out of the album, or Copy photos from the album into SnapTaskPhoto.</p>
+        </div>
+
+        <!-- Multi-Select Actions -->
+        <h2>Multi-Select Actions</h2>
+        <p class="section-intro">Select multiple photos, then act on them all at once.</p>
+
+        <img src="photo_grid.png" alt="Photo grid with multiple photos selected showing blue checkmarks" class="example-img" loading="lazy">
+        <p class="ai-generated-note">Example photos are AI-generated</p>
+
+        <div class="action-grid">
+            <div class="action-item">
+                <span class="action-emoji">&#128465;</span>
+                <h4>Delete</h4>
+                <p>Remove selected photos from your Camera Roll. Uses a single iOS permission prompt — no matter how many you selected.</p>
+            </div>
+            <div class="action-item">
+                <span class="action-emoji">&#128218;</span>
+                <h4>Album</h4>
+                <p>Add selected photos to an existing album or create a new one. When viewing an album, an additional "Move" option moves photos between albums.</p>
+            </div>
+            <div class="action-item">
+                <span class="action-emoji">&#11088;</span>
+                <h4>Best</h4>
+                <p>Select 2-6 similar photos. AI compares them and picks the sharpest shot. The best photo is deselected — rejects stay selected for easy deletion.</p>
+            </div>
+            <div class="action-item">
+                <span class="action-emoji">&#128229;</span>
+                <h4>Move</h4>
+                <p>Import selected photos into a SnapTaskPhoto folder and delete originals from your Camera Roll.</p>
+            </div>
+        </div>
+
+        <!-- Single Photo Actions -->
+        <h2>Single Photo Actions</h2>
+        <p class="section-intro">Tap any photo to open it, then choose an action.</p>
+
+        <div class="action-grid">
+            <div class="action-item">
+                <span class="action-emoji">&#128229;</span>
+                <h4>Move</h4>
+                <p>Choose a folder, import the photo, open Photo Details, then delete from Camera Roll.</p>
+            </div>
+            <div class="action-item">
+                <span class="action-emoji">&#128203;</span>
+                <h4>Copy</h4>
+                <p>Choose a folder, import the photo, open Photo Details, but keep the original in Camera Roll.</p>
+            </div>
+            <div class="action-item">
+                <span class="action-emoji">&#128465;</span>
+                <h4>Delete</h4>
+                <p>Remove from Camera Roll. Goes to iOS Recently Deleted for 30 days.</p>
+            </div>
+            <div class="action-item">
+                <span class="action-emoji">&#128218;</span>
+                <h4>Album</h4>
+                <p>Add to a Camera Roll album (existing or new). Photo stays in Camera Roll.</p>
+            </div>
+            <div class="action-item">
+                <span class="action-emoji">&#128257;</span>
+                <h4>Share</h4>
+                <p>Share the photo via the system share sheet to any app.</p>
+            </div>
+            <div class="action-item">
+                <span class="action-emoji">&#10084;</span>
+                <h4>Keep</h4>
+                <p>Mark as a memory. Photo stays in Camera Roll and is tracked so it can be hidden from future cleanups.</p>
+            </div>
+        </div>
+
+        <!-- Best Photo AI -->
+        <h2>Best Photo AI</h2>
+        <p class="section-intro">Stop keeping 5 versions of the same shot. Let AI pick the best one.</p>
+
+        <div class="best-photo-box" style="border: 2px solid #007AFF;">
+            <h3 style="font-size: 1.4rem;">The "Best then Delete" Two-Tap Workflow</h3>
+            <p style="color: #555; font-size: 1.05rem;">Select similar photos, tap Best, tap Delete. Two taps to go from duplicates to a single best shot.</p>
+            <div class="best-flow">
+                <div class="best-flow-step">Select 2-6 photos</div>
+                <span class="best-flow-arrow">&#8594;</span>
+                <div class="best-flow-step highlight">Tap Best</div>
+                <span class="best-flow-arrow">&#8594;</span>
+                <div class="best-flow-step">AI deselects the winner</div>
+                <span class="best-flow-arrow">&#8594;</span>
+                <div class="best-flow-step highlight">Tap Delete</div>
+            </div>
+            <p style="color: #555; font-size: 0.95rem;">The best photo is deselected (protected). Rejects stay selected. One tap on Delete clears them all. That's it.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>What AI Compares</h3>
+            <p>AI evaluates every photo in the set across multiple dimensions, then picks the one that wins overall:</p>
+            <ul>
+                <li><strong>Sharpness</strong> — Is the subject in focus? Any motion blur?</li>
+                <li><strong>Composition</strong> — Framing, centering, balance</li>
+                <li><strong>Lighting</strong> — Exposure, shadows, blown highlights</li>
+                <li><strong>Facial expressions</strong> — Eyes open? Natural smiles? Nobody blinking?</li>
+            </ul>
+        </div>
+
+        <div class="example-images">
+            <figure class="example-figure">
+                <img src="focus_example.png" alt="Four similar photos where AI picks the sharpest one" loading="lazy">
+                <figcaption>AI picks the sharp shot, rejects the blurry ones</figcaption>
+            </figure>
+            <figure class="example-figure">
+                <img src="blink_example.png" alt="Four similar photos where AI picks the one with eyes open" loading="lazy">
+                <figcaption>AI picks eyes-open, rejects the blinks</figcaption>
+            </figure>
+        </div>
+        <p class="ai-generated-note">Example photos are AI-generated</p>
+
+        <div class="feature-card">
+            <h3>When to Use It</h3>
+            <ul>
+                <li><strong>Group selfies</strong> — Took 4 attempts to get everyone smiling? Best picks the one where nobody's blinking.</li>
+                <li><strong>Landscape duplicates</strong> — Snapped the same view 3 times hoping one would be sharper? Find out instantly.</li>
+                <li><strong>Pet and kid photos</strong> — Burst-fired 6 shots of something that won't sit still? AI finds the keeper.</li>
+                <li><strong>Document retakes</strong> — Tried a few angles on that whiteboard? Best picks the clearest, most readable one.</li>
+                <li><strong>Food photos</strong> — Took a few shots before the lighting was right? Keep the appetizing one.</li>
+            </ul>
+        </div>
+
+        <div class="tip-callout">
+            <strong>Pro tip:</strong> Sort by "Similar" first to group alike photos together. Then select a cluster, tap Best, tap Delete. Repeat. You can clean hundreds of duplicates in minutes.
+        </div>
+
+        <!-- Options Menu -->
+        <h2>Options Menu</h2>
+        <p class="section-intro">Customize what you see in the Clean Up grid.</p>
+
+        <div class="options-grid">
+            <div class="option-item">
+                <h4>Batch Mode</h4>
+                <p>Move and Copy work silently without opening Photo Details. Great for rapid processing.</p>
+            </div>
+            <div class="option-item">
+                <h4>Hide Processed</h4>
+                <p>Hide photos you've already moved or copied. Focus on what's left to triage.</p>
+            </div>
+            <div class="option-item">
+                <h4>Hide Kept</h4>
+                <p>Hide photos you've marked as memories. Only see un-triaged photos.</p>
+            </div>
+            <div class="option-item">
+                <h4>Screenshots Only</h4>
+                <p>Filter to only show screenshots. Combine with batch select for fast screenshot cleanup.</p>
+            </div>
+        </div>
+
+        <p style="text-align: center; color: #555;">All toggles default to OFF so you see everything. Turn them on to focus your cleanup session.</p>
+
+        <!-- Sort Options -->
+        <h2>Sort Options</h2>
+        <p class="section-intro">Change how photos are ordered in the grid.</p>
+
+        <div class="sort-list">
+            <div class="sort-item">
+                <span class="sort-icon">&#128197;</span>
+                <div><div class="sort-name">Recent</div><div class="sort-desc">Newest first (default)</div></div>
+            </div>
+            <div class="sort-item">
+                <span class="sort-icon">&#128196;</span>
+                <div><div class="sort-name">Documents First</div><div class="sort-desc">Finds document-like photos</div></div>
+            </div>
+            <div class="sort-item">
+                <span class="sort-icon">&#128178;</span>
+                <div><div class="sort-name">Similar</div><div class="sort-desc">Groups alike photos together</div></div>
+            </div>
+            <div class="sort-item">
+                <span class="sort-icon">&#127758;</span>
+                <div><div class="sort-name">Latitude</div><div class="sort-desc">Sort by north-south position</div></div>
+            </div>
+            <div class="sort-item">
+                <span class="sort-icon">&#127759;</span>
+                <div><div class="sort-name">Longitude</div><div class="sort-desc">Sort by east-west position</div></div>
+            </div>
+            <div class="sort-item">
+                <span class="sort-icon">&#128205;</span>
+                <div><div class="sort-name">Distance</div><div class="sort-desc">Sort by proximity to you</div></div>
+            </div>
+        </div>
+
+        <!-- Grid & Map -->
+        <h2>Grid and Map Views</h2>
+
+        <div class="feature-card">
+            <h3>Adjustable grid columns</h3>
+            <p>Choose 1, 2, or 3 columns in the Options menu. Use 1 column for detail, 3 columns to scan fast. Your choice is remembered between sessions.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Map view</h3>
+            <p>Tap the map icon in the toolbar to see your Camera Roll photos on a map. Photos with GPS data appear as pins — tap any pin to open the photo. Great for finding photos from a specific trip or location.</p>
+        </div>
+
+        <!-- Range Selection -->
+        <h2>Range Selection</h2>
+
+        <div class="feature-card">
+            <h3>Long-press to select a range</h3>
+            <p>Long-press any photo to enter selection mode. Then long-press another photo — all photos between the two are selected. Much faster than tapping each one individually.</p>
+            <p>Once in selection mode, you can also drag your finger across photos to select them continuously.</p>
+        </div>
+
+        <div class="tip-callout">
+            <strong>After importing, find your photos in the <a href="folders.html">Folders tab</a>.</strong> Photos moved or copied from Clean Up appear in the folder you chose, ready for AI analysis and organization.
+        </div>
+
+        <!-- CTA -->
+        <div class="cta">
+            <h2>Ready to Clean Up?</h2>
+            <p><strong>Requires iOS 18.0 or later.</strong></p>
+            <a href="https://apps.apple.com/us/app/snaptaskphoto/id6757636900" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+            <p style="margin-top: 1.5rem; color: #555; font-style: italic; font-size: 0.95rem;">Photo intelligence. Always on. Always private. Always yours.</p>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="snap.html">SNAP Guide</a>
+            <a href="folders.html">Folders Guide</a>
+            <a href="cleanup.html">Clean Up Guide</a>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </nav>
+        <p>&copy; 2026 Digital Gemba, LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>
