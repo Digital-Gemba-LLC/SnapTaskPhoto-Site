@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /og-image.html
 Sitemap: https://snaptaskphoto.com/sitemap.xml
