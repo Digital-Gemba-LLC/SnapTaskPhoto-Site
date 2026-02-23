@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /og-image.html
-Sitemap: https://snaptaskphoto.com/sitemap.xml
+Sitemap: https://unmuck.app/sitemap.xml
