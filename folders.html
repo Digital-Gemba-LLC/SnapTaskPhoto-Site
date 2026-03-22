@@ -350,6 +350,7 @@
         <a href="snap.html">SNAP</a>
         <a href="folders.html" class="active">Folders</a>
         <a href="cleanup.html">Clean Up</a>
+        <a href="stats.html">Stats</a>
     </nav>
 
     <main class="container">
@@ -530,8 +531,31 @@
 
         <div class="feature-card">
             <h3>Summarize Slides</h3>
-            <p>Captured an entire presentation? Tap <strong>Summarize Slides</strong> to generate a cohesive summary of every slide in the folder. AI reads the OCR text from each slide, extracts key takeaways and action items, then synthesizes everything into structured notes.</p>
-            <p>For large decks (50+ slides), the app automatically batches them into groups of ~25 and runs a final synthesis pass to combine all batch summaries. One credit per batch.</p>
+            <p>Captured an entire presentation? Tap the sparkles button in the toolbar to summarize every slide in the folder. AI reads the OCR text from each slide and produces a structured summary with:</p>
+            <ul>
+                <li><strong>Event Summary</strong> — 2-3 sentence overview of the presentation</li>
+                <li><strong>Key Topics Covered</strong> — organized by logical flow</li>
+                <li><strong>Key Takeaways</strong> — the important points distilled</li>
+                <li><strong>Action Items / Follow-ups</strong> — what to do next</li>
+                <li><strong>Notable Details</strong> — data points, statistics, names, references</li>
+            </ul>
+            <p>You can also summarize just the slides from a single day using the sparkles button on any date header, or select specific slides and summarize only those.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Batch Processing</h3>
+            <p>The summarizer adapts to deck size:</p>
+            <ul>
+                <li><strong>Up to 30 slides</strong> — single AI pass, one credit</li>
+                <li><strong>31-50 slides</strong> — single pass with a confirmation prompt</li>
+                <li><strong>50+ slides</strong> — automatically split into batches of ~25, each batch summarized separately, then a final synthesis pass merges everything into one unified summary</li>
+            </ul>
+            <p>One AI credit per batch. Progress updates show which batch is being processed.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Summary Output</h3>
+            <p>The finished summary is saved as an image card in your Slides folder, backdated to appear at the top of the relevant date group. The full summary text is stored in the photo's notes — tap the card to read it. You can also copy the summary to your clipboard or share it via the standard share sheet.</p>
         </div>
 
         <div class="feature-card">
@@ -581,6 +605,7 @@
             <a href="snap.html">SNAP Guide</a>
             <a href="folders.html">Folders Guide</a>
             <a href="cleanup.html">Clean Up Guide</a>
+            <a href="stats.html">Stats Guide</a>
             <a href="support.html">Support</a>
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>

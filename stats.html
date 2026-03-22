@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Stats Tab - Unmuck Guide</title>
+    <meta name="description" content="Learn how the Stats tab works in Unmuck. See when, where, and how you shoot with interactive charts, heatmaps, and lifetime activity metrics. All on-device, no AI credits needed.">
+    <meta property="og:title" content="The Stats Tab - Unmuck Guide">
+    <meta property="og:description" content="Visual analytics for your Camera Roll. Charts, heatmaps, and lifetime metrics — all on-device.">
+    <meta property="og:url" content="https://unmuck.app/stats.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://unmuck.app/stats.html">
+    <meta name="apple-itunes-app" content="app-id=6757636900">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #fafafa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        a { color: #007AFF; }
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, #5856D6 0%, #007AFF 100%);
+            color: white;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 0 0 0.75rem 0;
+            font-weight: 700;
+        }
+        .hero .subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        /* Tutorial nav */
+        .tutorial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .tutorial-nav a {
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #888;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .tutorial-nav a:hover { color: #007AFF; }
+        .tutorial-nav a.active {
+            color: #007AFF;
+            border-bottom-color: #007AFF;
+        }
+        /* Headings */
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Cards */
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 2px solid #e5e5e5;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+        .feature-card:hover {
+            border-color: #007AFF;
+            box-shadow: 0 4px 12px rgba(0,122,255,0.1);
+        }
+        .feature-card h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.2rem;
+        }
+        .feature-card p {
+            margin: 0 0 0.5rem 0;
+            color: #555;
+        }
+        .feature-card p:last-child { margin-bottom: 0; }
+        .feature-card ul {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.2rem;
+            color: #555;
+        }
+        .feature-card li { margin-bottom: 0.25rem; }
+        /* Stat metrics grid */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .stat-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid #e5e5e5;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        .stat-item:hover {
+            border-color: #007AFF;
+            box-shadow: 0 4px 12px rgba(0,122,255,0.1);
+        }
+        .stat-item .stat-icon {
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .stat-item h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1rem;
+        }
+        .stat-item p {
+            margin: 0;
+            color: #555;
+            font-size: 0.85rem;
+        }
+        /* Chart grid */
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .chart-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid #e5e5e5;
+            transition: all 0.2s ease;
+        }
+        .chart-card:hover {
+            border-color: #007AFF;
+            box-shadow: 0 4px 12px rgba(0,122,255,0.1);
+        }
+        .chart-card h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.05rem;
+        }
+        .chart-card p {
+            margin: 0;
+            color: #555;
+            font-size: 0.9rem;
+        }
+        .chart-card.full-width {
+            grid-column: 1 / -1;
+        }
+        /* Mock chart */
+        .mock-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            height: 80px;
+            margin-bottom: 12px;
+            padding: 0 4px;
+        }
+        .mock-bar {
+            flex: 1;
+            border-radius: 3px 3px 0 0;
+            min-width: 0;
+        }
+        /* Bar chart color themes */
+        .bars-blue .mock-bar { background: linear-gradient(180deg, #007AFF 0%, #5856D6 100%); }
+        .bars-green .mock-bar { background: linear-gradient(180deg, #34C759 0%, #30B050 100%); }
+        .bars-orange .mock-bar { background: linear-gradient(180deg, #FF9500 0%, #FF6B00 100%); }
+        .bars-purple .mock-bar { background: linear-gradient(180deg, #5856D6 0%, #AF52DE 100%); }
+        /* Mock heatmap */
+        .mock-heatmap {
+            display: grid;
+            gap: 3px;
+            margin-bottom: 12px;
+        }
+        .mock-heatmap.months { grid-template-columns: repeat(12, 1fr); }
+        .mock-heatmap.years { grid-template-columns: repeat(10, 1fr); }
+        .heat-dot {
+            aspect-ratio: 1;
+            border-radius: 50%;
+            min-width: 0;
+        }
+        /* Viridis-inspired colors */
+        .heat-0 { background: #440154; }
+        .heat-1 { background: #482374; }
+        .heat-2 { background: #208F8D; }
+        .heat-3 { background: #44BF70; }
+        .heat-4 { background: #FDE725; }
+        /* Mock big numbers */
+        .mock-vs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 12px;
+        }
+        .mock-vs-num {
+            text-align: center;
+        }
+        .mock-vs-num .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .mock-vs-num .label {
+            font-size: 0.75rem;
+            color: #888;
+            font-weight: 600;
+        }
+        /* Tip callout */
+        .tip-callout {
+            background: #f0f7ff;
+            border-left: 4px solid #007AFF;
+            border-radius: 0 10px 10px 0;
+            padding: 16px 20px;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+        .tip-callout strong { color: #007AFF; }
+        /* Privacy callout */
+        .privacy-callout {
+            background: #1a1a2e;
+            color: #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .privacy-callout h3 {
+            color: #fff;
+            margin: 0 0 0.75rem 0;
+            font-size: 1.3rem;
+        }
+        .privacy-callout p {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+        .privacy-callout p:last-child { margin-bottom: 0; }
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .cta h2 { margin-top: 0; }
+        .app-store-badge {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .app-store-badge img { height: 50px; }
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+        footer nav { margin-bottom: 1rem; }
+        footer nav a { margin: 0 0.75rem; }
+        /* Responsive */
+        @media (max-width: 650px) {
+            .hero h1 { font-size: 2rem; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .chart-grid { grid-template-columns: 1fr; }
+            .tutorial-nav a { padding: 12px 16px; font-size: 0.9rem; }
+            .mock-vs { gap: 16px; }
+            .mock-vs-num .number { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>The Stats Tab</h1>
+        <p class="subtitle">See when, where, and how you shoot. All on-device. No AI credits needed.</p>
+    </header>
+
+    <nav class="tutorial-nav">
+        <a href="snap.html">SNAP</a>
+        <a href="folders.html">Folders</a>
+        <a href="cleanup.html">Clean Up</a>
+        <a href="stats.html" class="active">Stats</a>
+    </nav>
+
+    <main class="container">
+        <p class="section-intro" style="margin-top: 2rem;">Stats gives you a complete picture of your photography habits. Interactive charts, heatmaps, and lifetime metrics — all calculated on-device from your Camera Roll metadata.</p>
+
+        <!-- Lifetime Activity Stats -->
+        <h2>Lifetime Activity</h2>
+        <p class="section-intro">Track what you've accomplished with Unmuck over time.</p>
+
+        <div class="stat-grid">
+            <div class="stat-item">
+                <span class="stat-icon">&#128190;</span>
+                <h4>Space Reclaimed</h4>
+                <p>Total storage freed from deleted photos and compression savings. Displayed in green so you can celebrate.</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">&#10084;&#65039;</span>
+                <h4>Memories Kept</h4>
+                <p>Photos you added to albums or explicitly kept. The ones that matter.</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">&#128247;</span>
+                <h4>Muck Avoided</h4>
+                <p>Photos captured with Unmuck plus photos moved out of your Camera Roll. Clutter that never piled up.</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">&#128465;</span>
+                <h4>Muck Deleted</h4>
+                <p>Photos you deleted from Camera Roll during cleanup. Gone for good.</p>
+            </div>
+            <div class="stat-item" style="grid-column: 1 / -1;">
+                <span class="stat-icon">&#9989;</span>
+                <h4>Roll Processed</h4>
+                <p>Percentage of your Camera Roll that's been triaged — deleted, moved, organized, or kept. Watch it climb toward 100%.</p>
+            </div>
+        </div>
+
+        <div class="tip-callout">
+            <strong>Share any stat.</strong> Each metric can be shared individually as a branded image card with the unmuck.app watermark — ready for social media.
+        </div>
+
+        <!-- Unmuck Storage Stats -->
+        <h2>Unmuck Storage</h2>
+        <p class="section-intro">See how much you've stored in Unmuck's iCloud folders.</p>
+
+        <div class="stat-grid">
+            <div class="stat-item">
+                <span class="stat-icon">&#128193;</span>
+                <h4>Photos Stored</h4>
+                <p>Total photos saved in Unmuck's iCloud Drive folders.</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">&#9729;&#65039;</span>
+                <h4>iCloud Storage</h4>
+                <p>How much iCloud space your Unmuck photos use, in human-readable format.</p>
+            </div>
+            <div class="stat-item" style="grid-column: 1 / -1;">
+                <span class="stat-icon">&#10024;</span>
+                <h4>AI Analyses Used</h4>
+                <p>Lifetime count of AI analyses you've run. Only shown if you've used AI features.</p>
+            </div>
+        </div>
+
+        <!-- Camera Roll Statistics -->
+        <h2>Camera Roll Breakdown</h2>
+        <p class="section-intro">A snapshot of what's in your Camera Roll right now.</p>
+
+        <div class="stat-grid">
+            <div class="stat-item">
+                <span class="stat-icon">&#128248;</span>
+                <h4>Total Photos</h4>
+                <p>Everything in your Camera Roll.</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">&#128194;</span>
+                <h4>Not in Albums</h4>
+                <p>Photos that aren't in any user album yet.</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">&#128241;</span>
+                <h4>Screenshots</h4>
+                <p>Count and percentage of your Camera Roll that's screenshots.</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">&#127909;</span>
+                <h4>Videos</h4>
+                <p>Total video count in your library.</p>
+            </div>
+            <div class="stat-item" style="grid-column: 1 / -1;">
+                <span class="stat-icon">&#128202;</span>
+                <h4>Organized</h4>
+                <p>Percentage of your Camera Roll that's in albums or marked as kept. Your organization score.</p>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <h2>Charts</h2>
+        <p class="section-intro">Seven interactive charts that reveal your photography patterns. Tap any bar to jump straight to those photos in the Roll.</p>
+
+        <div class="chart-grid">
+            <!-- Photos by Quarter -->
+            <div class="chart-card full-width">
+                <div class="mock-chart bars-blue">
+                    <div class="mock-bar" style="height: 30%;"></div>
+                    <div class="mock-bar" style="height: 45%;"></div>
+                    <div class="mock-bar" style="height: 60%;"></div>
+                    <div class="mock-bar" style="height: 40%;"></div>
+                    <div class="mock-bar" style="height: 75%;"></div>
+                    <div class="mock-bar" style="height: 55%;"></div>
+                    <div class="mock-bar" style="height: 90%;"></div>
+                    <div class="mock-bar" style="height: 70%;"></div>
+                    <div class="mock-bar" style="height: 50%;"></div>
+                    <div class="mock-bar" style="height: 85%;"></div>
+                    <div class="mock-bar" style="height: 65%;"></div>
+                    <div class="mock-bar" style="height: 100%;"></div>
+                </div>
+                <h4>Photos by Quarter</h4>
+                <p>Timeline of your photo activity over the last 10 years, grouped by quarter. See seasonal patterns — do you shoot more in summer? During holidays? Tap any bar to jump to those photos.</p>
+            </div>
+
+            <!-- Photos by Day of Week -->
+            <div class="chart-card">
+                <div class="mock-chart bars-green">
+                    <div class="mock-bar" style="height: 80%;"></div>
+                    <div class="mock-bar" style="height: 45%;"></div>
+                    <div class="mock-bar" style="height: 50%;"></div>
+                    <div class="mock-bar" style="height: 40%;"></div>
+                    <div class="mock-bar" style="height: 55%;"></div>
+                    <div class="mock-bar" style="height: 70%;"></div>
+                    <div class="mock-bar" style="height: 100%;"></div>
+                </div>
+                <h4>Photos by Day of Week</h4>
+                <p>Which days you shoot the most. Weekends probably win.</p>
+            </div>
+
+            <!-- Photos by Hour -->
+            <div class="chart-card">
+                <div class="mock-chart bars-orange">
+                    <div class="mock-bar" style="height: 10%;"></div>
+                    <div class="mock-bar" style="height: 15%;"></div>
+                    <div class="mock-bar" style="height: 20%;"></div>
+                    <div class="mock-bar" style="height: 30%;"></div>
+                    <div class="mock-bar" style="height: 50%;"></div>
+                    <div class="mock-bar" style="height: 65%;"></div>
+                    <div class="mock-bar" style="height: 80%;"></div>
+                    <div class="mock-bar" style="height: 100%;"></div>
+                    <div class="mock-bar" style="height: 90%;"></div>
+                    <div class="mock-bar" style="height: 70%;"></div>
+                    <div class="mock-bar" style="height: 40%;"></div>
+                    <div class="mock-bar" style="height: 15%;"></div>
+                </div>
+                <h4>Photos by Hour of Day</h4>
+                <p>Your peak photography times. Uses the actual timezone of where each photo was taken — not your current timezone. Tap any hour to jump to those photos.</p>
+            </div>
+
+            <!-- Media Types -->
+            <div class="chart-card">
+                <div class="mock-chart" style="height: 60px;">
+                    <div class="mock-bar" style="height: 100%; background: #007AFF; flex: 3;"></div>
+                    <div class="mock-bar" style="height: 45%; background: #FF3B30; flex: 1;"></div>
+                    <div class="mock-bar" style="height: 15%; background: #8E8E93; flex: 1;"></div>
+                </div>
+                <h4>Media Types</h4>
+                <p>Breakdown of photos, videos, and other media in your library.</p>
+            </div>
+
+            <!-- Screenshots vs Photos -->
+            <div class="chart-card">
+                <div class="mock-vs">
+                    <div class="mock-vs-num">
+                        <div class="number" style="color: #007AFF;">2,847</div>
+                        <div class="label">Screenshots</div>
+                    </div>
+                    <div class="mock-vs-num">
+                        <div class="number" style="color: #34C759;">14,203</div>
+                        <div class="label">Regular Photos</div>
+                    </div>
+                </div>
+                <h4>Screenshots vs Photos</h4>
+                <p>Side-by-side comparison. How many of your "photos" are actually screenshots?</p>
+            </div>
+
+            <!-- Popular Locations -->
+            <div class="chart-card full-width">
+                <div class="mock-chart bars-purple" style="height: 100px;">
+                    <div class="mock-bar" style="height: 100%;"></div>
+                    <div class="mock-bar" style="height: 75%;"></div>
+                    <div class="mock-bar" style="height: 60%;"></div>
+                    <div class="mock-bar" style="height: 55%;"></div>
+                    <div class="mock-bar" style="height: 45%;"></div>
+                    <div class="mock-bar" style="height: 40%;"></div>
+                    <div class="mock-bar" style="height: 35%;"></div>
+                    <div class="mock-bar" style="height: 30%;"></div>
+                    <div class="mock-bar" style="height: 25%;"></div>
+                    <div class="mock-bar" style="height: 20%;"></div>
+                    <div class="mock-bar" style="height: 15%;"></div>
+                    <div class="mock-bar" style="height: 10%;"></div>
+                </div>
+                <h4>Popular Locations</h4>
+                <p>Your top 12 photography spots, with your #1 location (usually home) called out separately above the chart. Photos are grouped by geographic proximity (~11 km clusters) and reverse-geocoded to city or town names. Tap any bar to jump to photos from that location.</p>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <h3>Timezone-Aware Hours</h3>
+            <p>The "Photos by Hour" chart doesn't use your current timezone. It reverse-geocodes each geotagged photo's location to determine the <em>actual</em> local timezone where the photo was taken. A sunset photo in Paris shows up at Paris time, not your home timezone. Photos without GPS data use a stable GMT baseline.</p>
+        </div>
+
+        <div class="tip-callout">
+            <strong>Tap to explore.</strong> Tap any bar in the Quarter, Hour, or Location charts to jump to those photos in the Clean Up tab. A filter banner shows which selection is active — tap Clear to go back to the full view.
+        </div>
+
+        <!-- Heatmaps Section -->
+        <h2>Heatmaps</h2>
+        <p class="section-intro">Three bubble charts that cross-reference location, month, and year. Bigger bubbles mean more photos. Colors follow a Viridis-inspired gradient from dark purple (few) to yellow (many).</p>
+
+        <div class="chart-grid">
+            <!-- Locations by Month -->
+            <div class="chart-card full-width">
+                <div class="mock-heatmap months" style="grid-template-rows: repeat(4, 1fr);">
+                    <div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-4"></div>
+                    <div class="heat-dot heat-3"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div>
+                    <div class="heat-dot heat-0"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-0"></div>
+                    <div class="heat-dot heat-2"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-3"></div>
+                </div>
+                <h4>Locations by Month</h4>
+                <p>Which locations you photograph in which months. Rows are your top locations, columns are Jan through Dec. Spot vacation patterns — the beach town that only lights up in July, the family visit every December. Tap any bubble to jump to those photos.</p>
+            </div>
+
+            <!-- Locations by Year -->
+            <div class="chart-card full-width">
+                <div class="mock-heatmap years" style="grid-template-rows: repeat(4, 1fr);">
+                    <div class="heat-dot heat-0"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-4"></div>
+                    <div class="heat-dot heat-2"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-3"></div>
+                    <div class="heat-dot heat-4"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div>
+                    <div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div>
+                </div>
+                <h4>Locations by Year</h4>
+                <p>How your location habits evolved over the last 10 years. See when you moved, when you started frequenting a new spot, or when you stopped visiting one. Tap any bubble to jump to those photos.</p>
+            </div>
+
+            <!-- Year x Month -->
+            <div class="chart-card full-width">
+                <div class="mock-heatmap months" style="grid-template-rows: repeat(3, 1fr);">
+                    <div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-3"></div>
+                    <div class="heat-dot heat-1"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-0"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-4"></div>
+                    <div class="heat-dot heat-3"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-1"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-2"></div><div class="heat-dot heat-3"></div><div class="heat-dot heat-4"></div><div class="heat-dot heat-4"></div>
+                </div>
+                <h4>Photos by Year and Month</h4>
+                <p>Your entire photo history as a single heatmap. Rows are years, columns are months. Instantly see your most active periods — and the gaps where life got busy or the phone stayed in your pocket.</p>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <h3>How heatmaps are built</h3>
+            <p>Unmuck groups your geotagged photos by geographic proximity (~11 km clusters), then reverse-geocodes each cluster to a city or town name. The top 13 locations are displayed. Bubble size uses cube-root scaling so small counts are still visible next to large ones. Colors follow a five-stop Viridis-inspired gradient from dark purple (fewest photos) to bright yellow (most).</p>
+        </div>
+
+        <!-- Sharing -->
+        <h2>Share Your Stats</h2>
+        <p class="section-intro">Every section and chart can be shared individually as a high-resolution branded image.</p>
+
+        <div class="feature-card">
+            <h3>How sharing works</h3>
+            <ul>
+                <li>Tap the share button on any section header or chart</li>
+                <li>A high-resolution image is generated at 3x scale</li>
+                <li>Each image includes the chart, a title, and a "Made with unmuck.app" watermark</li>
+                <li>If you've saved space, the watermark shows how much you've reclaimed</li>
+                <li>Share via the standard iOS share sheet to any app — Messages, Instagram, Twitter, etc.</li>
+            </ul>
+        </div>
+
+        <div class="tip-callout">
+            <strong>Social-ready.</strong> Stats images are sized and branded for sharing. Show off your photography patterns, brag about reclaimed storage, or just marvel at how many screenshots you've accumulated.
+        </div>
+
+        <!-- Privacy -->
+        <div class="privacy-callout">
+            <h3>100% On-Device</h3>
+            <p>Stats are calculated entirely on your phone from Camera Roll metadata.</p>
+            <p>No data is sent anywhere. No AI credits are used. No network connection required.</p>
+            <p>Works without iCloud sign-in.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta">
+            <h2>Ready to See Your Patterns?</h2>
+            <p><strong>Requires iOS 18.0 or later.</strong></p>
+            <a href="https://apps.apple.com/us/app/snaptaskphoto/id6757636900" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+            <p style="margin-top: 1.5rem; color: #555; font-style: italic; font-size: 0.95rem;">Photo intelligence. Always on. Always private. Always yours.</p>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="snap.html">SNAP Guide</a>
+            <a href="folders.html">Folders Guide</a>
+            <a href="cleanup.html">Clean Up Guide</a>
+            <a href="stats.html">Stats Guide</a>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </nav>
+        <p>&copy; 2026 Digital Gemba, LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>

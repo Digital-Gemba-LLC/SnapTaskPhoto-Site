@@ -652,31 +652,51 @@
 
         <div class="faq-item">
             <h3>What does the Stats tab show?</h3>
-            <p>The Stats tab provides comprehensive analytics for your entire Camera Roll. You'll see visual charts showing:</p>
+            <p>The Stats tab provides comprehensive analytics across four sections. <a href="stats.html">See the full Stats guide.</a></p>
+            <p><strong>Lifetime Activity:</strong> Space reclaimed, memories kept, muck avoided, muck deleted, and your Camera Roll processed percentage.</p>
+            <p><strong>Unmuck Storage:</strong> Photos stored in iCloud, iCloud storage used, and lifetime AI analyses count.</p>
+            <p><strong>Camera Roll Breakdown:</strong> Total photos, photos not in albums, screenshots (count and percentage), videos, and an overall organization score.</p>
+            <p><strong>Seven charts:</strong></p>
             <ul>
-                <li><strong>Photos by Quarter:</strong> Timeline view of your photo activity over the last 10 years</li>
+                <li><strong>Photos by Quarter:</strong> Timeline of your photo activity over the last 10 years</li>
                 <li><strong>Photos by Day of Week:</strong> Which days you shoot most</li>
-                <li><strong>Photos by Hour:</strong> Your peak photography times throughout the day</li>
+                <li><strong>Photos by Hour:</strong> Peak photography times, using the actual timezone where each photo was taken</li>
                 <li><strong>Media Types:</strong> Photos, videos, and other media breakdown</li>
-                <li><strong>Other Popular Locations:</strong> Geographic distribution of your photos (top 12 spots after #1)</li>
-                <li><strong>Screenshots vs Photos:</strong> Compare screenshot count to regular photos</li>
+                <li><strong>Screenshots vs Photos:</strong> Side-by-side comparison</li>
+                <li><strong>Popular Locations:</strong> Your top 12 spots with #1 called out separately above the chart</li>
             </ul>
-            <p>Your most popular location is called out separately above the location chart — typically home, so excluded from the chart to highlight other interesting spots.</p>
+            <p><strong>Three heatmaps:</strong></p>
+            <ul>
+                <li><strong>Locations by Month:</strong> Which locations you photograph in which months — spot vacation patterns</li>
+                <li><strong>Locations by Year:</strong> How your location habits evolved over the last 10 years</li>
+                <li><strong>Photos by Year and Month:</strong> Your entire photo history as a single heatmap</li>
+            </ul>
+            <p>Heatmaps use bubble charts with a Viridis-inspired color gradient from dark purple (few photos) to bright yellow (many). Bubble size uses cube-root scaling so small counts remain visible.</p>
         </div>
 
         <div class="faq-item">
             <h3>Can I tap on the charts?</h3>
-            <p>Yes! Tap any bar in the Quarter, Hour, or Location charts to jump to the Roll tab with photos filtered to that selection. For example, tap the "3PM" bar to see all photos taken at 3PM. A filter banner appears in Roll showing the active filter — tap Clear to remove it and see all photos again.</p>
+            <p>Yes! Tap any bar in the Quarter, Hour, or Location charts to jump to those photos in the Clean Up tab. Tap any bubble in the three heatmaps to jump to photos matching that location, month, or year. A filter banner appears showing the active selection — tap Clear to remove it.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does the timezone-aware hour chart work?</h3>
+            <p>The "Photos by Hour" chart reverse-geocodes each geotagged photo's GPS coordinates to determine the actual local timezone where the photo was taken. A sunset photo in Paris shows up at Paris time, not your current timezone. Photos without GPS data use a stable GMT baseline so counts don't shift when you travel.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How are locations determined?</h3>
+            <p>Photos are grouped by geographic proximity (~11 km clusters). The top clusters are reverse-geocoded to city or town names using Apple's on-device geocoder. Your #1 location (typically home) is highlighted separately above the chart so it doesn't dominate the view of your other interesting spots. The count of photos without GPS data is also shown.</p>
         </div>
 
         <div class="faq-item">
             <h3>Can I share my stats?</h3>
-            <p>Yes. Tap the share button (↑) in the Stats toolbar to generate a high-resolution image of all your charts with a "Made with Unmuck" watermark. Perfect for sharing your photography habits with friends on social media.</p>
+            <p>Yes. Every section and chart has its own share button. Tap it to generate a high-resolution (3x scale) branded image with a "Made with unmuck.app" watermark. If you've reclaimed storage space, the watermark includes how much you've saved. Share via the standard iOS share sheet to Messages, Instagram, Twitter, or anywhere else.</p>
         </div>
 
         <div class="faq-item">
             <h3>Does Stats use AI credits?</h3>
-            <p>No. Statistics are calculated entirely on-device from your Camera Roll metadata. No AI credits required, no data sent anywhere.</p>
+            <p>No. All statistics are calculated entirely on-device from your Camera Roll metadata. No AI credits required, no data sent anywhere, no network connection needed. Stats works without iCloud sign-in.</p>
         </div>
     </div>
 
@@ -795,7 +815,9 @@
 
         <div class="faq-item">
             <h3>Can I summarize an entire slide deck?</h3>
-            <p>Yes. Open the Slides folder, and if you have 2 or more slides, tap <strong>Summarize Slides</strong> in the toolbar. AI compiles the extracted text from all your slides into a consolidated summary with key takeaways. Large decks (50+ slides) are automatically batched. Uses one AI credit per batch of ~25 slides. You can also tap <strong>Export Text</strong> to copy all extracted slide text to your clipboard.</p>
+            <p>Yes. Open the Slides folder with 2+ slides and tap the sparkles button. AI reads the OCR text from every slide and produces a structured summary: event overview, key topics, takeaways, action items, and notable details. You can also summarize a single day's slides via the date header, or select specific slides to summarize just those.</p>
+            <p>Decks up to 30 slides use a single AI credit. Decks of 31-50 show a confirmation. Decks over 50 are automatically batched into groups of ~25, with a final synthesis pass that merges all batch summaries into one unified result. One credit per batch.</p>
+            <p>The summary is saved as an image card in your Slides folder with the full text in its notes. You can copy or share it. You can also tap <strong>Export Text</strong> to copy all raw OCR text to your clipboard — no AI credit needed.</p>
         </div>
 
         <div class="faq-item">
@@ -904,7 +926,7 @@
     <p><strong>Developer:</strong> Digital Gemba, LLC</p>
 
     <footer>
-        <p><a href="index.html">Home</a> · <a href="snap.html">SNAP Guide</a> · <a href="folders.html">Folders Guide</a> · <a href="cleanup.html">Clean Up Guide</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+        <p><a href="index.html">Home</a> · <a href="snap.html">SNAP Guide</a> · <a href="folders.html">Folders Guide</a> · <a href="cleanup.html">Clean Up Guide</a> · <a href="stats.html">Stats Guide</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
         <p>© 2026 Digital Gemba, LLC. All rights reserved.</p>
     </footer>
 </body>
