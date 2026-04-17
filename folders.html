@@ -347,14 +347,14 @@
     </header>
 
     <nav class="tutorial-nav">
-        <a href="snap.html">SNAP</a>
+        <a href="snap.html">Capture</a>
         <a href="folders.html" class="active">Folders</a>
         <a href="cleanup.html">Clean Up</a>
         <a href="stats.html">Stats</a>
     </nav>
 
     <main class="container">
-        <p class="section-intro" style="margin-top: 2rem;">Photos arrive here automatically from the <a href="snap.html">SNAP tab</a>, and manually from the <a href="cleanup.html">Clean Up tab</a> when you move or copy Camera Roll photos. Each capture intent files photos to its default folder. Browse, filter, search, and act on everything you've captured.</p>
+        <p class="section-intro" style="margin-top: 2rem;">Photos arrive here automatically from the <a href="snap.html">Capture tab</a>, and manually from the <a href="cleanup.html">Clean Up tab</a> when you move or copy Camera Roll photos. Each capture intent files photos to its default folder. Browse, filter, search, and act on everything you've captured.</p>
 
         <!-- Smart Folders -->
         <h2>Smart Folders</h2>
@@ -362,7 +362,7 @@
 
         <div class="mock-ui">
             <div class="mock-tab-bar">
-                <div class="mock-tab">SNAP</div>
+                <div class="mock-tab">Capture</div>
                 <div class="mock-tab active">Folders</div>
                 <div class="mock-tab">Roll</div>
             </div>
@@ -383,10 +383,10 @@
             <div class="mock-folder-grid">
                 <div class="mock-folder-tile"><span class="emoji">&#128229;</span> Inbox</div>
                 <div class="mock-folder-tile"><span class="emoji">&#10003;</span> Tasks</div>
-                <div class="mock-folder-tile"><span class="emoji">&#128196;</span> Read</div>
+                <div class="mock-folder-tile"><span class="emoji">&#127760;</span> Translate</div>
                 <div class="mock-folder-tile"><span class="emoji">&#129534;</span> Receipt</div>
-                <div class="mock-folder-tile"><span class="emoji">&#127869;</span> Food</div>
-                <div class="mock-folder-tile"><span class="emoji">&#128269;</span> Identify</div>
+                <div class="mock-folder-tile"><span class="emoji">&#127869;</span> Calories</div>
+                <div class="mock-folder-tile"><span class="emoji">&#10067;</span> Identify</div>
             </div>
         </div>
 
@@ -404,8 +404,8 @@
                 <div><div class="name">Tasks</div><div class="desc">Actionable to-dos</div></div>
             </div>
             <div class="folder-item">
-                <span class="emoji">&#128196;</span>
-                <div><div class="name">Read / Translate</div><div class="desc">OCR / translation</div></div>
+                <span class="emoji">&#127760;</span>
+                <div><div class="name">Translate</div><div class="desc">Narrative translations</div></div>
             </div>
             <div class="folder-item">
                 <span class="emoji">&#129534;</span>
@@ -413,15 +413,15 @@
             </div>
             <div class="folder-item">
                 <span class="emoji">&#127869;</span>
-                <div><div class="name">Food</div><div class="desc">Meals with nutrition</div></div>
+                <div><div class="name">Calories</div><div class="desc">Meals with nutrition</div></div>
             </div>
             <div class="folder-item">
-                <span class="emoji">&#128269;</span>
+                <span class="emoji">&#10067;</span>
                 <div><div class="name">Identify</div><div class="desc">Item identification</div></div>
             </div>
             <div class="folder-item">
                 <span class="emoji">&#128300;</span>
-                <div><div class="name">Interpret</div><div class="desc">Test results, jargon</div></div>
+                <div><div class="name">Explain</div><div class="desc">Test results, jargon</div></div>
             </div>
             <div class="folder-item">
                 <span class="emoji">&#128202;</span>
@@ -429,7 +429,7 @@
             </div>
             <div class="folder-item">
                 <span class="emoji">&#128230;</span>
-                <div><div class="name">Reference</div><div class="desc">IDs, manuals, cards</div></div>
+                <div><div class="name">Essentials</div><div class="desc">IDs, manuals, cards</div></div>
             </div>
             <div class="folder-item">
                 <span class="emoji">&#128188;</span>
@@ -440,6 +440,10 @@
                 <div><div class="name">Evidence</div><div class="desc">Legal documentation</div></div>
             </div>
             <div class="folder-item">
+                <span class="emoji">&#127908;</span>
+                <div><div class="name">Audio</div><div class="desc">Recordings &amp; transcripts</div></div>
+            </div>
+            <div class="folder-item">
                 <span class="emoji">&#128451;</span>
                 <div><div class="name">Archive</div><div class="desc">Completed items</div></div>
             </div>
@@ -447,6 +451,44 @@
                 <span class="emoji">&#128465;</span>
                 <div><div class="name">Deleted</div><div class="desc">Recoverable trash</div></div>
             </div>
+        </div>
+
+        <!-- Folder List Views -->
+        <h2>Folder List Views</h2>
+        <p class="section-intro">Several folders offer a specialized list view alongside the standard photo grid. Toggle between grid and list with a toolbar button.</p>
+
+        <div class="feature-card">
+            <h3>Contacts — Alphabetical Directory</h3>
+            <p>Browse captured business cards as an alphabetical list showing name and company. Find the right contact without scrolling through thumbnails.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Receipts — Expense List</h3>
+            <p>See vendor, amount, and date for every receipt at a glance. Quickly scan recent purchases or find a specific transaction.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Identify (What is it?) — Triage List</h3>
+            <p>Each identified item shows its triage level and estimated value. Prioritize what needs attention without opening individual photos.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Essentials (IDs &amp; Docs) — Document List</h3>
+            <p>View document type, key dates, and ID numbers for each reference item. Find the right insurance card or warranty in seconds.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Slides — Event-Grouped View</h3>
+            <p>Slides are clustered by date and location into event groups, so a morning session and an afternoon session at the same conference appear as separate groups. Summarize any group with one tap.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Tasks — Checklist View</h3>
+            <p>View tasks as a checklist. Tap to mark as processed and archive completed items directly from the list.</p>
+        </div>
+
+        <div class="tip-callout">
+            <strong>Tip:</strong> List views show AI-extracted data when available. Run AI analysis on your photos for richer list view content.
         </div>
 
         <!-- Filters -->
@@ -493,8 +535,8 @@
         </div>
 
         <!-- Food Folder -->
-        <h2>The Food Folder</h2>
-        <p class="section-intro">The Food folder has special nutrition features.</p>
+        <h2>The Calories Folder</h2>
+        <p class="section-intro">The Calories folder has special nutrition features.</p>
 
         <div class="food-grid-wrapper">
             <div class="mock-nutrition-banner">
@@ -502,7 +544,7 @@
                 <div class="stat"><span class="number">186g</span> carbs today</div>
             </div>
             <div class="food-image-container">
-                <img src="food_grid.png" alt="Food folder showing 6 meals with calorie and carb overlays" loading="lazy">
+                <img src="food_grid.png" alt="Calories folder showing 6 meals with calorie and carb overlays" loading="lazy">
                 <div class="food-badge-overlay">
                     <div class="food-badge-cell"><div class="food-badge"><span>480 cal</span><span>62g</span></div></div>
                     <div class="food-badge-cell"><div class="food-badge"><span>320 cal</span><span>12g</span></div></div>
@@ -517,7 +559,7 @@
 
         <div class="feature-card">
             <h3>Daily nutrition banner</h3>
-            <p>A banner at the top of the Food folder shows your total calories and carbs for today. Updated as you capture meals throughout the day.</p>
+            <p>A banner at the top of the Calories folder shows your total calories and carbs for today. Updated as you capture meals throughout the day.</p>
         </div>
 
         <div class="feature-card">
@@ -527,7 +569,7 @@
 
         <!-- Slides Folder -->
         <h2>The Slides Folder</h2>
-        <p class="section-intro">The Slides folder has batch summarization and export features.</p>
+        <p class="section-intro">The Slides folder has event grouping, batch summarization, and export features.</p>
 
         <div class="feature-card">
             <h3>Summarize Slides</h3>
@@ -568,6 +610,25 @@
             <p>The camera remembers your zoom level for Slide captures. Set it once for the projector distance and every subsequent slide photo uses the same framing — no re-adjusting between shots.</p>
         </div>
 
+        <!-- Essentials Wallet -->
+        <h2>Essentials Wallet</h2>
+        <p class="section-intro">Pin your most important documents for instant access. Available in the Essentials folder.</p>
+
+        <div class="feature-card">
+            <h3>Quick-Access Slots</h3>
+            <p>Pin your IDs, insurance cards, and other essential documents to dedicated slots at the top of the Essentials folder. No scrolling, no searching — your essentials are always one tap away.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Capture Directly Into Essentials</h3>
+            <p>Take a photo of a new ID or card without leaving the Essentials folder. It goes straight into your essentials.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Auto-Scan Suggestions</h3>
+            <p>On first use, the app scans your existing Essentials photos and suggests documents to pin — driver's licenses, insurance cards, passports, and more. Organized by category with per-person grouping for families.</p>
+        </div>
+
         <!-- Show Archived -->
         <h2>Show Archived</h2>
 
@@ -585,7 +646,7 @@
         </div>
 
         <div class="tip-callout">
-            <strong>How do photos get here?</strong> Every photo captured on the <a href="snap.html">SNAP tab</a> auto-files to its intent's default folder. You can also import from your Camera Roll using the <a href="cleanup.html">Clean Up tab</a>.
+            <strong>How do photos get here?</strong> Every photo captured on the <a href="snap.html">Capture tab</a> auto-files to its intent's default folder. You can also import from your Camera Roll using the <a href="cleanup.html">Clean Up tab</a>.
         </div>
 
         <!-- CTA -->
@@ -602,7 +663,7 @@
     <footer>
         <nav>
             <a href="index.html">Home</a>
-            <a href="snap.html">SNAP Guide</a>
+            <a href="snap.html">Capture Guide</a>
             <a href="folders.html">Folders Guide</a>
             <a href="cleanup.html">Clean Up Guide</a>
             <a href="stats.html">Stats Guide</a>
