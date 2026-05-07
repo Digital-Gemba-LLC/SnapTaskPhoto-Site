@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Capture Tab - Unmuck Guide</title>
-    <meta name="description" content="Learn how the Capture tab works in Unmuck. 10 capture intents, on-device AI, and generative AI analysis. Capture with purpose — every photo knows where it belongs.">
+    <meta name="description" content="Learn how the Capture tab works in Unmuck. 10 capture intents, Record mode for audio, home screen widget, on-device AI, and generative AI analysis.">
     <meta property="og:title" content="The Capture Tab - Unmuck Guide">
-    <meta property="og:description" content="Learn how the Capture tab works in Unmuck. 10 capture intents, on-device AI, and generative AI analysis.">
+    <meta property="og:description" content="Learn how the Capture tab works in Unmuck. 10 capture intents, audio as a mode, a home screen widget, and on-device AI.">
     <meta property="og:url" content="https://unmuck.app/snap.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
@@ -356,7 +356,7 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Choose Your Intent</h3>
-                    <p>Tap what you're capturing: Receipt, Calories, Contact, or any of the 11 intents. This tells the app how to process and file it.</p>
+                    <p>Tap what you're capturing: Receipt, Calories, Contact, or any of the 10 intents. This tells the app how to process and file it.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
@@ -412,9 +412,12 @@
                 <div class="mock-intent-btn" style="background: #FFD60A; color: #333;">
                     <span class="emoji">&#128737;</span> Evidence
                 </div>
-                <div class="mock-intent-btn" style="background: #8B5CF6;">
-                    <span class="emoji">&#127908;</span> Audio
-                </div>
+            </div>
+            <!-- Record toggle is shown below the grid, not as a tile -->
+            <div style="display: flex; gap: 8px; margin-top: 12px; justify-content: center;">
+                <span style="background: #fff; border: 1px solid #ddd; border-radius: 14px; padding: 6px 12px; font-size: 0.7rem; font-weight: 600; color: #007AFF;">&#8634; Batch</span>
+                <span style="background: #FF3B30; color: #fff; border-radius: 14px; padding: 6px 12px; font-size: 0.7rem; font-weight: 600;">&#127908; Record</span>
+                <span style="background: #5856D6; color: #fff; border-radius: 14px; padding: 6px 12px; font-size: 0.7rem; font-weight: 600;">&#10024; Auto-AI</span>
             </div>
         </div>
 
@@ -423,8 +426,8 @@
         </div>
 
         <!-- 10 Capture Intents -->
-        <h2>11 Capture Intents</h2>
-        <p class="section-intro">Each intent determines what gets extracted, what AI analyzes, and which folder receives the photo.</p>
+        <h2>10 Capture Intents</h2>
+        <p class="section-intro">Each intent determines what gets extracted, what AI analyzes, and which folder receives the photo. Audio is a mode toggle, not an intent — record any of these as audio with the Record toggle.</p>
 
         <div class="intent-cards">
             <div class="intent-card">
@@ -607,28 +610,22 @@
                 </div>
             </div>
 
-            <div class="intent-card">
-                <div class="intent-card-header">
-                    <span class="emoji">&#127908;</span>
-                    <h3>Audio <span class="folder-tag">&#8594; Audio folder</span></h3>
-                </div>
-                <p>Record and transcribe on-device with WhisperKit. No internet needed. Summarize recordings per date section, same as Slides.</p>
-                <div class="intent-detail-boxes">
-                    <div class="intent-detail-box free">
-                        <div class="label">Free (On-Device)</div>
-                        On-device speech-to-text transcription via WhisperKit. Nothing leaves your phone.
-                    </div>
-                    <div class="intent-detail-box ai">
-                        <div class="label">With AI Credit</div>
-                        Summarize recordings into key takeaways. Include alongside slides for combined event summaries.
-                    </div>
-                </div>
-            </div>
+        </div>
+
+        <!-- Record Mode -->
+        <h2>Record: Audio As A Mode</h2>
+        <p class="section-intro">Audio is no longer a separate tile. Pick any intent, then toggle Record to capture it as audio instead of a photo.</p>
+
+        <div class="feature-card" style="background: #fff; border-radius: 12px; padding: 24px; border: 2px solid #e5e5e5;">
+            <h3 style="margin: 0 0 0.75rem 0; color: #FF3B30;"><span style="font-size: 1.2em;">&#127908;</span> Record an intent</h3>
+            <p style="margin: 0 0 0.75rem 0; color: #555;">A Record toggle sits next to Auto-AI and Batch. Flip it on, choose your intent, and the next capture is an audio recording — not a photo. Recordings are transcribed on-device with WhisperKit. Nothing leaves your phone for transcription.</p>
+            <p style="margin: 0 0 0.75rem 0; color: #555;">Recordings file to the Audio folder regardless of the chosen intent, but the original intent stays attached. Summarize a day of recordings the same way you summarize a day of slides.</p>
+            <p style="margin: 0; color: #555;"><strong>Why this changed:</strong> capturing a meeting as a Task or a class as a Slide is more useful than treating audio as its own bucket. The intent describes the situation; the mode describes how you captured it.</p>
         </div>
 
         <!-- Mode Toggles -->
         <h2>Mode Toggles</h2>
-        <p class="section-intro">Two toggles on the Capture screen customize your workflow.</p>
+        <p class="section-intro">Three toggles on the Capture screen customize your workflow.</p>
 
         <div class="toggle-section">
             <div class="toggle-card">
@@ -638,6 +635,10 @@
             <div class="toggle-card">
                 <h3>Batch Mode</h3>
                 <p>Keeps you in the camera after each capture for rapid-fire shooting. Great for snapping 10 slides in a row, or multiple receipts. Analyze them all later from the Folders tab.</p>
+            </div>
+            <div class="toggle-card" style="grid-column: 1 / -1;">
+                <h3>Record</h3>
+                <p>Turns the next capture into an audio recording instead of a photo. Works with any intent. Transcribed on-device with WhisperKit — no internet, no AI credits required for transcription itself.</p>
             </div>
         </div>
 
@@ -653,6 +654,17 @@
                 <h3>Zoom Memory</h3>
                 <p>The camera remembers your zoom level per capture intent. Set it once for the projector distance and every Slide photo uses the same framing.</p>
             </div>
+        </div>
+
+        <!-- Home Screen Widget -->
+        <h2 id="home-screen-widget">Home Screen Widget</h2>
+        <p class="section-intro">Skip the app launcher. Add an Unmuck widget to your home screen and tap straight into capture.</p>
+
+        <div class="feature-card" style="background: #fff; border-radius: 12px; padding: 24px; border: 2px solid #e5e5e5;">
+            <h3 style="margin: 0 0 0.75rem 0; color: #007AFF;"><span style="font-size: 1.2em;">&#128241;</span> One tap to capture</h3>
+            <p style="margin: 0 0 0.75rem 0; color: #555;">Each widget is configured for one intent and one mode. Pick "Receipt &middot; Photo" for the wallet, "Slide &middot; Audio" for conferences, "Calories &middot; Photo" for meals. Tap the widget — the camera opens with the intent already selected.</p>
+            <p style="margin: 0 0 0.75rem 0; color: #555;">Set up multiple widgets, one per workflow. Stack them or put them in a Smart Stack — your most-used capture path is always one tap away from the home screen.</p>
+            <p style="margin: 0; color: #555;"><strong>Audio mode</strong> launches into recording immediately. Useful when something interesting is being said and you don't want to lose seconds finding the right tile.</p>
         </div>
 
         <!-- Where Photos Go -->
