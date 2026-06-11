@@ -9,9 +9,15 @@
     <meta property="og:description" content="Get help with Unmuck. FAQs on capture modes, AI analysis, folders, Camera Roll cleanup, privacy, and pricing.">
     <meta property="og:url" content="https://unmuck.app/support.html">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://unmuck.app/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://unmuck.app/og-image.png">
     <link rel="canonical" href="https://unmuck.app/support.html">
     <meta name="apple-itunes-app" content="app-id=6757636900">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <style>
         * {
             box-sizing: border-box;
@@ -278,7 +284,7 @@
 
         <div class="faq-item">
             <h3>How do I capture photos with the app?</h3>
-            <p>Open the app and you'll see the Capture screen with 10 capture intents: Task, Read, Receipt, Food, Identify, Interpret, Slide, Reference, Contact, or Evidence. Tap what you're capturing, take the photo, and it goes directly to your iCloud Drive — never touching your Camera Roll. Photos auto-file to folders based on the intent you choose.</p>
+            <p>Open the app and you'll see the Capture screen with 13 capture intents: Task, Translate, Receipt, Calories, What is it?, Slide, IDs & Docs, Contact, Explain, Evidence, Bike Fit, Wardrobe, and Menu. Tap what you're capturing, take the photo, and it goes directly to your iCloud Drive — never touching your Camera Roll. Photos auto-file to folders based on the intent you choose. You can also toggle <strong>Record</strong> on any intent to capture audio instead, transcribed on-device.</p>
             <p>Every photo you capture is instantly processed by Apple's on-device AI — text is extracted, barcodes are scanned, and content is classified. All free, all private. For deeper analysis, tap Analyze to use generative AI (powered by Claude).</p>
         </div>
 
@@ -304,9 +310,9 @@
 
         <div class="faq-item">
             <h3>How do I process my photos?</h3>
-            <p>Photos land in folders based on the capture intent you chose — Receipt photos go to Receipt, Food photos go to Food, and so on. Open the Folders tab to browse all your folders. Tap any photo to open details where you can:</p>
+            <p>Photos land in folders based on the capture intent you chose — Receipt photos go to Receipt, Calories photos go to Calories, and so on. Open the Folders tab to browse all your folders. Tap any photo to open details where you can:</p>
             <ul>
-                <li><strong>Analyze:</strong> Run AI analysis (Task, Text, Receipt, Food, Identify, Interpret, Slide, Reference, Contact, or Evidence)</li>
+                <li><strong>Analyze:</strong> Run AI analysis (Task, Translate, Receipt, Calories, Identify, Explain, Slide, IDs & Docs, Contact, Evidence, Bike Fit, Wardrobe, or Menu)</li>
                 <li><strong>Share:</strong> Send to Reminders, Things 3, or other apps</li>
                 <li><strong>Folder:</strong> Move to a different folder</li>
                 <li><strong>Delete:</strong> Remove the photo</li>
@@ -340,7 +346,7 @@
 
         <div class="faq-item">
             <h3>What is Auto-AI?</h3>
-            <p>Auto-AI automatically runs AI analysis when you capture a photo. It's configured per capture intent — Food, Identify, Interpret, and Contact default to ON because AI adds the most value there. Other intents default to OFF so you control when credits are used. Toggle Auto-AI on the Capture screen; each intent remembers your preference independently. You can always analyze photos manually from the detail view.</p>
+            <p>Auto-AI automatically runs AI analysis when you capture a photo. It's configured per capture intent — Calories, What is it?, Explain, Contact, Translate, Bike Fit, Wardrobe, and Menu default to ON because AI adds the most value there. Task, Receipt, Slide, IDs & Docs, and Evidence default to OFF so you control when credits are used. Toggle Auto-AI on the Capture screen; each intent remembers your preference independently. You can always analyze photos manually from the detail view.</p>
         </div>
 
         <div class="faq-item">
@@ -365,7 +371,7 @@
 
         <div class="faq-item">
             <h3>What does the app do without AI credits?</h3>
-            <p>A lot. Apple's on-device AI processes every photo instantly for free: text recognition (OCR) extracts all visible text with no character limit, barcode and QR code scanning decodes any codes in the image, image classification auto-tags photos by content type, and for the Interpret intent, non-English text is automatically translated. All of this runs on your phone with no internet connection needed.</p>
+            <p>A lot. Apple's on-device AI processes every photo instantly for free: text recognition (OCR) extracts all visible text with no character limit, barcode and QR code scanning decodes any codes in the image, image classification auto-tags photos by content type, and for the Translate intent, non-English text is automatically translated. All of this runs on your phone with no internet connection needed.</p>
         </div>
 
         <div class="faq-item">
@@ -380,7 +386,7 @@
 
         <div class="faq-item">
             <h3>How does on-device translation work?</h3>
-            <p>When you use the Interpret intent and the text is in a foreign language, the app automatically translates it on-device. You'll see both the translation and the original text. No credits used. Want deeper context and explanation? Tap Analyze to use generative AI.</p>
+            <p>When you use the Translate intent and the text is in a foreign language, the app automatically translates it on-device. You'll see both the translation and the original text. No credits used. Want deeper context and explanation? Tap Analyze to use generative AI.</p>
         </div>
 
         <div class="faq-item">
@@ -419,9 +425,9 @@
                         <td class="col-ai"><span class="ai-plus">+</span> Actionable task summary with priority, next steps, and suggested due date.</td>
                     </tr>
                     <tr>
-                        <td>Read</td>
-                        <td class="col-ondevice">Full text extracted with no character limit. Barcodes/QR decoded.</td>
-                        <td class="col-ai"><span class="ai-plus">+</span> Structured summary — key information highlighted, organized by topic or section. Full text always preserved.</td>
+                        <td>Translate</td>
+                        <td class="col-ondevice">Full text extracted with no character limit. Foreign text auto-translated on-device. Barcodes/QR decoded.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Narrative translation with cultural context — what it says, what it means, and what a local would know. Full text always preserved.</td>
                     </tr>
                     <tr class="high-value">
                         <td>Receipt <span class="intent-star">&#9733; HIGH VALUE</span></td>
@@ -429,9 +435,9 @@
                         <td class="col-ai"><span class="ai-plus">+</span> Vendor name, date, total, tax, and line items structured and ready to file or expense.</td>
                     </tr>
                     <tr class="high-value">
-                        <td>Food <span class="intent-star">&#9733; HIGH VALUE</span></td>
-                        <td class="col-ondevice">Classified as food. Text extracted from menus or nutrition labels if present.</td>
-                        <td class="col-ai"><span class="ai-plus">+</span> Dish identification with estimated calories, carbs, protein, and fat. Ingredient and allergen notes.</td>
+                        <td>Calories <span class="intent-star">&#9733; HIGH VALUE</span></td>
+                        <td class="col-ondevice">Classified as food. Text extracted from nutrition labels if present.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Dish identification with estimated calories, carbs, and protein. Save frequent meals and re-log them with one tap — no credit needed.</td>
                     </tr>
                     <tr class="high-value">
                         <td>Identify <span class="intent-star">&#9733; HIGH VALUE</span></td>
@@ -439,9 +445,9 @@
                         <td class="col-ai"><span class="ai-plus">+</span> Specific identification — make, model, species, variety. Value estimate where applicable.</td>
                     </tr>
                     <tr>
-                        <td>Interpret</td>
-                        <td class="col-ondevice">Full text extracted. Foreign text auto-translated on-device. Barcodes/QR decoded.</td>
-                        <td class="col-ai"><span class="ai-plus">+</span> Plain-language explanation with context. Cultural notes for menus. What it means, why it matters, what to do.</td>
+                        <td>Explain</td>
+                        <td class="col-ondevice">Full text extracted. Barcodes/QR decoded.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Plain-language explanation with context — test results, lab work, jargon. What it means, why it matters, what to do.</td>
                     </tr>
                     <tr>
                         <td>Slide</td>
@@ -449,7 +455,7 @@
                         <td class="col-ai"><span class="ai-plus">+</span> Key takeaways and action items highlighted. Full slide text always preserved.</td>
                     </tr>
                     <tr>
-                        <td>Reference</td>
+                        <td>IDs &amp; Docs</td>
                         <td class="col-ondevice">Full text extracted. Barcodes/QR decoded (serial numbers, product codes). Content classified.</td>
                         <td class="col-ai"><span class="ai-plus">+</span> Structured details — model, specs, expiration dates, policy numbers, key terms organized. Full text always preserved.</td>
                     </tr>
@@ -462,6 +468,21 @@
                         <td>Evidence <span class="intent-star">&#9733; HIGH VALUE</span></td>
                         <td class="col-ondevice">Full text extracted. Content classified. Location and timestamp from capture.</td>
                         <td class="col-ai"><span class="ai-plus">+</span> Detailed condition description — what's shown, what's damaged, environmental context. Documentation-grade summary.</td>
+                    </tr>
+                    <tr>
+                        <td>Bike Fit</td>
+                        <td class="col-ondevice">Photo captured and classified.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Riding-position analysis — saddle height, reach, and posture observations with suggested adjustments.</td>
+                    </tr>
+                    <tr>
+                        <td>Wardrobe</td>
+                        <td class="col-ondevice">Photo captured and classified.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Each clothing item tagged by category, color, season, and formality. Build outfits, check an outfit, find what goes with any piece, track what you wore.</td>
+                    </tr>
+                    <tr>
+                        <td>Menu</td>
+                        <td class="col-ondevice">Full menu text extracted.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Low-carb and keto-friendly picks from the menu with estimated macros.</td>
                     </tr>
                 </tbody>
             </table>
@@ -483,12 +504,12 @@
 
         <div class="faq-item">
             <h3>How do folders work?</h3>
-            <p>Photos auto-file to folders based on your capture mode: Task photos go to Tasks, Food photos go to Food, etc. You can also manually move photos between folders. The Folders tab shows all your folders so you can browse everything.</p>
+            <p>Photos auto-file to folders based on your capture mode: Task photos go to Tasks, Calories photos go to Calories, etc. You can also manually move photos between folders. The Folders tab shows all your folders so you can browse everything.</p>
         </div>
 
         <div class="faq-item">
             <h3>What folders are available?</h3>
-            <p>There are 10 default folders: <strong>Tasks</strong> (actionable to-dos), <strong>Read</strong> (OCR/text extraction results), <strong>Receipt</strong> (expenses, returns, purchases), <strong>Food</strong> (meal tracking), <strong>Identify</strong> (item identification results), <strong>Interpret</strong> (test results and jargon explained), <strong>Slides</strong> (presentations and whiteboards), <strong>Reference</strong> (IDs, cards, permanent lookup items), <strong>Contacts</strong> (business cards), and <strong>Evidence</strong> (legal documentation and dispute records). Plus <strong>Inbox</strong> for Share Extension imports and uncategorized photos. You can also create custom folders in the Files app (iCloud Drive → Unmuck) and they'll appear automatically in the app.</p>
+            <p>Each capture intent has a matching folder: <strong>Tasks</strong> (actionable to-dos), <strong>Translate</strong> (foreign text and translations), <strong>Receipt</strong> (expenses, returns, purchases), <strong>Calories</strong> (meal tracking), <strong>Identify</strong> (item identification results), <strong>Explain</strong> (test results and jargon explained), <strong>Slides</strong> (presentations and whiteboards), <strong>Essentials</strong> (IDs, cards, permanent lookup items), <strong>Contacts</strong> (business cards), <strong>Evidence</strong> (legal documentation and dispute records), <strong>Bike Fit</strong>, <strong>Wardrobe</strong>, and <strong>Menu</strong>. Plus <strong>Audio</strong> for recordings and <strong>Inbox</strong> for Share Extension imports and uncategorized photos. You can also create custom folders in the Files app (iCloud Drive → Unmuck) and they'll appear automatically in the app.</p>
         </div>
 
         <div class="faq-item">
@@ -497,8 +518,8 @@
         </div>
 
         <div class="faq-item">
-            <h3>What's special about the Food folder?</h3>
-            <p>The Food folder shows a daily totals banner with your total calories, carbs, and meal count. Each photo thumbnail displays its calorie and carb count as an overlay so you can see nutrition at a glance. These totals respect any active time or location filters.</p>
+            <h3>What's special about the Calories folder?</h3>
+            <p>The Calories folder shows a daily totals banner with your total calories, carbs, and protein. Each photo thumbnail displays its nutrition as an overlay so you can see it at a glance. These totals respect any active time or location filters. You can also save meals you eat often and log them again with one tap — no AI credit needed.</p>
         </div>
 
         <div class="faq-item">
@@ -585,7 +606,7 @@
 
         <div class="faq-item">
             <h3>Can I use AI on Camera Roll photos without importing them?</h3>
-            <p>Yes. Open any photo in Clean Up, tap the <strong>AI</strong> button, and choose an analysis mode (Food, Receipt, Identify, Read, etc.). Results appear in a sheet. This is ephemeral — dismiss the sheet and results are gone. Use <strong>Copy All</strong> to save the text. Each analysis uses one AI credit.</p>
+            <p>Yes. Open any photo in Clean Up, tap the <strong>AI</strong> button, and choose an analysis mode (Calories, Receipt, Identify, Translate, etc.). Results appear in a sheet. This is ephemeral — dismiss the sheet and results are gone. Use <strong>Copy All</strong> to save the text. Each analysis uses one AI credit.</p>
         </div>
 
         <div class="faq-item">
@@ -760,36 +781,42 @@
         </div>
 
         <div class="faq-item">
-            <h3>The 10 capture folders explained</h3>
+            <h3>The capture folders explained</h3>
             <ul>
                 <li><strong>Tasks</strong> — Photos with actionable to-dos</li>
-                <li><strong>Read</strong> — OCR/text extraction results</li>
+                <li><strong>Translate</strong> — Foreign text with on-device translations</li>
                 <li><strong>Receipt</strong> — Expenses, returns, purchases</li>
-                <li><strong>Food</strong> — Meals with carb/calorie estimates</li>
+                <li><strong>Calories</strong> — Meals with calorie/carb/protein estimates</li>
                 <li><strong>Identify</strong> — Item identification results</li>
-                <li><strong>Interpret</strong> — Test results and scientific jargon explained</li>
+                <li><strong>Explain</strong> — Test results and scientific jargon explained</li>
                 <li><strong>Slides</strong> — Presentation slides and whiteboard captures</li>
-                <li><strong>Reference</strong> — IDs, cards, passwords — permanent lookup items</li>
+                <li><strong>Essentials</strong> — IDs, cards, warranties — permanent lookup items</li>
                 <li><strong>Contacts</strong> — Business cards and contact information</li>
                 <li><strong>Evidence</strong> — Legal documentation, damage, incidents, dispute records</li>
+                <li><strong>Bike Fit</strong> — Riding-position photos and analysis</li>
+                <li><strong>Wardrobe</strong> — Clothing items with outfit intelligence</li>
+                <li><strong>Menu</strong> — Restaurant menus with low-carb picks</li>
             </ul>
-            <p>Plus system folders: <strong>Inbox</strong> (Share Extension imports and uncategorized photos), <strong>Archive</strong> (completed items), and <strong>Deleted</strong> (recoverable trash).</p>
+            <p>Plus system folders: <strong>Inbox</strong> (Share Extension imports and uncategorized photos), <strong>Audio</strong> (recordings and transcripts), <strong>Archive</strong> (completed items), and <strong>Deleted</strong> (recoverable trash).</p>
         </div>
 
         <div class="faq-item">
-            <h3>The 10 capture options</h3>
-            <p>When you tap Capture, you choose what you're capturing. This determines where it's filed and how it's analyzed. Auto-AI defaults to ON for Food, Identify, Interpret, and Contact; OFF for others. Toggle per intent on the Capture screen:</p>
+            <h3>The 13 capture intents</h3>
+            <p>When you tap Capture, you choose what you're capturing. This determines where it's filed and how it's analyzed. Auto-AI defaults to ON for Calories, What is it?, Explain, Contact, Translate, Bike Fit, Wardrobe, and Menu; OFF for others. Toggle per intent on the Capture screen:</p>
             <ul>
                 <li><strong>Task</strong> — Infers actionable task titles → files to Tasks</li>
-                <li><strong>Read</strong> — Extracts all visible text (OCR) → files to Read</li>
+                <li><strong>Translate</strong> — Extracts and translates foreign text → files to Translate</li>
                 <li><strong>Receipt</strong> — Extracts vendor, date, total → files to Receipt</li>
-                <li><strong>Food</strong> — Identifies meals, estimates carbs/calories → files to Food</li>
-                <li><strong>Identify</strong> — Identifies unknown items and estimated value → files to Identify</li>
-                <li><strong>Interpret</strong> — Explains test results, jargon, or translates foreign text to your preferred language → files to Interpret</li>
+                <li><strong>Calories</strong> — Identifies meals, estimates calories/carbs/protein → files to Calories</li>
+                <li><strong>What is it?</strong> — Identifies unknown items and estimated value → files to Identify</li>
+                <li><strong>Explain</strong> — Explains test results and jargon in plain language → files to Explain</li>
                 <li><strong>Slide</strong> — Summarizes key points from presentations → files to Slides</li>
-                <li><strong>Reference</strong> — Extracts key details from documents/cards → files to Reference</li>
+                <li><strong>IDs &amp; Docs</strong> — Extracts key details from documents/cards → files to Essentials</li>
                 <li><strong>Contact</strong> — Extracts contact info from business cards → files to Contacts</li>
                 <li><strong>Evidence</strong> — Documents incidents, damage, conditions for legal or insurance purposes → files to Evidence</li>
+                <li><strong>Bike Fit</strong> — Analyzes riding position → files to Bike Fit</li>
+                <li><strong>Wardrobe</strong> — Tags clothing for outfit building → files to Wardrobe</li>
+                <li><strong>Menu</strong> — Suggests low-carb picks from restaurant menus → files to Menu</li>
             </ul>
         </div>
     </div>
@@ -802,14 +829,17 @@
             <h3>What are the different AI analysis modes?</h3>
             <ul>
                 <li><strong>Task:</strong> Infers actionable task titles from the photo. Best for "what do I need to do?" situations.</li>
-                <li><strong>Text:</strong> Extracts all visible text verbatim with no character limit. Best for documents and receipts.</li>
+                <li><strong>Translate:</strong> Narrative translation of foreign text with cultural context.</li>
                 <li><strong>Receipt:</strong> Extracts vendor, date, total amount, and key line items from receipts and invoices.</li>
-                <li><strong>Food:</strong> Identifies meals and estimates carbs and calories for tracking.</li>
+                <li><strong>Calories:</strong> Identifies meals and estimates calories, carbs, and protein for tracking.</li>
                 <li><strong>Identify:</strong> Identifies unknown items and estimated value — vehicles, electronics, art, antiques, plants, pets, collectibles.</li>
-                <li><strong>Interpret:</strong> Explains test results and scientific jargon in plain language. Translates foreign text to your preferred language. Great for blood work, soil tests, lab reports, menus, and any document with specialized terminology.</li>
+                <li><strong>Explain:</strong> Explains test results and scientific jargon in plain language. Great for blood work, soil tests, lab reports, and any document with specialized terminology.</li>
                 <li><strong>Slide:</strong> Summarizes conference slides and presentations into key takeaways.</li>
-                <li><strong>Reference:</strong> Extracts key information from documents and cards — names, numbers, dates, expiration, issuers, and other details for easy lookup.</li>
+                <li><strong>IDs &amp; Docs:</strong> Extracts key information from documents and cards — names, numbers, dates, expiration, issuers, and other details for easy lookup.</li>
                 <li><strong>Evidence:</strong> Documents and describes incidents, damage, or conditions with full text extraction — for legal, insurance, or dispute purposes.</li>
+                <li><strong>Bike Fit:</strong> Analyzes saddle height, reach, and posture from a riding photo.</li>
+                <li><strong>Wardrobe:</strong> Tags clothing items and powers outfit suggestions.</li>
+                <li><strong>Menu:</strong> Picks low-carb and keto-friendly options from a restaurant menu with estimated macros.</li>
             </ul>
         </div>
 
@@ -826,8 +856,8 @@
         </div>
 
         <div class="faq-item">
-            <h3>What can Interpret mode explain?</h3>
-            <p>Any document with specialized terminology: blood work and lab panels, soil and water quality tests, genetic/DNA reports, veterinary results, automotive diagnostics, home inspection reports, academic evaluations, foreign menus, and more. Results are explained in plain language with anything outside normal ranges highlighted. Foreign text is translated to your preferred language on-device before AI interpretation. Always consult a qualified professional before acting on any interpretation.</p>
+            <h3>What can Explain mode explain?</h3>
+            <p>Any document with specialized terminology: blood work and lab panels, soil and water quality tests, genetic/DNA reports, veterinary results, automotive diagnostics, home inspection reports, academic evaluations, and more. Results are explained in plain language with anything outside normal ranges highlighted. Always consult a qualified professional before acting on any interpretation.</p>
         </div>
 
         <div class="faq-item">
@@ -837,7 +867,7 @@
                 <li><strong>Full text recognition (OCR)</strong> with no character limit</li>
                 <li><strong>Barcode and QR code scanning</strong> — decoded content saved with the photo</li>
                 <li><strong>Automatic classification and tagging</strong> — searchable labels for photo content</li>
-                <li><strong>Foreign text translation</strong> for the Interpret capture mode</li>
+                <li><strong>Foreign text translation</strong> for the Translate capture mode</li>
                 <li><strong>Document edge detection</strong> for one-tap crop</li>
             </ul>
             <p>These are all Apple on-device AI features — distinct from the generative AI analysis which uses credits. On-device AI does the extraction. Generative AI adds interpretation and understanding.</p>
@@ -870,7 +900,7 @@
 
         <div class="faq-item">
             <h3>How accurate is AI analysis?</h3>
-            <p><strong>AI analyses are often wildly inaccurate.</strong> Verify everything before acting. Food estimates, item valuations, and other analyses are for entertainment only — not for medical, dietary, or financial decisions. When accuracy matters, consult a qualified professional.</p>
+            <p><strong>AI estimates can be wrong — always verify before acting.</strong> Calorie estimates, item valuations, and explanations are informational, not a substitute for professional advice. Don't rely on them for medical, dietary, or financial decisions; when accuracy matters, consult a qualified professional.</p>
         </div>
     </div>
 
@@ -921,7 +951,6 @@
     </div>
 
     <h2>App Information</h2>
-    <p><strong>Current Version:</strong> 1.14</p>
     <p><strong>Requires:</strong> iOS 18.0 or later</p>
     <p><strong>Developer:</strong> Digital Gemba, LLC</p>
 

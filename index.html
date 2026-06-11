@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unmuck - Keep the Muck Out of Memories</title>
-    <meta name="description" content="Photo intelligence for the real world. Unmuck captures receipts, serial numbers, menus, business cards — then recognizes, translates, and organizes them. On-device AI built in. Generative AI on demand.">
+    <meta name="description" content="A separate camera for task photos. Unmuck captures receipts, meals, and documents, reads them with AI, and keeps your Camera Roll memories-only.">
     <meta property="og:title" content="Unmuck - Keep the Muck Out of Memories">
-    <meta property="og:description" content="Photo intelligence for the real world. Unmuck captures receipts, serial numbers, menus, business cards — then recognizes, translates, and organizes them. On-device AI built in. Generative AI on demand.">
+    <meta property="og:description" content="A separate camera for task photos. Unmuck captures receipts, meals, and documents, reads them with AI, and keeps your Camera Roll memories-only.">
     <meta property="og:url" content="https://unmuck.app/">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://unmuck.app/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://unmuck.app/og-image.png">
     <link rel="canonical" href="https://unmuck.app/">
     <meta name="apple-itunes-app" content="app-id=6757636900">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -152,6 +158,17 @@
         }
         .how-it-works h2 {
             margin-top: 0;
+        }
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 650px) {
+            .two-col-grid {
+                grid-template-columns: 1fr;
+            }
         }
         .steps {
             display: grid;
@@ -428,7 +445,7 @@
         .ai-generated-note {
             text-align: center;
             font-size: 0.75rem;
-            color: #bbb;
+            color: #767676;
             font-style: italic;
             margin-top: 4px;
         }
@@ -462,94 +479,99 @@
     <header class="hero">
         <p style="font-size: 1.1rem; font-weight: 600; letter-spacing: 0.05em; margin: 0 0 0.25rem 0; opacity: 0.9;">Unmuck</p>
         <h1>Keep the Muck Out of Memories™</h1>
-        <p style="font-size: 1.15rem; font-style: italic; margin: 0 0 0.75rem 0; opacity: 0.9; letter-spacing: 0.02em;">Photo Intelligence for the Real World</p>
-        <p class="subtitle">Capture it. Recognize it. Understand it. Act on it.</p>
+        <p class="subtitle">A separate camera for receipts, meals, slides, and serial numbers — with AI that reads them. Your Camera Roll stays memories-only.</p>
 
-        <a href="https://apps.apple.com/us/app/snaptaskphoto/id6757636900" class="app-store-badge">
+        <a href="https://apps.apple.com/us/app/unmuck/id6757636900" class="app-store-badge">
             <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
         </a>
     </header>
 
     <main class="container">
-        <h2>13 problems. One app. Zero clutter.</h2>
+        <h2>14 problems. One app. Zero clutter.</h2>
         <p class="section-intro">Ever tried to remember where you saved that receipt? Or squint at a serial number? Here's what changes.</p>
 
         <div class="pain-points-grid">
             <div class="pain-card">
-                <span class="icon">🧾</span>
+                <span class="icon" aria-hidden="true">🧾</span>
                 <h3>Receipts everywhere</h3>
                 <p class="solution">Capture, <strong>extract vendor and total,</strong> file by folder. Find them in seconds, not minutes.</p>
             </div>
 
             <div class="pain-card">
-                <span class="icon">🔍</span>
+                <span class="icon" aria-hidden="true">🔍</span>
                 <h3>Tiny serial numbers and barcodes</h3>
                 <p class="solution"><strong>AI reads model numbers, specs, warranty info.</strong> Barcodes and QR codes scanned automatically. No squinting. No retyping.</p>
             </div>
 
             <div class="pain-card">
-                <span class="icon">❓</span>
+                <span class="icon" aria-hidden="true">❓</span>
                 <h3>"What is this thing?"</h3>
                 <p class="solution">Snap anything. <strong>AI identifies it and estimates value.</strong> Vehicles, electronics, art, plants, pets.</p>
             </div>
 
             <div class="pain-card">
-                <span class="icon">🍽️</span>
+                <span class="icon" aria-hidden="true">🍽️</span>
                 <h3>Tracking calories, carbs, and protein</h3>
                 <p class="solution">Snap your meal → <strong>instant nutrition breakdown.</strong> No manual entry. No endless scrolling through food databases. Daily totals + per-meal log inside Stats.</p>
             </div>
 
             <div class="pain-card">
-                <span class="icon">🌍</span>
+                <span class="icon" aria-hidden="true">🌍</span>
                 <h3>"I can't read this"</h3>
                 <p class="solution">Snap signs, menus, labels, instructions in any language. <strong>Translated with narrative context</strong> — foreign menus explained with dish descriptions, signs with cultural meaning, documents with practical notes.</p>
             </div>
 
             <div class="pain-card">
-                <span class="icon">💳</span>
+                <span class="icon" aria-hidden="true">💳</span>
                 <h3>Business cards pile up</h3>
                 <p class="solution">Snap → <strong>AI extracts contact</strong> → Share to Contacts. Done. Browse all your contacts in an <strong>alphabetical list view</strong> like an address book.</p>
             </div>
 
             <div class="pain-card">
-                <span class="icon">🔬</span>
+                <span class="icon" aria-hidden="true">🔬</span>
                 <h3>Can't read test results</h3>
                 <p class="solution">Snap lab work, soil tests, water reports. <strong>AI explains jargon</strong> and translates to plain language.</p>
             </div>
 
             <div class="pain-card">
-                <span class="icon">📊</span>
+                <span class="icon" aria-hidden="true">📊</span>
                 <h3>Conference slides fly by</h3>
                 <p class="solution">Capture slides → <strong>Deep Summary reads the actual images</strong> — charts, tables, and diagrams that OCR misses. Or Quick Summary from text alone. Include same-day audio recordings automatically. <strong>Event view</strong> groups slides by conference.</p>
             </div>
 
             <!-- Track your dinosaur collection with the Fossils folder — catalog bones, teeth, and amber by era and excavation site -->
             <div class="pain-card">
-                <span class="icon">📦</span>
+                <span class="icon" aria-hidden="true">📦</span>
                 <h3>Reference docs scattered</h3>
                 <p class="solution"><strong>One place</strong> for manuals, warranties, IDs, insurance cards, policies. Pin essentials to quick-access slots with the <strong>Essentials Wallet.</strong></p>
             </div>
 
             <div class="pain-card">
-                <span class="icon">🛡️</span>
+                <span class="icon" aria-hidden="true">🛡️</span>
                 <h3>Need proof for a dispute?</h3>
                 <p class="solution">Snap damage, incidents, conditions. <strong>AI describes and timestamps everything</strong> for insurance claims and legal disputes.</p>
             </div>
 
             <div class="pain-card">
-                <span class="icon">📱</span>
+                <span class="icon" aria-hidden="true">📱</span>
                 <h3>Camera Roll is a mess</h3>
                 <p class="solution">Task photos buried in memories. <strong>Filter, sort, batch-select, and triage.</strong> Move the muck out. Keep the memories.</p>
             </div>
 
             <div class="pain-card">
-                <span class="icon">👔</span>
+                <span class="icon" aria-hidden="true">👔</span>
                 <h3>"What should I wear?"</h3>
                 <p class="solution">Photograph your clothes. AI identifies each item by color, category, season, and formality. <strong>Build Me an Outfit</strong> generates weather-aware suggestions. Check what pairs with what. Save outfits and track what you wore.</p>
             </div>
 
             <div class="pain-card">
-                <span class="icon">📸</span>
+                <span class="icon" aria-hidden="true">🍴</span>
+                <h3>"What can I eat here?"</h3>
+                <p class="solution">Snap the restaurant menu. <strong>AI picks the low-carb and keto-friendly options</strong> with estimated macros — before the server comes back.</p>
+            </div>
+
+            <div class="pain-card">
+                <span class="icon" aria-hidden="true">📸</span>
                 <h3>5 shots of the same thing</h3>
                 <p class="solution">Select the duplicates, tap <strong>Best — AI picks the sharpest shot.</strong> Delete the rest in one tap. Two taps, done.</p>
             </div>
@@ -572,7 +594,7 @@
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>Generative AI Insights</h3>
-                    <p>Auto-AI runs instantly for Calories, What is it?, Explain, Translate, and Contact — the intents where it matters most. For everything else, tap Analyze when you want deeper insight. Each intent remembers your preference. One credit per analysis.</p>
+                    <p>Auto-AI runs instantly for Calories, What is it?, Explain, Translate, Contact, Bike Fit, Wardrobe, and Menu — the intents where it matters most. For everything else, tap Analyze when you want deeper insight. Each intent remembers your preference. One credit per analysis.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
@@ -584,7 +606,7 @@
 
         <div class="how-it-works">
             <h2>Two Layers of Photo Intelligence</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+            <div class="two-col-grid">
                 <div>
                     <h3 style="color: #007AFF; margin-top: 0;">On-Device AI — Free. Instant. Private.</h3>
                     <ul style="color: #555; padding-left: 1.2rem;">
@@ -615,7 +637,7 @@
         </div>
 
         <div class="privacy-callout">
-            <span class="icon">🔒</span>
+            <span class="icon" aria-hidden="true">🔒</span>
             <h2>Your Data Stays Yours</h2>
             <p><strong>Photos stored in your iCloud Drive.</strong> We never see them. Ever.</p>
             <p><strong>On-device text recognition, translation, barcode scanning, and image classification.</strong> All run entirely on your phone. Nothing leaves your device.</p>
@@ -623,7 +645,7 @@
         </div>
 
         <div class="ai-disclaimer">
-            <strong>⚠️ AI Disclaimer:</strong> AI analyses are often wildly inaccurate. Verify everything before acting on it. Not suitable for medical, dietary, or financial decisions.
+            <strong>⚠️ AI Disclaimer:</strong> AI estimates can be wrong — always verify before acting. Not a substitute for medical, dietary, or financial advice.
         </div>
 
         <h2>See It In Action</h2>
@@ -647,6 +669,7 @@
                             <div class="mock-intent-sm" style="background: #FFD60A; color: #333;"><span class="emoji">&#128737;</span> Evidence</div>
                             <div class="mock-intent-sm" style="background: #8E8E93;"><span class="emoji">&#128085;</span> Wardrobe</div>
                             <div class="mock-intent-sm" style="background: #30D158;"><span class="emoji">&#128690;</span> Bike Fit</div>
+                            <div class="mock-intent-sm" style="background: #FF9F0A;"><span class="emoji">&#127860;</span> Menu</div>
                         </div>
                     </div>
                 </div>
@@ -702,7 +725,7 @@
             <div class="showcase-split reverse">
                 <div class="showcase-visual">
                     <div class="food-showcase-wrap">
-                        <img src="food_grid.png" alt="Food folder showing meals with calorie and carb overlays" loading="lazy">
+                        <img src="food_grid.webp" alt="Food folder showing meals with calorie and carb overlays" loading="lazy">
                         <div class="food-overlay-grid">
                             <div class="food-overlay-cell"><div class="food-overlay-badge"><span>480 cal</span><span>62g</span></div></div>
                             <div class="food-overlay-cell"><div class="food-overlay-badge"><span>320 cal</span><span>12g</span></div></div>
@@ -729,11 +752,11 @@
                 <div class="showcase-visual">
                     <div class="best-photo-examples">
                         <figure style="margin: 0;">
-                            <img src="focus_example.png" alt="AI picks the sharpest photo from similar shots" loading="lazy">
+                            <img src="focus_example.webp" alt="AI picks the sharpest photo from similar shots" loading="lazy">
                             <figcaption>Picks the sharp one</figcaption>
                         </figure>
                         <figure style="margin: 0;">
-                            <img src="blink_example.png" alt="AI picks the photo where everyone's eyes are open" loading="lazy">
+                            <img src="blink_example.webp" alt="AI picks the photo where everyone's eyes are open" loading="lazy">
                             <figcaption>Picks eyes-open</figcaption>
                         </figure>
                     </div>
@@ -759,7 +782,7 @@
         <div class="showcase">
             <div class="showcase-split reverse">
                 <div class="showcase-visual">
-                    <img src="camera_roll.png" alt="Camera Roll grid ready for triage" loading="lazy" style="max-width: 280px; border-radius: 12px; border: 1px solid #e5e5e5;">
+                    <img src="camera_roll.webp" alt="Camera Roll grid ready for triage" loading="lazy" style="max-width: 280px; border-radius: 12px; border: 1px solid #e5e5e5;">
                     <p class="ai-generated-note">Example photos are AI-generated</p>
                 </div>
                 <div class="showcase-text">
@@ -795,7 +818,7 @@
         <div class="how-it-works">
             <h2>Share and Act</h2>
             <p class="section-intro" style="margin-top: 0;">Every photo has a deep link. Share it anywhere — the link opens the photo in the app, in whatever folder it lives in.</p>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
+            <div class="two-col-grid" style="margin-top: 1.5rem;">
                 <div>
                     <h3 style="color: #007AFF; margin-top: 0;">Deep Links That Work</h3>
                     <p style="color: #555;">Share a photo to Reminders, Notes, or Messages and the link opens that specific photo in Unmuck — no matter which folder it's in. Not limited to Inbox.</p>
@@ -826,7 +849,7 @@
         <div class="cta">
             <h2>Ready to Get Things Done?</h2>
             <p><strong>Requires iOS 18.0 or later.</strong></p>
-            <a href="https://apps.apple.com/us/app/snaptaskphoto/id6757636900" class="app-store-badge">
+            <a href="https://apps.apple.com/us/app/unmuck/id6757636900" class="app-store-badge">
                 <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
             </a>
             <p style="margin-top: 1.5rem; color: #555; font-style: italic; font-size: 0.95rem;">Photo intelligence. Always on. Always private. Always yours.</p>
