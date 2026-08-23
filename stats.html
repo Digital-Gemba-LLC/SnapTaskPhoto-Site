@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Stats Tab - UnMuck Guide</title>
-    <meta name="description" content="Learn how the Stats tab works in Unmuck. See when, where, and how you shoot with interactive charts, heatmaps, and lifetime activity metrics. All on-device, no AI credits needed.">
+    <meta name="description" content="Learn how the Stats tab works in Unmuck. See when, where, and how you shoot with interactive charts, heatmaps, and lifetime activity metrics, plus your nutrition history. All on-device, no AI credits needed.">
     <meta property="og:title" content="The Stats Tab - UnMuck Guide">
     <meta property="og:description" content="Visual analytics for your Camera Roll. Charts, heatmaps, and lifetime metrics — all on-device.">
     <meta property="og:url" content="https://unmuck.app/stats.html">
@@ -57,6 +57,7 @@
         .tutorial-nav {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 0;
             background: #fff;
             border-bottom: 1px solid #e5e5e5;
@@ -314,6 +315,7 @@
         <a href="folders.html">Folders</a>
         <a href="cleanup.html">Clean Up</a>
         <a href="stats.html" class="active">Stats</a>
+        <a href="calories.html">Calories</a>
     </nav>
 
     <main class="container">
@@ -409,27 +411,33 @@
             </div>
         </div>
 
-        <!-- Calorie Log -->
-        <h2>Calorie Log</h2>
-        <p class="section-intro">A nutrition history of every meal you've captured to the Calories folder, surfaced inside Stats.</p>
+        <!-- Nutrition -->
+        <h2 id="nutrition">Nutrition</h2>
+        <p class="section-intro">Your meal history from the Calories folder, surfaced inside Stats. The <a href="calories.html">calorie tracking guide</a> covers the full loop.</p>
 
         <div class="feature-card">
-            <h3>Daily totals at the top</h3>
-            <p>The header shows today's totals — calories, carbs, and protein — at a glance. Browse back day-by-day to see trends or spot the day you were over.</p>
+            <h3>7-day strip</h3>
+            <p>A tile at the top of the section shows three sparklines for the last week of calories, carbs, and protein. Tap it to open the Food Log.</p>
         </div>
 
         <div class="feature-card">
-            <h3>Per-meal breakdown</h3>
-            <p>Each row of the log is one meal: thumbnail, time of day, dish description, and the cal / carb / protein columns. No icons cluttering the row — just the numbers, sorted by capture time. Tap a meal to jump to its photo and edit the values if the AI estimate was off.</p>
+            <h3>Food Log: trends and daily totals</h3>
+            <p>The Food Log opens on three full-width trend charts (calories, carbs, protein) with a 7 / 14 / 30-day picker and a dashed average line. Below them, each day is a section with its totals and one row per meal: thumbnail, time of day, dish description, and the cal / carb / protein columns, sorted by capture time.</p>
+            <p>With a calories-burned source enabled (WHOOP or Apple Health), each day also shows a Burned row and the calories chart adds a dashed green burned series with today's net in its header.</p>
         </div>
 
         <div class="feature-card">
             <h3>Editable in place</h3>
-            <p>Tap any meal to open the photo detail view, where calories, carbs, and protein are all editable. Use the follow-up chat to refine the AI's estimate — corrections re-run the analyzer and the daily totals update automatically.</p>
+            <p>Tap any meal to open the photo detail view, where calories, carbs, and protein are all editable. Use the follow-up chat to refine the AI's estimate: corrections re-run the analyzer and the daily totals update automatically.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Calories vs Carbs</h3>
+            <p>A scatter plot of complete days on a calories-versus-carbs grid. See whether your high-calorie days are also your high-carb days.</p>
         </div>
 
         <div class="tip-callout">
-            <strong>Where it lives:</strong> The Calorie Log is a section inside the Stats tab, right next to Lifetime Activity. You don't need a separate diet app — your meal photos and your nutrition history are in the same place.
+            <strong>Where it lives:</strong> The Nutrition section sits inside the Stats tab, right next to Lifetime Activity. The same Food Log is reachable from Settings and from the Calories folder banner. You don't need a separate diet app.
         </div>
 
         <!-- Charts Section -->
@@ -640,6 +648,7 @@
             <a href="folders.html">Folders Guide</a>
             <a href="cleanup.html">Clean Up Guide</a>
             <a href="stats.html">Stats Guide</a>
+            <a href="calories.html">Calorie Tracking</a>
             <a href="support.html">Support</a>
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>

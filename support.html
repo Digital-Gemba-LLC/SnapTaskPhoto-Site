@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support - UnMuck</title>
-    <meta name="description" content="Get help with Unmuck. FAQs on capture modes, AI analysis, folders, Camera Roll cleanup, privacy, and pricing. Contact support@unmuck.app.">
+    <meta name="description" content="Get help with Unmuck. FAQs on capture intents, calorie tracking and calories burned, AI analysis, folders, Camera Roll cleanup, privacy, and pricing. Contact support@unmuck.app.">
     <meta property="og:title" content="Support - UnMuck">
     <meta property="og:description" content="Get help with Unmuck. FAQs on capture modes, AI analysis, folders, Camera Roll cleanup, privacy, and pricing.">
     <meta property="og:url" content="https://unmuck.app/support.html">
@@ -284,7 +284,7 @@
 
         <div class="faq-item">
             <h3>How do I capture photos with the app?</h3>
-            <p>Open the app and you'll see the Capture screen with 13 capture intents: Task, Translate, Receipt, Calories, What is it?, Slide, IDs & Docs, Contact, Explain, Evidence, Bike Fit, Wardrobe, and Menu. Tap what you're capturing, take the photo, and it goes directly to your iCloud Drive — never touching your Camera Roll. Photos auto-file to folders based on the intent you choose. You can also toggle <strong>Record</strong> on any intent to capture audio instead, transcribed on-device.</p>
+            <p>Open the app and you'll see the Capture screen with 14 capture intents: Task, Translate, Receipt, Calories, What is it?, Slide, IDs & Docs, Contact, Explain, Evidence, Bike Fit, Wardrobe, Books, and Menu. Tap what you're capturing, take the photo, and it goes directly to your iCloud Drive — never touching your Camera Roll. Photos auto-file to folders based on the intent you choose. You can also toggle <strong>Record</strong> on any intent to capture audio instead, transcribed on-device.</p>
             <p>Every photo you capture is instantly processed by Apple's on-device AI — text is extracted, barcodes are scanned, and content is classified. All free, all private. For deeper analysis, tap Analyze to use generative AI (powered by Claude).</p>
         </div>
 
@@ -312,7 +312,7 @@
             <h3>How do I process my photos?</h3>
             <p>Photos land in folders based on the capture intent you chose — Receipt photos go to Receipt, Calories photos go to Calories, and so on. Open the Folders tab to browse all your folders. Tap any photo to open details where you can:</p>
             <ul>
-                <li><strong>Analyze:</strong> Run AI analysis (Task, Translate, Receipt, Calories, Identify, Explain, Slide, IDs & Docs, Contact, Evidence, Bike Fit, Wardrobe, or Menu)</li>
+                <li><strong>Analyze:</strong> Run AI analysis (Task, Translate, Receipt, Calories, Identify, Explain, Slide, IDs & Docs, Contact, Evidence, Bike Fit, Wardrobe, Books, or Menu)</li>
                 <li><strong>Share:</strong> Send to Reminders, Things 3, or other apps</li>
                 <li><strong>Folder:</strong> Move to a different folder</li>
                 <li><strong>Delete:</strong> Remove the photo</li>
@@ -346,7 +346,7 @@
 
         <div class="faq-item">
             <h3>What is Auto-AI?</h3>
-            <p>Auto-AI automatically runs AI analysis when you capture a photo. It's configured per capture intent — Calories, What is it?, Explain, Contact, Translate, Bike Fit, Wardrobe, and Menu default to ON because AI adds the most value there. Task, Receipt, Slide, IDs & Docs, and Evidence default to OFF so you control when credits are used. Toggle Auto-AI on the Capture screen; each intent remembers your preference independently. You can always analyze photos manually from the detail view.</p>
+            <p>Auto-AI automatically runs AI analysis when you capture a photo. It's configured per capture intent — Calories, What is it?, Explain, Contact, Translate, Bike Fit, Wardrobe, Books, and Menu default to ON because AI adds the most value there. Task, Receipt, Slide, IDs & Docs, and Evidence default to OFF so you control when credits are used. Toggle Auto-AI on the Capture screen; each intent remembers your preference independently. You can always analyze photos manually from the detail view.</p>
         </div>
 
         <div class="faq-item">
@@ -362,6 +362,11 @@
         <div class="faq-item">
             <h3>Can I rotate photos?</h3>
             <p>Yes. Open any photo and use the rotate button to fix orientation.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What happens if a phone call interrupts a recording?</h3>
+            <p>Unmuck saves everything captured up to the interruption and shows a banner with the exact duration it kept. While recording, the banner shows two timers: time actually captured and time since you pressed record. If they diverge, the difference is highlighted so you know right away. The screen stays awake while recording. Keep Unmuck open in the foreground for the whole session; a first-run notice explains this.</p>
         </div>
     </div>
 
@@ -437,7 +442,7 @@
                     <tr class="high-value">
                         <td>Calories <span class="intent-star">&#9733; HIGH VALUE</span></td>
                         <td class="col-ondevice">Classified as food. Text extracted from nutrition labels if present.</td>
-                        <td class="col-ai"><span class="ai-plus">+</span> Dish identification with estimated calories, carbs, and protein. Save frequent meals and re-log them with one tap — no credit needed.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Dish identification with estimated calories, carbs, and protein. Describe the meal or tag ingredients before you shoot for sharper estimates. Save frequent meals and re-log them with one tap, no credit needed. <a href="calories.html">Calorie tracking guide</a>.</td>
                     </tr>
                     <tr class="high-value">
                         <td>Identify <span class="intent-star">&#9733; HIGH VALUE</span></td>
@@ -480,6 +485,11 @@
                         <td class="col-ai"><span class="ai-plus">+</span> Each clothing item tagged by category, color, season, and formality. Build outfits, check an outfit, find what goes with any piece, track what you wore.</td>
                     </tr>
                     <tr>
+                        <td>Books</td>
+                        <td class="col-ondevice">Photo captured and classified. Open Library lookup (cover, year, subjects) and room assignment are free.</td>
+                        <td class="col-ai"><span class="ai-plus">+</span> Every spine on a shelf read into title, author, series, publisher, year, ISBN, format, genre, and language. Pick which to save; each becomes its own cropped entry.</td>
+                    </tr>
+                    <tr>
                         <td>Menu</td>
                         <td class="col-ondevice">Full menu text extracted.</td>
                         <td class="col-ai"><span class="ai-plus">+</span> Low-carb and keto-friendly picks from the menu with estimated macros.</td>
@@ -509,7 +519,7 @@
 
         <div class="faq-item">
             <h3>What folders are available?</h3>
-            <p>Each capture intent has a matching folder: <strong>Tasks</strong> (actionable to-dos), <strong>Translate</strong> (foreign text and translations), <strong>Receipt</strong> (expenses, returns, purchases), <strong>Calories</strong> (meal tracking), <strong>Identify</strong> (item identification results), <strong>Explain</strong> (test results and jargon explained), <strong>Slides</strong> (presentations and whiteboards), <strong>Essentials</strong> (IDs, cards, permanent lookup items), <strong>Contacts</strong> (business cards), <strong>Evidence</strong> (legal documentation and dispute records), <strong>Bike Fit</strong>, <strong>Wardrobe</strong>, and <strong>Menu</strong>. Plus <strong>Audio</strong> for recordings and <strong>Inbox</strong> for Share Extension imports and uncategorized photos. You can also create custom folders in the Files app (iCloud Drive → Unmuck) and they'll appear automatically in the app.</p>
+            <p>Each capture intent has a matching folder: <strong>Tasks</strong> (actionable to-dos), <strong>Translate</strong> (foreign text and translations), <strong>Receipt</strong> (expenses, returns, purchases), <strong>Calories</strong> (meal tracking), <strong>Identify</strong> (item identification results), <strong>Explain</strong> (test results and jargon explained), <strong>Slides</strong> (presentations and whiteboards), <strong>Essentials</strong> (IDs, cards, permanent lookup items), <strong>Contacts</strong> (business cards), <strong>Evidence</strong> (legal documentation and dispute records), <strong>Bike Fit</strong>, <strong>Wardrobe</strong>, <strong>Books</strong> (shelf catalog by room), and <strong>Menu</strong>. Plus <strong>Audio</strong> for recordings and <strong>Inbox</strong> for Share Extension imports and uncategorized photos. You can also create custom folders in the Files app (iCloud Drive → Unmuck) and they'll appear automatically in the app.</p>
         </div>
 
         <div class="faq-item">
@@ -519,7 +529,7 @@
 
         <div class="faq-item">
             <h3>What's special about the Calories folder?</h3>
-            <p>The Calories folder shows a daily totals banner with your total calories, carbs, and protein. Each photo thumbnail displays its nutrition as an overlay so you can see it at a glance. These totals respect any active time or location filters. You can also save meals you eat often and log them again with one tap — no AI credit needed.</p>
+            <p>The Calories folder shows a daily totals banner with your total calories, carbs, and protein, a 7-day strip of sparklines that opens the Food Log, and, when a calories-burned source is enabled, "N burned" with "N under" or "N over" for the day. Each photo thumbnail displays its nutrition as an overlay so you can see it at a glance. Totals respect any active time or location filters. You can also save meals you eat often and log them again with one tap, no AI credit needed. See the <a href="calories.html">calorie tracking guide</a>.</p>
         </div>
 
         <div class="faq-item">
@@ -532,6 +542,77 @@
             <p>Archive lets you hide completed items from your active view while keeping them in their original folder. Toggle "Archived" on any photo to mark it as done — it disappears from the default view but stays organized where it belongs. Use the "Show archived photos" toggle at the top of folder views to see archived items again. Toggle it off to bring items back to active view.</p>
         </div>
 
+    </div>
+
+    <!-- Calorie Tracking -->
+    <div class="faq-section">
+        <h2>Calorie Tracking</h2>
+
+        <div class="faq-item">
+            <h3>How do I log a meal?</h3>
+            <p>Tap Calories on the Capture tab. A chooser appears before the camera: <strong>Snap</strong> goes straight to the camera, <strong>Describe</strong> lets you type a note first ("leftover chili, second helping"), and <strong>Has / Not</strong> lets you tap ingredient pills for what is and isn't on the plate. Your saved foods are listed underneath. The photo saves the moment you shoot with all of that attached, and AI returns calories, carbs, and protein. The same three buttons are on the Calorie Capture Home Screen widget. <a href="calories.html#capture">Details</a>.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Where do the ingredient pills come from?</h3>
+            <p>You set them up in Settings under <strong>Ingredient Quick-Select</strong>. Add the things that change your usual meals (dressing, cheese, rice, sauce) and they appear as pills in the Has / Not step. If you haven't configured any, Has / Not falls back to the Describe note.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What are saved foods and My Foods?</h3>
+            <p>After a meal has been analyzed, save it. Next time, tap it in the chooser to stamp its calories, carbs, and protein on the photo you're about to take, or choose <strong>Log Without Photo</strong> to add it to the day with a placeholder card. Neither uses an AI credit. <strong>My Foods</strong> in Settings lists your saved foods and suggests meals from your history: repeated meals first, or your most recent meals until something repeats.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Where is my nutrition history?</h3>
+            <p>The <strong>Food Log</strong>, reachable from Settings, the Stats tab (Calorie Log), and the 7-day strip in the Calories folder banner. It shows trend charts for calories, carbs, and protein over 7, 14, or 30 days with a dashed average, then each day's totals and meals. Tap a meal to edit its values. The Stats tab also has a Calories vs Carbs scatter plot.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What nutrition widgets are there?</h3>
+            <p><strong>Today's Nutrition</strong> (Home Screen medium and Lock Screen rectangular) shows today's calories, carbs, and protein, plus burned and net when a burn source is on. Six <strong>7-day chart widgets</strong> (bar or trend line for each of calories, carbs, and protein) come in small and medium sizes. <strong>Calorie Capture</strong> (medium) has the Snap / Describe / Has-Not buttons. All nutrition widgets open the Calories folder when tapped and reset at midnight.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why is my widget behind the app?</h3>
+            <p>Widgets can't read iCloud Drive, so the app publishes totals to them whenever you log a meal, when a meal arrives from another device, when you share into Unmuck, and each time you open the app. If a widget looks stale, open Unmuck once; it forces a refresh on every launch and return to the foreground.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I see calories burned?</h3>
+            <p>Go to Settings, then <strong>Calories Burned</strong>, and pick a source: <strong>Off</strong> (default), <strong>WHOOP</strong>, or <strong>Apple Health</strong>. Once a source is on, the Calories folder banner, Food Log, trend charts, and Today's Nutrition widget show burned calories and whether you're under or over for the day. <a href="calories.html#burned">Setup steps for each source</a>.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I connect WHOOP?</h3>
+            <p>Choose WHOOP as the source and tap Connect WHOOP. You sign in on WHOOP's own page and approve read access to your cycles; your WHOOP password never passes through us. The last 35 days download immediately, and Unmuck refreshes on launch and when you open the Calories folder or Food Log. Sync Now forces a refresh. Disconnect WHOOP removes the sign-in and the history from your device.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I use Apple Watch, Garmin, Oura, or another wearable?</h3>
+            <p>Choose Apple Health as the source and allow Unmuck to read Active Energy and Resting Energy when iOS asks. Apple Watch and most other wearables already write to Health. <strong>Garmin users:</strong> in the Garmin Connect app, open Settings, then Apple Health, and turn on both <strong>Active Energy</strong> and <strong>Basal Energy</strong>; Unmuck needs both for a full day. If nothing shows up, open the Health app, then Sharing, then Apps, then Unmuck, and confirm both energy types are allowed.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How are "under" and "over" calculated?</h3>
+            <p>Net = calories logged minus calories burned. A negative net shows as "N under" (a deficit); a positive net shows as "N over" (a surplus). Burned is the whole day including resting metabolism, not just workouts. The folder banner shows the balance for Today and Yesterday; the Food Log, charts, and widgets carry it across the whole window.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why does today's burn look low or different from my wearable's app?</h3>
+            <ul>
+                <li><strong>WHOOP days run wake-to-wake.</strong> A cycle starts when you wake and ends when you wake the next morning, so today's number keeps growing until tomorrow morning and includes tonight's sleep. Unmuck assigns each cycle to the morning you woke up.</li>
+                <li><strong>Apple Health days run midnight-to-midnight</strong> in your local time zone.</li>
+                <li><strong>Third-party Health data lags.</strong> Garmin, Oura, and similar sources write to Health only when their own app syncs. Open that app to push the latest data through.</li>
+                <li><strong>No data shows as blank, not zero.</strong> A day with nothing written to Health, or no WHOOP cycle, has no burned value.</li>
+                <li><strong>Sources never mix.</strong> Switching the source clears the stored history and reloads from the new source.</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h3>Is my health data sent anywhere?</h3>
+            <p>No. Apple Health data is read on-device and stays there; Unmuck never writes to Health. For WHOOP, our server only relays the sign-in handshake and never sees your burn data, which is stored on your phone. Health and diet data is never used for advertising or sold. See the <a href="privacy.html">Privacy Policy</a>.</p>
+        </div>
     </div>
 
     <!-- Photo Gallery Cleanup -->
@@ -795,14 +876,15 @@
                 <li><strong>Evidence</strong> — Legal documentation, damage, incidents, dispute records</li>
                 <li><strong>Bike Fit</strong> — Riding-position photos and analysis</li>
                 <li><strong>Wardrobe</strong> — Clothing items with outfit intelligence</li>
+                <li><strong>Books</strong> — Shelf catalog, one entry per book, organized by room</li>
                 <li><strong>Menu</strong> — Restaurant menus with low-carb picks</li>
             </ul>
             <p>Plus system folders: <strong>Inbox</strong> (Share Extension imports and uncategorized photos), <strong>Audio</strong> (recordings and transcripts), <strong>Archive</strong> (completed items), and <strong>Deleted</strong> (recoverable trash).</p>
         </div>
 
         <div class="faq-item">
-            <h3>The 13 capture intents</h3>
-            <p>When you tap Capture, you choose what you're capturing. This determines where it's filed and how it's analyzed. Auto-AI defaults to ON for Calories, What is it?, Explain, Contact, Translate, Bike Fit, Wardrobe, and Menu; OFF for others. Toggle per intent on the Capture screen:</p>
+            <h3>The 14 capture intents</h3>
+            <p>When you tap Capture, you choose what you're capturing. This determines where it's filed and how it's analyzed. Auto-AI defaults to ON for Calories, What is it?, Explain, Contact, Translate, Bike Fit, Wardrobe, Books, and Menu; OFF for others. Toggle per intent on the Capture screen:</p>
             <ul>
                 <li><strong>Task</strong> — Infers actionable task titles → files to Tasks</li>
                 <li><strong>Translate</strong> — Extracts and translates foreign text → files to Translate</li>
@@ -816,6 +898,7 @@
                 <li><strong>Evidence</strong> — Documents incidents, damage, conditions for legal or insurance purposes → files to Evidence</li>
                 <li><strong>Bike Fit</strong> — Analyzes riding position → files to Bike Fit</li>
                 <li><strong>Wardrobe</strong> — Tags clothing for outfit building → files to Wardrobe</li>
+                <li><strong>Books</strong> — Reads every spine on a shelf → files to Books</li>
                 <li><strong>Menu</strong> — Suggests low-carb picks from restaurant menus → files to Menu</li>
             </ul>
         </div>
@@ -839,13 +922,14 @@
                 <li><strong>Evidence:</strong> Documents and describes incidents, damage, or conditions with full text extraction — for legal, insurance, or dispute purposes.</li>
                 <li><strong>Bike Fit:</strong> Analyzes saddle height, reach, and posture from a riding photo.</li>
                 <li><strong>Wardrobe:</strong> Tags clothing items and powers outfit suggestions.</li>
+                <li><strong>Books:</strong> Reads a shelf photo spine by spine into title, author, series, publisher, year, ISBN, format, genre, and language. Never invents an ISBN or year it can't see.</li>
                 <li><strong>Menu:</strong> Picks low-carb and keto-friendly options from a restaurant menu with estimated macros.</li>
             </ul>
         </div>
 
         <div class="faq-item">
             <h3>Can I summarize an entire slide deck?</h3>
-            <p>Yes. Open the Slides folder with 2+ slides and tap the sparkles button. AI reads the OCR text from every slide and produces a structured summary: event overview, key topics, takeaways, action items, and notable details. You can also summarize a single day's slides via the date header, or select specific slides to summarize just those.</p>
+            <p>Yes. Open the Slides folder with 2+ slides and tap the sparkles button. An options sheet lets you choose <strong>Quick</strong> (summarize from the on-device OCR text) or <strong>Deep</strong> (send the slide images to Claude in batches of 15 so charts, tables, and diagrams are interpreted too), <strong>Brief</strong> or <strong>Comprehensive</strong> detail, and whether to include same-day audio recordings. The result is a structured summary: event overview, key topics, takeaways, action items, and notable details. You can also summarize a single day's slides via the date header, or select specific slides to summarize just those. The Audio folder summarizes recordings the same way.</p>
             <p>Decks up to 30 slides use a single AI credit. Decks of 31-50 show a confirmation. Decks over 50 are automatically batched into groups of ~25, with a final synthesis pass that merges all batch summaries into one unified result. One credit per batch.</p>
             <p>The summary is saved as an image card in your Slides folder with the full text in its notes. You can copy or share it. You can also tap <strong>Export Text</strong> to copy all raw OCR text to your clipboard — no AI credit needed.</p>
         </div>
@@ -858,6 +942,21 @@
         <div class="faq-item">
             <h3>What can Explain mode explain?</h3>
             <p>Any document with specialized terminology: blood work and lab panels, soil and water quality tests, genetic/DNA reports, veterinary results, automotive diagnostics, home inspection reports, academic evaluations, and more. Results are explained in plain language with anything outside normal ranges highlighted. Always consult a qualified professional before acting on any interpretation.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does Books work?</h3>
+            <p>Tap Books and photograph a shelf (up to about 30 spines per photo; wide shelves are uploaded at higher resolution so small text stays legible). AI reads each spine and a review screen draws a box on every book it found. Pick the ones to keep and each is saved to the Books folder as its own cropped entry, with the shelf photo kept alongside as the source. If a shelf has more books than fit in one response, Unmuck tells you it was cut off rather than silently dropping books; shoot the rest as a second photo.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is Open Library enrichment?</h3>
+            <p>After AI reads a spine, Unmuck looks the book up on Open Library, a free public catalog, and fills in the cover image, first-publish year, and subjects. No AI credit is used. ISBN matches are exact; otherwise title and author are matched with a confidence threshold so the wrong edition isn't attached. Enrichment only fills gaps and never overwrites what AI or you entered. Use <strong>Re-match</strong> or <strong>Clear</strong> in the book's detail view, or <strong>Match from Open Library</strong> in the Books folder to backfill books captured earlier.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do rooms work for Books?</h3>
+            <p>Assign each book to the room it physically lives in. A room picker appears when you save a shelf (applied to the whole shelf, defaulting to the last room you used) and in each book's detail view. Rooms come from one managed list so typos don't create duplicate rooms. The Books folder shows a room badge on every book and room chips to filter to one room.</p>
         </div>
 
         <div class="faq-item">
@@ -914,6 +1013,11 @@
         </div>
 
         <div class="faq-item">
+            <h3>What are the nutrition settings?</h3>
+            <p>Settings has four nutrition entries: <strong>Food Log</strong> (your history and trends), <strong>My Foods</strong> (saved foods and suggestions), <strong>Ingredient Quick-Select</strong> (the pills shown in the Has / Not capture step), and <strong>Calories Burned</strong> (Off, WHOOP, or Apple Health, with connect, sync, and a list of recent days). See the <a href="calories.html">calorie tracking guide</a>.</p>
+        </div>
+
+        <div class="faq-item">
             <h3>How do I change the AI response language?</h3>
             <p>Go to Settings → AI Response Language. Choose System Default (follows your iPhone language) or select a specific language from 19 options. This controls both on-device translations and the language generative AI uses for analysis results.</p>
         </div>
@@ -940,6 +1044,8 @@
                 <li><strong>Camera:</strong> Capture photos directly to Files, bypassing your Camera Roll. Skip this if you only want to import from Camera Roll.</li>
                 <li><strong>Photo Library:</strong> Access Camera Roll for Photo Gallery Cleanup. Skip this if you only want to capture with the in-app camera.</li>
                 <li><strong>Location:</strong> Tag photos with where they were captured. Photos display the city/town name (e.g., "Boston 17Jan") so you know at a glance where you took them. Completely optional.</li>
+                <li><strong>Microphone:</strong> Only when you use the Record toggle. Transcription runs on-device.</li>
+                <li><strong>Apple Health (read only):</strong> Only if you choose Apple Health as your calories-burned source. Unmuck reads Active and Resting Energy and never writes to Health.</li>
             </ul>
             <p>You can change permissions anytime in Settings → Unmuck.</p>
         </div>
@@ -955,7 +1061,7 @@
     <p><strong>Developer:</strong> Digital Gemba, LLC</p>
 
     <footer>
-        <p><a href="index.html">Home</a> · <a href="snap.html">Capture Guide</a> · <a href="folders.html">Folders Guide</a> · <a href="cleanup.html">Clean Up Guide</a> · <a href="stats.html">Stats Guide</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+        <p><a href="index.html">Home</a> · <a href="snap.html">Capture Guide</a> · <a href="folders.html">Folders Guide</a> · <a href="cleanup.html">Clean Up Guide</a> · <a href="stats.html">Stats Guide</a> · <a href="calories.html">Calorie Tracking</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
         <p>© 2026 Digital Gemba, LLC. All rights reserved.</p>
     </footer>
     <script data-goatcounter="https://unmuck.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

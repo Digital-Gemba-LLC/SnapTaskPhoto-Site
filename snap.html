@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Capture Tab - UnMuck Guide</title>
-    <meta name="description" content="Learn how the Capture tab works in Unmuck. 13 capture intents, Record mode for audio, home screen widget, on-device AI, and generative AI analysis.">
+    <meta name="description" content="Learn how the Capture tab works in Unmuck. 14 capture intents, Record mode for audio, Home Screen and Lock Screen widgets, on-device AI, and generative AI analysis.">
     <meta property="og:title" content="The Capture Tab - UnMuck Guide">
-    <meta property="og:description" content="Learn how the Capture tab works in Unmuck. 13 capture intents, audio as a mode, a home screen widget, and on-device AI.">
+    <meta property="og:description" content="Learn how the Capture tab works in Unmuck. 14 capture intents, audio as a mode, Home Screen and Lock Screen widgets, and on-device AI.">
     <meta property="og:url" content="https://unmuck.app/snap.html">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://unmuck.app/og-image.png">
@@ -57,6 +57,7 @@
         .tutorial-nav {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 0;
             background: #fff;
             border-bottom: 1px solid #e5e5e5;
@@ -352,6 +353,7 @@
         <a href="folders.html">Folders</a>
         <a href="cleanup.html">Clean Up</a>
         <a href="stats.html">Stats</a>
+        <a href="calories.html">Calories</a>
     </nav>
 
     <main class="container">
@@ -362,7 +364,7 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Choose Your Intent</h3>
-                    <p>Tap what you're capturing: Receipt, Calories, Contact, or any of the 13 intents. This tells the app how to process and file it.</p>
+                    <p>Tap what you're capturing: Receipt, Calories, Contact, or any of the 14 intents. This tells the app how to process and file it.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
@@ -418,6 +420,18 @@
                 <div class="mock-intent-btn" style="background: #FFD60A; color: #333;">
                     <span class="emoji">&#128737;</span> Evidence
                 </div>
+                <div class="mock-intent-btn" style="background: #30D158;">
+                    <span class="emoji">&#128690;</span> Bike Fit
+                </div>
+                <div class="mock-intent-btn" style="background: #8E8E93;">
+                    <span class="emoji">&#128085;</span> Wardrobe
+                </div>
+                <div class="mock-intent-btn" style="background: #A2845E;">
+                    <span class="emoji">&#128218;</span> Books
+                </div>
+                <div class="mock-intent-btn" style="background: #FF9F0A;">
+                    <span class="emoji">&#127860;</span> Menu
+                </div>
             </div>
             <!-- Record toggle is shown below the grid, not as a tile -->
             <div style="display: flex; gap: 8px; margin-top: 12px; justify-content: center;">
@@ -431,8 +445,8 @@
             <strong>Tip:</strong> On-device AI runs free on every photo — OCR, barcodes, classification, and translation. No credits needed. Nothing leaves your phone.
         </div>
 
-        <!-- 13 Capture Intents -->
-        <h2>13 Capture Intents</h2>
+        <!-- 14 Capture Intents -->
+        <h2>14 Capture Intents</h2>
         <p class="section-intro">Each intent determines what gets extracted, what AI analyzes, and which folder receives the photo. Audio is a mode toggle, not an intent — record any of these as audio with the Record toggle.</p>
 
         <div class="intent-cards">
@@ -495,17 +509,18 @@
                     <span class="emoji">&#127869;</span>
                     <h3>Calories <span class="folder-tag">&#8594; Calories folder</span></h3>
                 </div>
-                <p>Snap your meal for instant nutrition estimation. No manual food database entry.</p>
+                <p>Snap your meal for instant nutrition estimation. No manual food database entry. Tapping Calories opens a chooser before the camera: <strong>Snap</strong> (straight to camera), <strong>Describe</strong> (a note first, then shoot), or <strong>Has / Not</strong> (tap ingredient pills, then shoot). Your saved foods sit underneath for one-tap logging with or without a photo.</p>
                 <div class="intent-detail-boxes">
                     <div class="intent-detail-box free">
                         <div class="label">Free (On-Device)</div>
-                        Classified as food. Text extracted from menus or nutrition labels if present.
+                        Classified as food. Text extracted from menus or nutrition labels if present. Saved foods log with no credit.
                     </div>
                     <div class="intent-detail-box ai">
                         <div class="label">With AI Credit</div>
-                        Dish identified with estimated calories, carbs, protein, fat. Ingredient and allergen notes.
+                        Dish identified with estimated calories, carbs, and protein. Ingredient and allergen notes. Correct the portion in the follow-up chat and the numbers update in place.
                     </div>
                 </div>
+                <p style="margin: 12px 0 0 0;"><a href="calories.html">Full calorie tracking guide &#8594;</a></p>
             </div>
 
             <div class="intent-card">
@@ -654,6 +669,24 @@
 
             <div class="intent-card">
                 <div class="intent-card-header">
+                    <span class="emoji">&#128218;</span>
+                    <h3>Books <span class="folder-tag">&#8594; Books folder</span></h3>
+                </div>
+                <p>Photograph a shelf and catalog every book on it. One shelf photo becomes one entry per spine, each cropped from the source photo, with the original shelf shot kept alongside. Wide shelves are uploaded at higher resolution so small spine text stays legible. Up to 30 books per photo.</p>
+                <div class="intent-detail-boxes">
+                    <div class="intent-detail-box free">
+                        <div class="label">Free (On-Device)</div>
+                        Photo captured and classified. After AI reads the spines, Open Library adds cover art, first-publish year, and subjects at no charge. Assign each book to the room it lives in and filter the folder by room.
+                    </div>
+                    <div class="intent-detail-box ai">
+                        <div class="label">With AI Credit</div>
+                        Title, author, series and volume, publisher, year, ISBN, format, genre, and language per spine. The reader never invents an ISBN or year it can't see. Pick which spines to save before anything is filed.
+                    </div>
+                </div>
+            </div>
+
+            <div class="intent-card">
+                <div class="intent-card-header">
                     <span class="emoji">&#127860;</span>
                     <h3>Menu <span class="folder-tag">&#8594; Menu folder</span></h3>
                 </div>
@@ -683,6 +716,14 @@
             <p style="margin: 0; color: #555;"><strong>Why this changed:</strong> capturing a meeting as a Task or a class as a Slide is more useful than treating audio as its own bucket. The intent describes the situation; the mode describes how you captured it.</p>
         </div>
 
+        <div class="feature-card" style="background: #fff; border-radius: 12px; padding: 24px; border: 2px solid #e5e5e5; margin-top: 1.5rem;">
+            <h3 style="margin: 0 0 0.75rem 0;">Recording you can trust</h3>
+            <p style="margin: 0 0 0.75rem 0; color: #555;"><strong>Two timers, not one.</strong> While recording, the banner shows both the time actually captured and the time since you pressed record. If they drift apart, the difference is highlighted, so you know before the talk ends whether anything was missed.</p>
+            <p style="margin: 0 0 0.75rem 0; color: #555;"><strong>The screen stays awake.</strong> The phone won't auto-lock mid-lecture.</p>
+            <p style="margin: 0 0 0.75rem 0; color: #555;"><strong>Interruptions save what they can.</strong> If a phone call, Siri, or another audio app takes over, Unmuck saves everything captured up to that point and shows a banner with the exact duration it kept.</p>
+            <p style="margin: 0; color: #555;"><strong>Clear about the limits.</strong> The first time you record, a short notice explains that Unmuck should stay open in the foreground while recording and what happens if it's interrupted.</p>
+        </div>
+
         <!-- Mode Toggles -->
         <h2>Mode Toggles</h2>
         <p class="section-intro">Three toggles on the Capture screen customize your workflow.</p>
@@ -690,7 +731,7 @@
         <div class="toggle-section">
             <div class="toggle-card">
                 <h3>Auto-AI</h3>
-                <p>Automatically runs generative AI analysis after capture. Configured per intent — Calories, What is it?, Explain, Translate, and Contact default to ON. Each intent remembers your preference independently. Uses one credit per analysis.</p>
+                <p>Automatically runs generative AI analysis after capture. Configured per intent — Calories, What is it?, Explain, Translate, Contact, Bike Fit, Wardrobe, Books, and Menu default to ON. Each intent remembers your preference independently. Uses one credit per analysis.</p>
             </div>
             <div class="toggle-card">
                 <h3>Batch Mode</h3>
@@ -717,14 +758,33 @@
         </div>
 
         <!-- Home Screen Widget -->
-        <h2 id="home-screen-widget">Home Screen Widget</h2>
-        <p class="section-intro">Skip the app launcher. Add an Unmuck widget to your home screen and tap straight into capture.</p>
+        <h2 id="home-screen-widget">Widgets</h2>
+        <p class="section-intro">Skip the app launcher. Unmuck ships Home Screen and Lock Screen widgets for capture, plus a family of nutrition widgets.</p>
 
         <div class="feature-card" style="background: #fff; border-radius: 12px; padding: 24px; border: 2px solid #e5e5e5;">
-            <h3 style="margin: 0 0 0.75rem 0; color: #007AFF;"><span style="font-size: 1.2em;">&#128241;</span> One tap to capture</h3>
-            <p style="margin: 0 0 0.75rem 0; color: #555;">Each widget is configured for one intent and one mode. Pick "Receipt &middot; Photo" for the wallet, "Slide &middot; Audio" for conferences, "Calories &middot; Photo" for meals. Tap the widget — the camera opens with the intent already selected.</p>
-            <p style="margin: 0 0 0.75rem 0; color: #555;">Set up multiple widgets, one per workflow. Stack them or put them in a Smart Stack — your most-used capture path is always one tap away from the home screen.</p>
+            <h3 style="margin: 0 0 0.75rem 0; color: #007AFF;"><span style="font-size: 1.2em;">&#128241;</span> Unmuck Capture (Home Screen, small)</h3>
+            <p style="margin: 0 0 0.75rem 0; color: #555;">Each widget is configured for one intent and one mode. Pick "Receipt &middot; Photo" for the wallet, "Slide &middot; Audio" for conferences, "Books &middot; Photo" for the shelf you keep meaning to catalog. Tap the widget and the camera opens with that intent already selected. All 14 intents are available.</p>
+            <p style="margin: 0 0 0.75rem 0; color: #555;">Set up multiple widgets, one per workflow. Stack them or put them in a Smart Stack so your most-used capture path is always one tap away.</p>
             <p style="margin: 0; color: #555;"><strong>Audio mode</strong> launches into recording immediately. Useful when something interesting is being said and you don't want to lose seconds finding the right tile.</p>
+        </div>
+
+        <div class="toggle-section">
+            <div class="toggle-card">
+                <h3>Unmuck Multi-Capture (medium)</h3>
+                <p>Two or three capture buttons in one wide widget, each with its own intent and mode. Receipt, Calories, and Task side by side, for example.</p>
+            </div>
+            <div class="toggle-card">
+                <h3>Lock Screen capture</h3>
+                <p>Circular and rectangular Lock Screen widgets open the camera for a chosen intent without unlocking into the app first.</p>
+            </div>
+            <div class="toggle-card">
+                <h3>Calorie Capture (medium)</h3>
+                <p>Three one-tap ways to log a meal: Snap (camera), Describe (note, then camera), Has / Not (ingredient pills, then camera). Each runs a single step and shoots.</p>
+            </div>
+            <div class="toggle-card">
+                <h3>Nutrition widgets</h3>
+                <p>Today's Nutrition (Home Screen and Lock Screen) shows today's calories, carbs, and protein, plus burned and net when a burn source is on. Six 7-day chart widgets (bar or trend line for each of calories, carbs, and protein) in small and medium sizes. <a href="calories.html#widgets">Details in the calorie guide &#8594;</a></p>
+            </div>
         </div>
 
         <!-- Where Photos Go -->
@@ -765,6 +825,7 @@
             <a href="folders.html">Folders Guide</a>
             <a href="cleanup.html">Clean Up Guide</a>
             <a href="stats.html">Stats Guide</a>
+            <a href="calories.html">Calorie Tracking</a>
             <a href="support.html">Support</a>
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>

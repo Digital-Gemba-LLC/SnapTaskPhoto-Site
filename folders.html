@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Folders Tab - UnMuck Guide</title>
-    <meta name="description" content="Learn how the Folders tab works in Unmuck. Smart folders, time and location filters, search, nutrition tracking, and custom folders. Everything organized, nothing lost.">
+    <meta name="description" content="Learn how the Folders tab works in Unmuck. Smart folders, time and location filters, search, list views, the Calories and Books folders, slide and audio summaries, and custom folders.">
     <meta property="og:title" content="The Folders Tab - UnMuck Guide">
     <meta property="og:description" content="Learn how the Folders tab works in Unmuck. Smart folders, filters, search, and custom folders.">
     <meta property="og:url" content="https://unmuck.app/folders.html">
@@ -57,6 +57,7 @@
         .tutorial-nav {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 0;
             background: #fff;
             border-bottom: 1px solid #e5e5e5;
@@ -357,6 +358,7 @@
         <a href="folders.html" class="active">Folders</a>
         <a href="cleanup.html">Clean Up</a>
         <a href="stats.html">Stats</a>
+        <a href="calories.html">Calories</a>
     </nav>
 
     <main class="container">
@@ -446,6 +448,22 @@
                 <div><div class="name">Evidence</div><div class="desc">Legal documentation</div></div>
             </div>
             <div class="folder-item">
+                <span class="emoji">&#128690;</span>
+                <div><div class="name">Bike Fit</div><div class="desc">Riding-position photos</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#128085;</span>
+                <div><div class="name">Wardrobe</div><div class="desc">Clothing and outfits</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#128218;</span>
+                <div><div class="name">Books</div><div class="desc">Shelf catalog by room</div></div>
+            </div>
+            <div class="folder-item">
+                <span class="emoji">&#127860;</span>
+                <div><div class="name">Menu</div><div class="desc">Restaurant menus, low-carb picks</div></div>
+            </div>
+            <div class="folder-item">
                 <span class="emoji">&#127908;</span>
                 <div><div class="name">Audio</div><div class="desc">Recordings &amp; transcripts</div></div>
             </div>
@@ -486,6 +504,11 @@
         <div class="feature-card">
             <h3>Slides — Event-Grouped View</h3>
             <p>Slides are clustered by date and location into event groups, so a morning session and an afternoon session at the same conference appear as separate groups. Summarize any group with one tap.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Books — Shelf Catalog</h3>
+            <p>Each book shows its cover (from Open Library when matched, otherwise the cropped spine) with a room badge. Room chips at the top filter the shelf to one room. See <a href="#books">The Books Folder</a>.</p>
         </div>
 
         <div class="feature-card">
@@ -579,14 +602,15 @@
             <strong>Tip:</strong> Tap any contact in the list to open the full photo detail view, where you can share the contact info or add it to your iOS Contacts with one tap.
         </div>
 
-        <!-- Food Folder -->
-        <h2>The Calories Folder</h2>
-        <p class="section-intro">The Calories folder has special nutrition features.</p>
+        <!-- Calories Folder -->
+        <h2 id="calories">The Calories Folder</h2>
+        <p class="section-intro">Daily totals, per-photo overlays, a 7-day strip, and your calorie balance. The <a href="calories.html">calorie tracking guide</a> covers the whole loop from capture to calories burned.</p>
 
         <div class="food-grid-wrapper">
             <div class="mock-nutrition-banner">
-                <div class="stat"><span class="number">1,840</span> calories today</div>
-                <div class="stat"><span class="number">186g</span> carbs today</div>
+                <div class="stat"><span class="number">1,840</span> cal today</div>
+                <div class="stat"><span class="number">142g</span> carbs</div>
+                <div class="stat"><span class="number">118g</span> protein</div>
             </div>
             <div class="food-image-container">
                 <img src="food_grid.webp" alt="Calories folder showing 6 meals with calorie and carb overlays" loading="lazy">
@@ -604,7 +628,12 @@
 
         <div class="feature-card">
             <h3>Daily nutrition banner</h3>
-            <p>A banner at the top of the Calories folder shows your total calories, carbs, and protein for today. Updated as you capture meals throughout the day.</p>
+            <p>A banner at the top of the Calories folder shows your total calories, carbs, and protein for today, updated as you capture meals. With a calories-burned source enabled in Settings (WHOOP or Apple Health), the banner adds "N burned" and "N under" or "N over" for Today and Yesterday.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>7-day strip and Food Log</h3>
+            <p>Three small sparklines under the totals show the last week of calories, carbs, and protein. Tap them to open the Food Log: every day's meals with totals, a burned row when a source is on, and full-width trend charts over 7, 14, or 30 days.</p>
         </div>
 
         <div class="feature-card">
@@ -613,18 +642,18 @@
         </div>
 
         <div class="feature-card">
-            <h3>Meal description before analysis</h3>
-            <p>Add a short description before running AI — "leftover chili, second helping" or "16 oz porterhouse, medium rare." The hint goes to the analyzer alongside the photo for noticeably more accurate calorie, carb, and protein estimates.</p>
+            <h3>Capture with context</h3>
+            <p>Tapping Calories on the Capture tab offers Snap, Describe (a note such as "leftover chili, second helping"), or Has / Not (ingredient pills you configure under Settings, Ingredient Quick-Select). Notes and pills go to the analyzer alongside the photo for noticeably more accurate estimates.</p>
         </div>
 
         <div class="feature-card">
-            <h3>Protein tracking</h3>
-            <p>Estimates protein grams alongside calories and carbs. Visible on the daily banner, in the Calorie Log inside the Stats tab, and editable per-meal in the photo detail view.</p>
+            <h3>My Foods</h3>
+            <p>Save any analyzed meal, then log it again in one tap, with a photo or without one (a placeholder card is generated). No AI credit either way. My Foods suggests meals from your history: repeated meals first, or your most recent meals if nothing has repeated yet.</p>
         </div>
 
         <div class="feature-card">
             <h3>Follow-up chat refines the estimate</h3>
-            <p>Got the portion wrong? Reply in the follow-up chat with a correction — "this was actually 12 oz, not 8" — and the analyzer re-runs and updates the main calorie, carb, and protein estimates in place. Conversation history is preserved so the AI keeps your context across multiple corrections.</p>
+            <p>Got the portion wrong? Reply in the follow-up chat with a correction ("this was actually 12 oz, not 8") and the analyzer re-runs and updates the main calorie, carb, and protein estimates in place. Conversation history is preserved so the AI keeps your context across multiple corrections. All three values are also editable by hand in the photo detail view.</p>
         </div>
 
         <!-- Slides Folder -->
@@ -642,6 +671,18 @@
                 <li><strong>Notable Details</strong> — data points, statistics, names, references</li>
             </ul>
             <p>You can also summarize just the slides from a single day using the sparkles button on any date header, or select specific slides and summarize only those.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Summary Options: Quick or Deep</h3>
+            <p>Before summarizing, choose how to read the deck:</p>
+            <ul>
+                <li><strong>Quick</strong> summarizes from the on-device OCR text of each slide.</li>
+                <li><strong>Deep</strong> sends the slide images to Claude in batches of 15 so charts, tables, and diagrams that OCR can't read are interpreted too.</li>
+                <li><strong>Brief</strong> or <strong>Comprehensive</strong> sets the level of detail for either mode.</li>
+                <li><strong>Include same-day audio</strong> folds that day's transcribed recordings into the same summary. Recordings are labelled as such in the output.</li>
+            </ul>
+            <p>A selection that is only recordings summarizes in Quick mode, since there are no images to interpret.</p>
         </div>
 
         <div class="feature-card">
@@ -679,6 +720,31 @@
         <div class="feature-card">
             <h3>Smart Event Labels</h3>
             <p>The app recognizes conference names from your slide text — PDA Week, Bioprocessing Summit, MIT programs, and more. When it can't find a conference name, it falls back to the city and date (e.g., "Barcelona, Mar 2026"). No AI credits needed — event detection uses on-device OCR text you already have.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>The Audio folder summarizes the same way</h3>
+            <p>Recordings made with the Record toggle land in the Audio folder with their on-device transcripts. Each date section has its own Summarize button, produces the same summary cover card, and batches long days with a synthesis pass, exactly like Slides.</p>
+        </div>
+
+        <!-- Books Folder -->
+        <h2 id="books">The Books Folder</h2>
+        <p class="section-intro">A catalog of your shelves, one entry per book, organized by the room it lives in.</p>
+
+        <div class="feature-card">
+            <h3>One shelf photo, many books</h3>
+            <p>Capture a shelf with the Books intent and AI reads each spine: title, author, series and volume, publisher, year, ISBN, format, genre, and language. A review screen overlays a box on every spine it found; pick the ones to keep and each is saved as its own cropped entry, with the original shelf photo kept alongside and marked as the source.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Open Library enrichment</h3>
+            <p>After the spine is read, Unmuck looks the book up on Open Library (a free public catalog, no AI credit) and fills in what the spine couldn't: cover image, first-publish year, and subjects. ISBN matches are exact; otherwise title and author are matched with a confidence gate so a wrong edition isn't attached. Enrichment never overwrites what AI or you entered. The detail view shows the cover, subjects, and "matched as", with Re-match and Clear.</p>
+            <p>Already have a shelf of books captured before this existed? Tap <strong>Match from Open Library</strong> in the Books folder to backfill them all, with progress and a summary. It resumes where it left off.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Rooms</h3>
+            <p>Every book can be assigned to a room. A room picker appears at capture time for the whole shelf (defaulting to the last room you used), in the batch review sheet, and in each book's detail view. Rooms come from one managed list so "Study" and "study" don't become two rooms. The Books folder shows a room badge on each cell and room chips to filter the shelf to one room; Select All respects the active room.</p>
         </div>
 
         <!-- Essentials Wallet -->
@@ -738,6 +804,7 @@
             <a href="folders.html">Folders Guide</a>
             <a href="cleanup.html">Clean Up Guide</a>
             <a href="stats.html">Stats Guide</a>
+            <a href="calories.html">Calorie Tracking</a>
             <a href="support.html">Support</a>
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>

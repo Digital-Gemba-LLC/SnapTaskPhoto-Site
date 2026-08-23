@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Tracking - UnMuck Guide</title>
+    <meta name="description" content="Track calories, carbs, and protein by photographing your meals. Snap, describe, or tag what's on the plate; daily totals, Food Log trends, Home Screen widgets, and calories burned from WHOOP or Apple Health.">
+    <meta property="og:title" content="Calorie Tracking - UnMuck Guide">
+    <meta property="og:description" content="Photograph your meal, get calories, carbs, and protein. Daily totals, trends, widgets, and a calories-burned balance from WHOOP or Apple Health.">
+    <meta property="og:url" content="https://unmuck.app/calories.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unmuck.app/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://unmuck.app/og-image.png">
+    <link rel="canonical" href="https://unmuck.app/calories.html">
+    <meta name="apple-itunes-app" content="app-id=6757636900">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #fafafa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        a { color: #007AFF; }
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, #5856D6 0%, #007AFF 100%);
+            color: white;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 0 0 0.75rem 0;
+            font-weight: 700;
+        }
+        .hero .subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        /* Tutorial nav */
+        .tutorial-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .tutorial-nav a {
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #888;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .tutorial-nav a:hover { color: #007AFF; }
+        .tutorial-nav a.active {
+            color: #007AFF;
+            border-bottom-color: #007AFF;
+        }
+        /* Headings */
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* How it works steps */
+        .how-it-works {
+            background: linear-gradient(135deg, #f5f5f7 0%, #fff 100%);
+            border-radius: 16px;
+            padding: 40px 30px;
+            margin: 2rem 0 3rem 0;
+            border: 1px solid #e5e5e5;
+        }
+        .how-it-works h2 { margin-top: 0; }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .step { text-align: center; }
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background: #007AFF;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .step h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        .step p {
+            margin: 0;
+            color: #555;
+            font-size: 0.92rem;
+        }
+        /* Cards */
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 2px solid #e5e5e5;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+        }
+        .feature-card:hover {
+            border-color: #007AFF;
+            box-shadow: 0 4px 12px rgba(0,122,255,0.1);
+        }
+        .feature-card h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.2rem;
+        }
+        .feature-card p {
+            margin: 0 0 0.5rem 0;
+            color: #555;
+        }
+        .feature-card p:last-child { margin-bottom: 0; }
+        .feature-card ul, .feature-card ol {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.2rem;
+            color: #555;
+        }
+        .feature-card li { margin-bottom: 0.3rem; }
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .card-grid .feature-card { margin-bottom: 0; }
+        .card-grid .feature-card.full-width { grid-column: 1 / -1; }
+        /* Mock capture chooser */
+        .mock-ui {
+            background: #f5f5f7;
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 380px;
+            margin: 2rem auto;
+        }
+        .mock-chooser {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .mock-choice {
+            background: #fff;
+            border-radius: 12px;
+            padding: 14px 8px;
+            text-align: center;
+            border: 1px solid #e5e5e5;
+        }
+        .mock-choice .dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #FF9500;
+            margin: 0 auto 8px;
+            color: #fff;
+            font-weight: 700;
+            line-height: 40px;
+            font-size: 0.9rem;
+        }
+        .mock-choice .name {
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .mock-choice .caption {
+            font-size: 0.7rem;
+            color: #888;
+        }
+        .mock-saved {
+            margin-top: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+        }
+        .mock-saved span {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 14px;
+            padding: 5px 12px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .mock-saved-label {
+            font-size: 0.7rem;
+            color: #888;
+            text-align: center;
+            margin-top: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        /* Mock banner */
+        .mock-nutrition-banner {
+            background: #fff;
+            border-radius: 12px;
+            padding: 14px 18px;
+            max-width: 400px;
+            margin: 1.5rem auto;
+            border: 1px solid #e5e5e5;
+        }
+        .mock-nutrition-banner .row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .mock-nutrition-banner .row + .row { margin-top: 6px; }
+        .mock-nutrition-banner .number {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+        }
+        .mock-nutrition-banner .under { color: #2e7d32; font-weight: 700; }
+        .mock-nutrition-banner .over { color: #e65100; font-weight: 700; }
+        .mock-sparkline {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            height: 34px;
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px solid #eee;
+        }
+        .mock-sparkline div {
+            flex: 1;
+            background: #FF9500;
+            opacity: 0.4;
+            border-radius: 2px 2px 0 0;
+        }
+        .mock-sparkline div:last-child { opacity: 1; }
+        /* Mock widgets */
+        .widget-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            max-width: 520px;
+            margin: 1.5rem auto;
+        }
+        .mock-widget {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 18px;
+            padding: 16px;
+            color: #fff;
+            min-height: 120px;
+        }
+        .mock-widget .title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .mock-widget .big {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+        .mock-widget .small {
+            font-size: 0.75rem;
+            opacity: 0.85;
+        }
+        .mock-widget .bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            height: 44px;
+            margin-top: 10px;
+        }
+        .mock-widget .bars div {
+            flex: 1;
+            background: #FF9500;
+            opacity: 0.45;
+            border-radius: 2px 2px 0 0;
+        }
+        .mock-widget .bars div:last-child { opacity: 1; }
+        .mock-widget .capture-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .mock-widget .capture-buttons div {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 10px 4px;
+            text-align: center;
+            font-size: 0.68rem;
+            font-weight: 700;
+        }
+        .mock-widget .capture-buttons .circle {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #FF9500;
+            margin: 0 auto 6px;
+        }
+        /* Source cards */
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .source-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid #e5e5e5;
+            text-align: center;
+        }
+        .source-card h4 {
+            margin: 0 0 0.4rem 0;
+            font-size: 1.05rem;
+        }
+        .source-card p {
+            margin: 0;
+            color: #555;
+            font-size: 0.88rem;
+        }
+        /* Balance math box */
+        .math-box {
+            background: linear-gradient(135deg, #f5f5f7 0%, #fff 100%);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 2rem 0;
+            border: 1px solid #e5e5e5;
+            text-align: center;
+        }
+        .math-box h3 { margin-top: 0; }
+        .math-line {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+        .math-line .under { color: #2e7d32; }
+        .math-line .over { color: #e65100; }
+        .math-box p { color: #555; margin: 0.75rem 0 0 0; }
+        /* Tip callout */
+        .tip-callout {
+            background: #f0f7ff;
+            border-left: 4px solid #007AFF;
+            border-radius: 0 10px 10px 0;
+            padding: 16px 20px;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+        .tip-callout strong { color: #007AFF; }
+        .caveat-callout {
+            background: #fff8e1;
+            border-left: 4px solid #ffb300;
+            border-radius: 0 10px 10px 0;
+            padding: 16px 20px;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            color: #5d4037;
+        }
+        .caveat-callout strong { color: #bf360c; }
+        .caveat-callout ul {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.2rem;
+        }
+        .caveat-callout li { margin-bottom: 0.3rem; }
+        /* Privacy callout */
+        .privacy-callout {
+            background: #1a1a2e;
+            color: #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .privacy-callout h3 {
+            color: #fff;
+            margin: 0 0 0.75rem 0;
+            font-size: 1.3rem;
+        }
+        .privacy-callout p {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+        .privacy-callout p:last-child { margin-bottom: 0; }
+        .ai-disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            color: #856404;
+        }
+        .ai-disclaimer strong { color: #d32f2f; }
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .cta h2 { margin-top: 0; }
+        .app-store-badge {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .app-store-badge img { height: 50px; }
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+        footer nav { margin-bottom: 1rem; }
+        footer nav a { margin: 0 0.75rem; }
+        /* Responsive */
+        @media (max-width: 650px) {
+            .hero h1 { font-size: 2rem; }
+            .steps { grid-template-columns: 1fr; gap: 1.5rem; }
+            .card-grid { grid-template-columns: 1fr; }
+            .source-grid { grid-template-columns: 1fr; }
+            .widget-row { grid-template-columns: 1fr; }
+            .tutorial-nav a { padding: 12px 14px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>Calorie Tracking</h1>
+        <p class="subtitle">Photograph the plate. Get calories, carbs, and protein. See how the day balances against what you burned.</p>
+    </header>
+
+    <nav class="tutorial-nav">
+        <a href="snap.html">Capture</a>
+        <a href="folders.html">Folders</a>
+        <a href="cleanup.html">Clean Up</a>
+        <a href="stats.html">Stats</a>
+        <a href="calories.html" class="active">Calories</a>
+    </nav>
+
+    <main class="container">
+        <div class="how-it-works">
+            <h2>The Loop</h2>
+            <p class="section-intro" style="margin-top: 0;">No food database, no serving-size search. Four steps from plate to balance.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Capture</h3>
+                    <p>Snap the meal, or tell the app what it is first. From the app, a widget, or a saved food.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Estimate</h3>
+                    <p>AI identifies the dish and returns calories, carbs, and protein. Correct it in a sentence if it's off.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Total</h3>
+                    <p>The Calories folder, Food Log, and widgets add up the day and chart the last 7, 14, or 30 days.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Balance</h3>
+                    <p>Optionally bring in calories burned from WHOOP or Apple Health and see under or over for the day.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Capture -->
+        <h2 id="capture">Capturing a Meal</h2>
+        <p class="section-intro">Tap Calories on the Capture tab. The questions come before the camera, so the photo saves the instant you shoot with everything already attached.</p>
+
+        <div class="mock-ui">
+            <div class="mock-chooser">
+                <div class="mock-choice">
+                    <div class="dot">1</div>
+                    <div class="name">Snap</div>
+                    <div class="caption">Straight to camera</div>
+                </div>
+                <div class="mock-choice">
+                    <div class="dot">2</div>
+                    <div class="name">Describe</div>
+                    <div class="caption">Add a note first</div>
+                </div>
+                <div class="mock-choice">
+                    <div class="dot">3</div>
+                    <div class="name">Has / Not</div>
+                    <div class="caption">Mark ingredients</div>
+                </div>
+            </div>
+            <div class="mock-saved-label">My Foods</div>
+            <div class="mock-saved">
+                <span>4-Egg Breakfast</span>
+                <span>Greek Yogurt Bowl</span>
+                <span>Chicken Salad</span>
+            </div>
+        </div>
+
+        <div class="card-grid">
+            <div class="feature-card">
+                <h3>Snap</h3>
+                <p>Straight to the camera. One tap, one photo, done. Best when the plate speaks for itself: a sandwich, a salad, a bowl of pasta.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Describe</h3>
+                <p>Type a short note first, then shoot. "Leftover chili, second helping" or "16 oz porterhouse, medium rare." The note goes to the analyzer with the photo and noticeably sharpens the estimate.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Has / Not</h3>
+                <p>Tap ingredient pills to mark what is and isn't on the plate (no dressing, has cheese, no rice), then shoot. You choose the pills in Settings under Ingredient Quick-Select. If you haven't set any up, this path falls back to Describe.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Saved foods</h3>
+                <p>Your saved meals sit under the three buttons. Tap one to stamp its calories, carbs, and protein on the photo you're about to take, or choose <strong>Log Without Photo</strong> to add it to the day with a placeholder card. Neither uses an AI credit.</p>
+            </div>
+            <div class="feature-card full-width">
+                <h3>Snap Now at any step</h3>
+                <p>Changed your mind halfway through a note? A Snap Now button on the note step jumps straight to the camera. Back returns to the chooser. Nothing is lost if you dismiss: the photo only saves after you shoot, so there is no half-captured meal waiting in limbo.</p>
+            </div>
+        </div>
+
+        <div class="tip-callout">
+            <strong>From the Home Screen:</strong> The Calorie Capture widget has the same three buttons. Each one opens the app directly at that step, skipping the chooser. See <a href="#widgets">Widgets</a> below.
+        </div>
+
+        <!-- What AI returns -->
+        <h2 id="estimates">What the AI Returns</h2>
+        <p class="section-intro">Calories auto-analyzes by default (Auto-AI is on for this intent). One AI credit per meal photo.</p>
+
+        <div class="feature-card">
+            <h3>Calories, carbs, protein</h3>
+            <p>The analyzer identifies the dish and estimates calories, carbohydrates (grams), and protein (grams), with a short description of what it saw and any ingredient or allergen notes. The three numbers are stored with the photo, shown as an overlay on its thumbnail, and roll into every total, chart, and widget.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Correct it in a sentence</h3>
+            <p>Got the portion wrong? Reply in the follow-up chat: "this was 12 oz, not 8" or "no cheese on this one." The analyzer re-runs with your correction and updates the main calorie, carb, and protein values in place, and the daily totals follow. The first two follow-ups per analysis are free. You can also edit the three numbers directly in the photo's detail view.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Save it for next time</h3>
+            <p>Once a meal has been analyzed, save it to <strong>My Foods</strong>. Next time you eat the same thing, log it in one tap with no photo and no credit. My Foods also suggests meals from your history: repeated meals first, or your most recent meals if nothing has repeated yet.</p>
+        </div>
+
+        <!-- Folder -->
+        <h2 id="folder">The Calories Folder</h2>
+        <p class="section-intro">Every meal photo files here. The banner at the top does the arithmetic for you.</p>
+
+        <div class="mock-nutrition-banner">
+            <div class="row"><span><span class="number">1,840</span> cal</span><span><span class="number">142g</span> carbs</span><span><span class="number">118g</span> protein</span></div>
+            <div class="row"><span>2,410 burned</span><span class="under">570 under</span></div>
+            <div class="mock-sparkline">
+                <div style="height: 60%;"></div><div style="height: 75%;"></div><div style="height: 45%;"></div><div style="height: 90%;"></div><div style="height: 70%;"></div><div style="height: 55%;"></div><div style="height: 65%;"></div>
+            </div>
+        </div>
+
+        <div class="card-grid">
+            <div class="feature-card">
+                <h3>Daily totals</h3>
+                <p>Today's calories, carbs, and protein, updated as you log. Switch the folder's time filter to Yesterday to see that day's totals instead. Totals respect any active time or location filter.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Burned and balance</h3>
+                <p>With a calories-burned source enabled, the banner adds "N burned" and "N under" or "N over" for Today and Yesterday. See <a href="#burned">Calories Burned</a>.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Per-photo overlays</h3>
+                <p>Each thumbnail shows its calories and carbs, so a day's meals read at a glance without opening anything.</p>
+            </div>
+            <div class="feature-card">
+                <h3>7-day strip</h3>
+                <p>Three small sparklines under the totals show the last week of calories, carbs, and protein. Tap the strip to open the Food Log.</p>
+            </div>
+        </div>
+
+        <!-- Food Log and trends -->
+        <h2 id="food-log">Food Log and Trends</h2>
+        <p class="section-intro">The full history lives in the Food Log, reachable from Settings, the Stats tab, and the Calories folder banner.</p>
+
+        <div class="feature-card">
+            <h3>Day by day</h3>
+            <p>Each day is a section with its total calories, carbs, and protein and one row per meal: thumbnail, time, description, and the three numbers. When a burn source is on, the day also shows a "Burned (WHOOP)" or "Burned (Apple Health)" row. Tap a meal to open its photo and edit the values.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Trends: 7, 14, or 30 days</h3>
+            <p>Three full-width charts at the top of the Food Log, one each for calories, carbs, and protein, with a 7 / 14 / 30-day picker. A dashed line marks your average over the days you logged. With a burn source enabled, the calories chart adds a dashed green burned series and shows today's net in its header. The same charts appear as a tile on the Stats tab.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Calories vs Carbs</h3>
+            <p>A scatter plot in the Stats tab puts each complete day on a calories-versus-carbs grid, so you can see whether your high-calorie days are also your high-carb days.</p>
+        </div>
+
+        <!-- Widgets -->
+        <h2 id="widgets">Widgets</h2>
+        <p class="section-intro">Log and check without opening the app. Add them from the Home Screen or Lock Screen widget gallery.</p>
+
+        <div class="widget-row">
+            <div class="mock-widget">
+                <div class="title">Calorie Capture</div>
+                <div class="capture-buttons">
+                    <div><div class="circle"></div>Snap</div>
+                    <div><div class="circle"></div>Describe</div>
+                    <div><div class="circle"></div>Has / Not</div>
+                </div>
+            </div>
+            <div class="mock-widget">
+                <div class="title">Today's Nutrition</div>
+                <div class="big">1,840 cal</div>
+                <div class="small">142g carbs &middot; 118g protein</div>
+                <div class="small">2,410 burned &middot; 570 under</div>
+            </div>
+            <div class="mock-widget">
+                <div class="title">Calories &ndash; 7 Days</div>
+                <div class="big">1,840</div>
+                <div class="bars">
+                    <div style="height: 60%;"></div><div style="height: 75%;"></div><div style="height: 45%;"></div><div style="height: 90%;"></div><div style="height: 70%;"></div><div style="height: 55%;"></div><div style="height: 65%;"></div>
+                </div>
+            </div>
+            <div class="mock-widget">
+                <div class="title">Protein &ndash; 7 Day Trend</div>
+                <div class="big">118g</div>
+                <div class="small">avg 104g</div>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <h3>Calorie Capture (medium)</h3>
+            <p>Three one-tap entries into the food flow: Snap opens the camera, Describe opens the note, Has / Not opens the ingredient pills. Each runs exactly one step and then shoots.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Today's Nutrition (medium and Lock Screen)</h3>
+            <p>Today's total calories, carbs, and protein, plus burned and net when a burn source is on. The Lock Screen version is a rectangular accessory widget. Tap to open the Calories folder. Resets to zero at midnight.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>7-day charts (small and medium)</h3>
+            <p>Six chart widgets: Calories, Carbs, and Protein, each as a 7-day bar chart or a 7-day trend line. Bars show today at full strength and prior days lighter; trend lines mark every day and draw a dashed average line labelled "avg N." The header shows today's total. The calories chart includes the dashed burned series when a source is enabled. The window slides at midnight without opening the app.</p>
+        </div>
+
+        <div class="tip-callout">
+            <strong>Widgets stay current.</strong> The app refreshes them whenever you log a meal, when a meal arrives from another device via iCloud, when you share into Unmuck, and every time you open the app. Widgets can't read iCloud Drive themselves, so the app publishes the totals for them.
+        </div>
+
+        <!-- Calories Burned -->
+        <h2 id="burned">Calories Burned</h2>
+        <p class="section-intro">Intake is only half the picture. Pick a source in Settings under Calories Burned and every surface shows the balance.</p>
+
+        <div class="source-grid">
+            <div class="source-card">
+                <h4>Off</h4>
+                <p>The default. Intake totals only; no health data is read.</p>
+            </div>
+            <div class="source-card">
+                <h4>WHOOP</h4>
+                <p>Total daily burn from your WHOOP physiological cycle, including resting metabolism.</p>
+            </div>
+            <div class="source-card">
+                <h4>Apple Health</h4>
+                <p>Active Energy plus Resting Energy per day from whatever writes to Health: Apple Watch, Garmin, Oura, and others.</p>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <h3>Set up WHOOP</h3>
+            <ol>
+                <li>Open Settings in Unmuck and tap <strong>Calories Burned</strong>.</li>
+                <li>Choose <strong>WHOOP</strong>, then tap <strong>Connect WHOOP</strong>.</li>
+                <li>Sign in on WHOOP's own page and approve access. Unmuck asks only to read your cycles; your WHOOP password never passes through us.</li>
+                <li>The last 35 days of burn download immediately. After that, Unmuck refreshes on launch and when you open the Calories folder or Food Log, and <strong>Sync Now</strong> forces a refresh.</li>
+            </ol>
+            <p><strong>Disconnect WHOOP</strong> removes the sign-in and the stored history from this device.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Set up Apple Health (Apple Watch, Oura, and others)</h3>
+            <ol>
+                <li>Open Settings in Unmuck and tap <strong>Calories Burned</strong>.</li>
+                <li>Choose <strong>Apple Health</strong>. iOS asks you to allow Unmuck to read Active Energy and Resting Energy. Allow both.</li>
+                <li>Anything that already writes energy to Health (Apple Watch, Oura, Withings, most fitness apps) shows up without further setup.</li>
+            </ol>
+            <p>If nothing appears, open the Health app, then Sharing, then Apps, then Unmuck, and confirm both energy types are allowed. Unmuck only reads; it never writes to Health.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Set up Garmin (via Apple Health)</h3>
+            <p>Garmin doesn't write to Apple Health by default. Turn it on once in Garmin Connect:</p>
+            <ol>
+                <li>In the Garmin Connect app, open <strong>Settings</strong>, then <strong>Apple Health</strong>.</li>
+                <li>Turn on <strong>Active Energy</strong> and <strong>Basal Energy</strong>. Both are needed; with only one, Unmuck would see a partial day.</li>
+                <li>In Unmuck, choose <strong>Apple Health</strong> as the source as described above.</li>
+            </ol>
+            <p>Garmin data reaches Health only when Garmin Connect syncs with your watch, so the day's number fills in over the course of the day.</p>
+        </div>
+
+        <div class="math-box">
+            <h3>How "under" and "over" are computed</h3>
+            <div class="math-line">net = calories logged &minus; calories burned</div>
+            <div class="math-line"><span class="under">Under</span> when net is negative (a deficit) &middot; <span class="over">Over</span> when net is positive (a surplus)</div>
+            <p>Example: 1,840 logged and 2,410 burned shows "2,410 burned &middot; 570 under." Burned is the whole day, resting metabolism included, not just workouts. The banner shows the balance for Today and Yesterday; the Food Log, trend charts, and widgets carry it across the whole window.</p>
+        </div>
+
+        <div class="caveat-callout">
+            <strong>Good to know before you compare days</strong>
+            <ul>
+                <li><strong>WHOOP days run wake-to-wake.</strong> A WHOOP cycle starts when you wake and ends when you wake the next morning, so a day's burn includes last night's sleep. Unmuck assigns each cycle to the morning you woke up. Today's number keeps growing until tomorrow morning.</li>
+                <li><strong>Apple Health days run midnight-to-midnight.</strong> Unmuck sums Active and Resting Energy per calendar day in your local time zone.</li>
+                <li><strong>Third-party Health data lags.</strong> Garmin, Oura, and similar sources write to Health only when their own app syncs. Today's burn can look low until that sync happens; open the source app to push it along.</li>
+                <li><strong>Days with no data are blank, not zero.</strong> A day with nothing written to Health, or no WHOOP cycle, shows no burned value rather than a misleading zero.</li>
+                <li><strong>Sources never mix.</strong> Switching the source clears the stored history and loads fresh from the new one, so you never see WHOOP and Health numbers side by side.</li>
+                <li><strong>Health permission can't be detected.</strong> iOS doesn't tell apps whether read access was denied. If you chose Apple Health and see nothing, check the Health app's Sharing settings.</li>
+            </ul>
+        </div>
+
+        <div class="privacy-callout">
+            <h3>Health Data Stays on Your Phone</h3>
+            <p>Apple Health data is read on-device and never leaves it. Unmuck doesn't write to Health.</p>
+            <p>WHOOP sign-in happens on WHOOP's page. Our server only relays the handshake and never sees your burn data. The history is stored on your phone only.</p>
+            <p>Meal photos are stored in your iCloud Drive. Nothing about your diet is used for advertising or sold. See the <a href="privacy.html" style="color: #8ab4ff;">Privacy Policy</a>.</p>
+        </div>
+
+        <div class="ai-disclaimer">
+            <strong>AI Disclaimer:</strong> Calorie, carb, and protein estimates are approximations from a photo and can be wrong. Burn figures come from your wearable's own model. Unmuck is not a substitute for medical or dietary advice.
+        </div>
+
+        <!-- CTA -->
+        <div class="cta">
+            <h2>Ready to Log by Photo?</h2>
+            <p><strong>Requires iOS 18.0 or later.</strong> 50 AI analyses included free. Saved foods and burn sources never use a credit.</p>
+            <a href="https://apps.apple.com/us/app/unmuck/id6757636900" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+            <p style="margin-top: 1.5rem; color: #555; font-style: italic; font-size: 0.95rem;">Photo intelligence. Always on. Always private. Always yours.</p>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="snap.html">Capture Guide</a>
+            <a href="folders.html">Folders Guide</a>
+            <a href="cleanup.html">Clean Up Guide</a>
+            <a href="stats.html">Stats Guide</a>
+            <a href="calories.html">Calorie Tracking</a>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </nav>
+        <p>&copy; 2026 Digital Gemba, LLC. All rights reserved.</p>
+    </footer>
+    <script data-goatcounter="https://unmuck.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
