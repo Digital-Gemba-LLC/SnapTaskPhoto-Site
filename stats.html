@@ -322,8 +322,26 @@
         <p class="section-intro" style="margin-top: 2rem;">Stats gives you a complete picture of your photography habits. Interactive charts, heatmaps, and lifetime metrics — all calculated on-device from your Camera Roll metadata.</p>
 
         <!-- Lifetime Activity Stats -->
+        <h2>How Stats Is Organized</h2>
+        <p class="section-intro">The tab opens on a hub that loads instantly, and each screen computes only what it shows.</p>
+
+        <div class="feature-card">
+            <h3>Lifetime Activity at the top</h3>
+            <p>Your Space Reclaimed, Memories Kept, Muck Avoided, Muck Deleted, and Roll Processed numbers sit at the top of the hub. They come from Unmuck's own counters, so they never wait on your Camera Roll.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Six destination cards</h3>
+            <p><strong>Nutrition</strong> (today's intake, burn, and net), <strong>Camera Roll</strong> (counts), <strong>When</strong> (quarter, weekday, year-by-month), <strong>Where</strong> (hour of day, places, locations by month and year), <strong>Media</strong> (types, screenshots vs photos), and <strong>Unmuck Storage</strong>. Plus a Calories vs Carbs row.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Pay only for what you open</h3>
+            <p>When, Where, and Media read your whole library once per session, the first time you open any of them. Where also reverse-geocodes your top locations, and pauses if you leave the screen and resumes when you come back. Unmuck Storage measures your iCloud folders when you open it. Going straight to Nutrition or Lifetime Activity triggers none of that.</p>
+        </div>
+
         <h2>Lifetime Activity</h2>
-        <p class="section-intro">Track what you've accomplished with Unmuck over time.</p>
+        <p class="section-intro">Track what you've accomplished with Unmuck over time. Shown at the top of the hub.</p>
 
         <div class="stat-grid">
             <div class="stat-item">
@@ -359,7 +377,7 @@
 
         <!-- Unmuck Storage Stats -->
         <h2>Unmuck Storage</h2>
-        <p class="section-intro">See how much you've stored in Unmuck's iCloud folders.</p>
+        <p class="section-intro">See how much you've stored in Unmuck's iCloud folders. Its own screen, measured when you open it.</p>
 
         <div class="stat-grid">
             <div class="stat-item">
@@ -381,7 +399,7 @@
 
         <!-- Camera Roll Statistics -->
         <h2>Camera Roll Breakdown</h2>
-        <p class="section-intro">A snapshot of what's in your Camera Roll right now.</p>
+        <p class="section-intro">A snapshot of what's in your Camera Roll right now. The Camera Roll screen: quick counts, no library scan.</p>
 
         <div class="stat-grid">
             <div class="stat-item">
@@ -413,17 +431,16 @@
 
         <!-- Nutrition -->
         <h2 id="nutrition">Nutrition</h2>
-        <p class="section-intro">Your meal history from the Calories folder, surfaced inside Stats. The <a href="calories.html">calorie tracking guide</a> covers the full loop.</p>
+        <p class="section-intro">The Nutrition card on the hub shows today's calories, burn, and net, and opens the Nutrition page. The <a href="calories.html">calorie tracking guide</a> covers the full loop.</p>
 
         <div class="feature-card">
-            <h3>7-day strip</h3>
-            <p>A tile at the top of the section shows three sparklines for the last week of calories, carbs, and protein. Tap it to open the Food Log.</p>
+            <h3>The Nutrition page</h3>
+            <p>Today and Yesterday at a glance (intake, meals, burned, under or over), then three full-width trend charts (calories, carbs, protein) with a 7 / 14 / 30-day picker and a dashed average line. Links below lead to the Food Log, Calories vs Carbs, My Foods, Ingredient Quick-Select, and Calories Burned. <a href="calories.html#food-log">Details in the calorie guide.</a></p>
         </div>
 
         <div class="feature-card">
-            <h3>Food Log: trends and daily totals</h3>
-            <p>The Food Log opens on three full-width trend charts (calories, carbs, protein) with a 7 / 14 / 30-day picker and a dashed average line. Below them, each day is a section with its totals and one row per meal: thumbnail, time of day, dish description, and the cal / carb / protein columns, sorted by capture time.</p>
-            <p>With a calories-burned source enabled (WHOOP or Apple Health), each day also shows a Burned row and the calories chart adds a dashed green burned series with today's net in its header.</p>
+            <h3>Food Log: daily totals</h3>
+            <p>Each day is a section with its totals and one row per meal: thumbnail, time of day, dish description, and the cal / carb / protein columns, sorted by capture time. With a calories-burned source enabled (WHOOP or Apple Health), each day also shows a Burned row.</p>
         </div>
 
         <div class="feature-card">
@@ -437,12 +454,12 @@
         </div>
 
         <div class="tip-callout">
-            <strong>Where it lives:</strong> The Nutrition section sits inside the Stats tab, right next to Lifetime Activity. The same Food Log is reachable from Settings and from the Calories folder banner. You don't need a separate diet app.
+            <strong>Where it lives:</strong> Nutrition is the first card on the Stats hub. The same page is reachable from Settings and from the Calories folder banner. You don't need a separate diet app.
         </div>
 
         <!-- Charts Section -->
         <h2>Charts</h2>
-        <p class="section-intro">Seven interactive charts that reveal your photography patterns. Tap any bar to jump straight to those photos in the Roll.</p>
+        <p class="section-intro">Seven interactive charts that reveal your photography patterns, split across the When, Where, and Media screens. Tap any bar to jump straight to those photos in the Roll.</p>
 
         <div class="chart-grid">
             <!-- Photos by Quarter -->
@@ -497,7 +514,7 @@
                     <div class="mock-bar" style="height: 15%;"></div>
                 </div>
                 <h4>Photos by Hour of Day</h4>
-                <p>Your peak photography times. Uses the actual timezone of where each photo was taken — not your current timezone. Tap any hour to jump to those photos.</p>
+                <p>Your peak photography times. Uses the actual timezone of where each photo was taken — not your current timezone — which is why it lives on the Where screen. Tap any hour to jump to those photos.</p>
             </div>
 
             <!-- Media Types -->
@@ -559,7 +576,7 @@
 
         <!-- Heatmaps Section -->
         <h2>Heatmaps</h2>
-        <p class="section-intro">Three bubble charts that cross-reference location, month, and year. Bigger bubbles mean more photos. Colors follow a Viridis-inspired gradient from dark purple (few) to yellow (many).</p>
+        <p class="section-intro">Three bubble charts that cross-reference location, month, and year (the two location heatmaps on Where, the year-by-month heatmap on When). Bigger bubbles mean more photos. Colors follow a Viridis-inspired gradient from dark purple (few) to yellow (many).</p>
 
         <div class="chart-grid">
             <!-- Locations by Month -->

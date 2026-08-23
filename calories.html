@@ -176,7 +176,7 @@
         }
         .mock-chooser {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
         }
         .mock-choice {
@@ -204,31 +204,6 @@
         .mock-choice .caption {
             font-size: 0.7rem;
             color: #888;
-        }
-        .mock-saved {
-            margin-top: 14px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            justify-content: center;
-        }
-        .mock-saved span {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 14px;
-            padding: 5px 12px;
-            font-size: 0.72rem;
-            font-weight: 600;
-            color: #333;
-        }
-        .mock-saved-label {
-            font-size: 0.7rem;
-            color: #888;
-            text-align: center;
-            margin-top: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
         }
         /* Mock banner */
         .mock-nutrition-banner {
@@ -495,7 +470,7 @@
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>Total</h3>
-                    <p>The Calories folder, Food Log, and widgets add up the day and chart the last 7, 14, or 30 days.</p>
+                    <p>The Calories folder, the Nutrition page, and widgets add up the day and chart the last 7, 14, or 30 days.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
@@ -526,12 +501,11 @@
                     <div class="name">Has / Not</div>
                     <div class="caption">Mark ingredients</div>
                 </div>
-            </div>
-            <div class="mock-saved-label">My Foods</div>
-            <div class="mock-saved">
-                <span>4-Egg Breakfast</span>
-                <span>Greek Yogurt Bowl</span>
-                <span>Chicken Salad</span>
+                <div class="mock-choice">
+                    <div class="dot">4</div>
+                    <div class="name">Saved</div>
+                    <div class="caption">Known macros, no AI</div>
+                </div>
             </div>
         </div>
 
@@ -549,8 +523,8 @@
                 <p>Tap ingredient pills to mark what is and isn't on the plate (no dressing, has cheese, no rice), then shoot. Usually you won't need this: Snap is enough for most meals. It helps when a photo is easy to misread, such as a sauce that could be cream or yogurt, a hidden layer of rice, or a swap the AI can't see. You choose the pills in Settings under Ingredient Quick-Select. If you haven't set any up, this path falls back to Describe.</p>
             </div>
             <div class="feature-card">
-                <h3>Saved foods</h3>
-                <p>Your saved meals sit under the three buttons. Tap one to stamp its calories, carbs, and protein on the photo you're about to take, or choose <strong>Log Without Photo</strong> to add it to the day with a placeholder card. Neither uses an AI credit.</p>
+                <h3>Saved</h3>
+                <p>A fourth button that appears once you have saved a meal to My Foods. Tap it, pick the meal, then either <strong>Snap Photo</strong> to stamp its calories, carbs, and protein on the photo you're about to take, or <strong>Log Without Photo</strong> to add it to the day with a placeholder card. Neither uses an AI credit. New users see exactly the three buttons above, the same as the widget.</p>
             </div>
             <div class="feature-card full-width">
                 <h3>Snap Now at any step</h3>
@@ -559,7 +533,7 @@
         </div>
 
         <div class="tip-callout">
-            <strong>From the Home Screen:</strong> The Calorie Capture widget has the same three buttons. Each one opens the app directly at that step, skipping the chooser. See <a href="#widgets">Widgets</a> below.
+            <strong>From the Home Screen:</strong> The Calorie Capture widget has the first three buttons (Snap, Describe, Has / Not). Each one opens the app directly at that step, skipping the chooser. See <a href="#widgets">Widgets</a> below.
         </div>
 
         <!-- What AI returns -->
@@ -588,6 +562,7 @@
         <div class="mock-nutrition-banner">
             <div class="row"><span><span class="number">1,840</span> cal</span><span><span class="number">142g</span> carbs</span><span><span class="number">118g</span> protein</span></div>
             <div class="row"><span>2,410 burned</span><span class="under">570 under</span></div>
+            <div class="row" style="font-size: 0.85em; color: #666;"><span>Yesterday &middot; 1,640 cal &middot; 128g carb &middot; 96g prot &middot; <span class="under">310 under</span> &rsaquo;</span></div>
             <div class="mock-sparkline">
                 <div style="height: 60%;"></div><div style="height: 75%;"></div><div style="height: 45%;"></div><div style="height: 90%;"></div><div style="height: 70%;"></div><div style="height: 55%;"></div><div style="height: 65%;"></div>
             </div>
@@ -595,12 +570,12 @@
 
         <div class="card-grid">
             <div class="feature-card">
-                <h3>Daily totals</h3>
-                <p>Today's calories, carbs, and protein, updated as you log. Switch the folder's time filter to Yesterday to see that day's totals instead. Totals respect any active time or location filter.</p>
+                <h3>Today and Yesterday</h3>
+                <p>Today's calories, carbs, and protein, updated as you log, with a Yesterday line underneath so you can compare without touching anything. Tap the Yesterday line to filter the folder to that day (the same view as the Yesterday time filter). Totals respect any active time or location filter.</p>
             </div>
             <div class="feature-card">
                 <h3>Burned and balance</h3>
-                <p>With a calories-burned source enabled, the banner adds "N burned" and "N under" or "N over" for Today and Yesterday. See <a href="#burned">Calories Burned</a>.</p>
+                <p>With a calories-burned source enabled, the banner adds "N burned" and "N under" or "N over" for Today, and the Yesterday line ends with its own under or over. See <a href="#burned">Calories Burned</a>.</p>
             </div>
             <div class="feature-card">
                 <h3>Per-photo overlays</h3>
@@ -608,27 +583,37 @@
             </div>
             <div class="feature-card">
                 <h3>7-day strip</h3>
-                <p>Three small sparklines under the totals show the last week of calories, carbs, and protein. Tap the strip to open the Food Log.</p>
+                <p>Three small sparklines under the totals show the last week of calories, carbs, and protein. Tap the strip to open the Nutrition page.</p>
             </div>
         </div>
 
-        <!-- Food Log and trends -->
-        <h2 id="food-log">Food Log and Trends</h2>
-        <p class="section-intro">The full history lives in the Food Log, reachable from Settings, the Stats tab, and the Calories folder banner.</p>
+        <!-- Nutrition page, Food Log and trends -->
+        <h2 id="food-log">The Nutrition Page</h2>
+        <p class="section-intro">Everything calories lives on one page, reachable from the Stats tab's Nutrition card, from Settings, and from the Calories folder banner.</p>
 
         <div class="feature-card">
-            <h3>Day by day</h3>
-            <p>Each day is a section with its total calories, carbs, and protein and one row per meal: thumbnail, time, description, and the three numbers. When a burn source is on, the day also shows a "Burned (WHOOP)" or "Burned (Apple Health)" row. Tap a meal to open its photo and edit the values.</p>
+            <h3>At a glance</h3>
+            <p>Today and Yesterday at the top: calories, carbs, protein, how many meals, and, with a burn source on, burned and under or over.</p>
         </div>
 
         <div class="feature-card">
             <h3>Trends: 7, 14, or 30 days</h3>
-            <p>Three full-width charts at the top of the Food Log, one each for calories, carbs, and protein, with a 7 / 14 / 30-day picker. A dashed line marks your average over the days you logged. With a burn source enabled, the calories chart adds a dashed green burned series and shows today's net in its header. The same charts appear as a tile on the Stats tab.</p>
+            <p>Three full-width charts, one each for calories, carbs, and protein, with a 7 / 14 / 30-day picker. A dashed line marks your average over the days you logged. With a burn source enabled, the calories chart adds a dashed green burned series and shows today's net in its header.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Food Log: day by day</h3>
+            <p>Open it from the Nutrition page. Each day is a section with its total calories, carbs, and protein and one row per meal: thumbnail, time, description, and the three numbers. When a burn source is on, the day also shows a "Burned (WHOOP)" or "Burned (Apple Health)" row. Tap a meal to open its photo and edit the values.</p>
         </div>
 
         <div class="feature-card">
             <h3>Calories vs Carbs</h3>
-            <p>A scatter plot in the Stats tab puts each complete day on a calories-versus-carbs grid, so you can see whether your high-calorie days are also your high-carb days.</p>
+            <p>A scatter plot that puts each complete day on a calories-versus-carbs grid, so you can see whether your high-calorie days are also your high-carb days. Linked from the Nutrition page and the Stats hub.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Everything else, one tap away</h3>
+            <p>The Nutrition page also links to My Foods (your saved meals and suggestions), Ingredient Quick-Select (the Has / Not pills), and Calories Burned, which shows the active source and today's burn.</p>
         </div>
 
         <!-- Widgets -->
